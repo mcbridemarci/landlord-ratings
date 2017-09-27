@@ -1,4 +1,18 @@
-#outerDiv {
+#innerDiv {
+  background-color: #FFF;
+  padding: 3em;
   text-align: center;
+}
 
+#innerDiv h1 {
+  margin: 0;
+
+}
+
+#innerDiv h2 {
+
+}
+
+#innerDiv h4 {
+  margin: 0;
 }
