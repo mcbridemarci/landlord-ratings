@@ -1,0 +1,15 @@
+/* Fonts */
+
+body{
+	margin:0;
+	padding:0;
+	background-image:url("img/bg.jpg");
+	background-repeat:no-repeat;
+	background-size:100% 100%;
+	background-opacity:50%;
+	letter-spacing:1px;
+}
+.mainDescriptionArea{
+	background-color:#2B2B2B;
+	color:#FFFFFF;
+}
