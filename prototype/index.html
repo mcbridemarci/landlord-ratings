@@ -45,6 +45,23 @@
 				Create A New Review 
 			</div>
 			<div class="map">
+				<script>
+		      function initMap() {
+		        var uluru = {lat: 34.066239, lng: 106.905656};
+		        var map = new google.maps.Map(document.getElementById('map'), {
+		          zoom: 4,
+		          center: uluru,
+		          mapTypeId:roadmap
+		        });
+		        var marker = new google.maps.Marker({
+		          position: uluru,
+		          map: map
+		        });
+      		}
+    		</script>
+    		<script async defer
+    			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCS3xTyXT5UrvxdKH9g7D9PtG3H02TRi7c&callback=initMap">
+    		</script>
 			</div>
 		</section>
 	</body>
@@ -56,5 +73,6 @@
 		<p>
 			Created by techies - To help out other techies
 		</p>
+		<p><a href="legal.html" class="link">Legal Disclaimer</a></p>
 	</footer>
 </html>
