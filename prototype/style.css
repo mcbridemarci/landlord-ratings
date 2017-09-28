@@ -15,7 +15,7 @@ h1 {
   font-size: 500%;
   color: #414141;
   text-align: center;
-} 
+}
 h2 {
   margin-top: 40px;
   height: 1px;
@@ -54,17 +54,18 @@ a:link, a:visited {
 }
 .button {
   cursor: pointer;
-  display: block;
-  width: 20%;
   margin:0 auto;
-  padding: 15px 32px;
-  background-color: #CCDFCB;
-  border-radius: 15px;
-  border: 1px solid #414141;
+  background-color: #4ABDAC;
+  border: 1px solid #373737;
   text-decoration: none;
   font-family: 'Alegreya Sans SC', sans-serif;
-  text-align: center;
   font-size: 125%;
+}
+a.btn.button {
+  padding: 5px 10px;
+}
+.centerText {
+  text-align: center;
 }
 .line-separator {
   background-color: #414141;
