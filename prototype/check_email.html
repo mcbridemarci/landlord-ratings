@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="">
+		<title>Socorro Rental Reviews</title>
+    <script>
+      function checkEmail() {
+          var x = document.getElementById("email");
+          var email = document.getElementById("email").value;
+          var split = email.split("@");
+
+          var message = document.getElementById("message");
+
+          if (split.length == 2 && split[1] == "student.nmt.edu"){
+            message.innerHTML = "Email address valid";
+            message.style = "color: green;";
+          }
+          else {
+            message.innerHTML = "Email address invalid. Must end in @student.nmt.edu";
+            message.style = "color: red;";
+          }
+
+      }
+    </script>
+
+
+
+	</head>
+
+	<body>
+		<div class ="cointainer">
+
+			<Label for="email">Email Address:</label>
+			<input type="email" id="email" name="email" placeholder="john.smith@student.nmt.edu" onblur="checkEmail()">
+      <div>
+        <p id="message"></p>
+      </div>
+
+		</div>
+	</body>
+</html>
