@@ -2,9 +2,23 @@
   background-color:#2B2B2B;
   color:#FFFFFF;
   padding-top: 20px;
-  padding-bottom: 20px
+  padding-bottom: 20px;
 }
 #map{
-  height: 400px;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  height: 80%;
   width: 100%;
+}
+.inText:a:link, a:visited {
+  padding: 0 5px;
+  color: #FFF;
+}
+.inText {
+  font-family: 'Alegreya Sans SC', sans-serif;
+  color: #FFF;
+  text-align: center;
+  cursor: pointer;
 }
