@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<title>Socorro Rental Reviews | Review Template | Basic Information:</title>
 		<meta charset="utf-8">
-		<link rel="stylesheet" type="text/css" href="review_template.css">
-		<title>Socorro Rental Reviews</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link href="review_template.css" rel="stylesheet" type="text/css">
 	</head>
 	<body>
 		<div class ="cointainer">
+			 <h1 class="titleArea">Socorro Rental Reviews</h1>
+			 <h2>Review Template</h2>
+			 <br />
+			 <h3>Basic Information:</h3>
+			 <br />
+			 <br />
 
 			<Label for="rentaladd">Rental Address:</label> 
 			<input type="text" id="rentaladd" name="location" placeholder ="Location of Property">
@@ -22,7 +29,8 @@
 			<Label for="lease_length">Length of lease:</label>
 			<input type="text" id="lease_length" name="lease">
 
-			<Label for="furnished">Furnished:</label><br />
+			<br />
+			<Label for="furnished">Furnished:</label>
 			<form>
 				<input type="radio" name="furnished" value="Yes"> Yes
 				<input type="radio" name="furnished" value="No"> No<br>
@@ -30,11 +38,20 @@
 			<br />
 
 			<Label for="lease_allowed">Type of lease allowed:</label><br />
-			<select multiple>
-				<option value="Month-to-Month"> Month-to-Month</option><br>
-				<option value="Yearly"> Yearly</option><br>
-				<option value="Other"> Other</option><br>	
-			</select>
+			<fieldset>
+				<div>
+					<input type="checkbox"  id= "month" name= "lease_allowed" value="monthly" />
+					<label for="month">Month-to-Month</label>
+				</div>
+				<div>		
+					<input type="checkbox"  id= "yearly" name= "lease_allowed" value="year" />
+					<label for="yearly">Yearly</label>
+				</div>
+				<div>
+					<input type="checkbox"  id= "other" name= "lease_allowed" value="other" />
+					<label for="other">Other</label>
+				</div>
+			</fieldset>
 			<br />
 
 			<Label for="late_fee">Late fee:</label>
@@ -46,14 +63,26 @@
 
 			<Label for="payment_methods">Payment Methods allowed:</label>
 			<br />
-			<select multiple>
-				<option value="Check"> Check</option><br>
-				<option value="Mobile_app"> Mobile App (e.g Venmo)</option><br>
-				<option value="Direct_deposit"> Direct Deposit</option><br>
-				<option value="Other"> Other</option><br>	
-			</select>
-			<br />
+			<fieldset>
+				<div>
+					<input type="checkbox"  id= "check" name= "payments_allowed" value="checks" />
+					<label for="check">Check</label>
+				</div>
+				<div>		
+					<input type="checkbox"  id= "mobile_app" name= "payments_allowed" value="apps" />
+					<label for="mobile_app">Mobile App</label>
+				</div>
+				<div>
+					<input type="checkbox"  id= "direct_deposit" name= "payments_allowed" value="direct" />
+					<label for="direct_deposit">Direct Deposit</label>
+				</div>
+				<div>
+					<input type="checkbox"  id= "other" name= "payments_allowed" value="others" />
+					<label for="other">Other</label>
+				</div>
+			</fieldset>
 
+			<br />
 			<Label for="deposit">Deposit amount:</label>
 			<input type="text" id="deposit" name="deposit_amnt">
 			<br />
@@ -71,7 +100,8 @@
 			<br />
 			<br />
 			<!--for next button at bottom of page-->
-			<input type="Next" value="Next">
+			<!--<input type="Next" value="Next">-->
+			<a href="index.html" id="link" class="btn " role="button">Next <span class="glyphicon glyphicon-chevron-right"></span></a>
 		</div>
 	</body>
 </html>
