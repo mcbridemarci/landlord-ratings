@@ -59,6 +59,7 @@ a:link, a:visited {
   margin:0 auto;
   padding: 15px 32px;
   background-color: #CCDFCB;
+  border-radius: 15px;
   border: 1px solid #414141;
   text-decoration: none;
   font-family: 'Alegreya Sans SC', sans-serif;
