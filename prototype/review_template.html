@@ -7,42 +7,58 @@
 	</head>
 	<body>
 		<div class ="cointainer">
-			<form action="/action_page.php">
 
-				<Label for="rentaladd">Rental Address:</label> 
-				<input type="text" id="rentaladd" name="location" placeholder ="Location of Property">
-				<br />
-				<Label for="numb_bed">Number of bedrooms:</label>
-				<input type="text" id="numbe_bed" name="bedrooms">
-				<br />
+			<Label for="rentaladd">Rental Address:</label> 
+			<input type="text" id="rentaladd" name="location" placeholder ="Location of Property">
+			<br />
+			<Label for="numb_bed">Number of bedrooms:</label>
+			<input type="text" id="numbe_bed" name="bedrooms">
+			<br />
 
-				<Label for="numb_bath">Number of bathrooms:</label>
-				<input type="text" id="numbe_bath" name="bathrooms">
+			<Label for="numb_bath">Number of bathrooms:</label>
+			<input type="text" id="numbe_bath" name="bathrooms">
+			<br />
 
-				<Label for="lease_length">Length of lease:</label>
-				<input type="text" id="lease_length" name="lease">
-				<br />
+			<Label for="lease_length">Length of lease:</label>
+			<input type="text" id="lease_length" name="lease">
 
-				<Label for="monthly_rent">Monthly rent:</label>
-				<input type="text" id="monthly_rent" name="rent">
-				<br />
+			<Label for="furnished">Furnished:</label>
+			<input type="checkbox" class="yes-no-check" name="lease">
+			<input type="yes-no-check-text" value="">
+			<br />
 
-				<Label for="late_fee">Late fee:</label>
-				<input type="text" id="late_fee" name="fee">
+			<Label for="monthly_rent">Monthly rent:</label>
+			<input type="text" id="monthly_rent" name="rent">
+			<br />
 
-				<Label for="late_days">Late days allowed per month:</label>
-				<input type="text" id="late_days" name="late_days">
-				<br />
+			<Label for="late_fee">Late fee:</label>
+			<input type="text" id="late_fee" name="fee">
 
-				<Label for="deposit">Deposit amount:</label>
-				<input type="text" id="deposit" name="deposit_amnt">
-				<br />
+			<Label for="late_days">Late days allowed per month:</label>
+			<input type="text" id="late_days" name="late_days">
+			<br />
 
-				<Label for="deposit_returned">Amount returned from deposit:</label>
-				<input type="text" id="deposit_returned" name="return_depo">	
-				<br />	
+			<Label for="deposit">Deposit amount:</label>
+			<input type="text" id="deposit" name="deposit_amnt">
+			<br />
 
-				<input type="Next" value="Next">
+			<Label for="deposit_returned">Amount returned from deposit:</label>
+			<input type="text" id="deposit_returned" name="return_depo">	
+			<br />	
+
+			<Label for="item_recepit">Itemized receipt given with deposit decution</label>
+			<input type="checkbox" class="yes-no-check-input" name="receipt">
+				
+			<br />
+			<br />
+			<!--for next button at bottom of page-->
+			<input type="Next" value="Next">
+
+			<!--checkbox(yes or no): used for furnished and itemized receipt given-->
+			<Label class="yes-no-check">
+			<input type="checkbox" class="yes-no-check-input" />
+				<span class="yes-no-check-text"></span>
+			</label>
 			</form>
 		</div>
 	</body>
