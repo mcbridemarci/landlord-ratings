@@ -22,13 +22,19 @@
 			<Label for="lease_length">Length of lease:</label>
 			<input type="text" id="lease_length" name="lease">
 
-			<Label for="furnished">Furnished:</label>
-			<input type="checkbox" class="yes-no-check" name="lease">
-			<input type="yes-no-check-text" value="">
+			<Label for="furnished">Furnished:</label><br />
+			<form>
+				<input type="radio" name="furnished" value="Yes"> Yes
+				<input type="radio" name="furnished" value="No"> No<br>
+			</form>
 			<br />
 
-			<Label for="monthly_rent">Monthly rent:</label>
-			<input type="text" id="monthly_rent" name="rent">
+			<Label for="lease_allowed">Type of lease allowed:</label><br />
+			<select multiple>
+				<option value="Month-to-Month"> Month-to-Month</option><br>
+				<option value="Yearly"> Yearly</option><br>
+				<option value="Other"> Other</option><br>	
+			</select>
 			<br />
 
 			<Label for="late_fee">Late fee:</label>
@@ -36,6 +42,16 @@
 
 			<Label for="late_days">Late days allowed per month:</label>
 			<input type="text" id="late_days" name="late_days">
+			<br />
+
+			<Label for="payment_methods">Payment Methods allowed:</label>
+			<br />
+			<select multiple>
+				<option value="Check"> Check</option><br>
+				<option value="Mobile_app"> Mobile App (e.g Venmo)</option><br>
+				<option value="Direct_deposit"> Direct Deposit</option><br>
+				<option value="Other"> Other</option><br>	
+			</select>
 			<br />
 
 			<Label for="deposit">Deposit amount:</label>
@@ -47,19 +63,15 @@
 			<br />	
 
 			<Label for="item_recepit">Itemized receipt given with deposit decution</label>
-			<input type="checkbox" class="yes-no-check-input" name="receipt">
+			<form>
+				<input type="radio" name="receipt" value="Yes"> Yes
+				<input type="radio" name="receipt" value="No"> No<br>
+			</form>
 				
 			<br />
 			<br />
 			<!--for next button at bottom of page-->
 			<input type="Next" value="Next">
-
-			<!--checkbox(yes or no): used for furnished and itemized receipt given-->
-			<Label class="yes-no-check">
-			<input type="checkbox" class="yes-no-check-input" />
-				<span class="yes-no-check-text"></span>
-			</label>
-			</form>
 		</div>
 	</body>
 </html>
