@@ -1,6 +1,6 @@
 .mainDescriptionArea{
-  background-color:#414141;
-  color:#FFFFFF;
+  background-color: var(--light-color);
+  color:var(--dark-color);
   padding-top: 20px;
   padding-bottom: 20px;
 }

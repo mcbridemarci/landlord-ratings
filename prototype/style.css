@@ -1,5 +1,10 @@
 /* Fonts */
 @import url('https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:800|Faster+One');
+:root {
+  --light-color: #DCD0C0;
+  --dark-color: #373737;
+  --button-color: #373737;
+}
 
 body{
 	margin:0;
@@ -13,21 +18,22 @@ h1 {
   margin-bottom: 10px;
   font-family: 'Alegreya Sans SC', sans-serif;
   font-size: 500%;
-  color: #414141;
+  color: var(--dark-color);
   text-align: center;
 }
 h2 {
   margin-top: 40px;
+  background-color: var(--light-color);
   height: 1px;
   text-align: center;
-  border-top: 2px solid #FFFFFF;
+  border-top: 2px solid var(--dark-color);
   max-width: 650px;
   margin-left:auto;
   margin-right:auto;
 }
 h2 span {
   text-align: center;
-  background-color: #414141;
+  background-color: var(--light-color);
   position: relative;
   top: -0.7em;
   display: inline-block;
@@ -44,30 +50,30 @@ p {
 }
 a:link, a:visited {
   padding: 0 5px;
-  color: #414141;
+  color: var(--dark-color);
 }
 .link {
   font-family: 'Alegreya Sans SC', sans-serif;
-  color: #414141;
+  color: var(--dark-color);
   text-align: center;
   cursor: pointer;
 }
 .button {
   cursor: pointer;
   margin:0 auto;
-  background-color: #4ABDAC;
-  border: 1px solid #373737;
+  background-color: var(--button-color);
+  border: 1px solid var(--dark-color);
   text-decoration: none;
   font-family: 'Alegreya Sans SC', sans-serif;
   font-size: 125%;
 }
 a.btn.button {
-  padding: 5px 10px;
+  padding: 10px 15px;
 }
 .centerText {
   text-align: center;
 }
 .line-separator {
-  background-color: #414141;
-  border-bottom: 2px solid #414141;
+  background-color: var(--dark-color);
+  border-bottom: 2px solid var(--dark-color);
 }
