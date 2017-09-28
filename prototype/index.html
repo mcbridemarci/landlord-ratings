@@ -1,7 +1,7 @@
 <html>
 <!-- This page will be the main web page that will contain the title, description, map and button to create a new review -->
 	<head>
-		<title>Socorro Rental Reviews</title>
+		<title>Socorro Rental Reviews | Home</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet"
@@ -13,7 +13,28 @@
 		<!-- our stylesheets -->
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<link rel="stylesheet" type="text/css" href="main.css">
+
+    <script>
+      function initMap() {
+        var myLatLng = {lat: 34.066239, lng: -106.905656};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 15,
+          center: new google.maps.LatLng(34.066239,-106.905656),
+          mapTypeId:'roadmap'
+        });
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCS3xTyXT5UrvxdKH9g7D9PtG3H02TRi7c&callback=initMap">
+    </script>
+
 	</head>
+
+
 	<body>
 		<div class="container-fluid">
 			<section class="titleArea">
@@ -42,7 +63,7 @@
 				</p>
 				<h2><span>Please Note</span></h2>
 				<p>
-					In order to leave a review, you must have a New Mexico Tech email.
+					In order to leave a review, you must have a New Mexico Tech student email address.
 				</p>
 			</section>
 
@@ -54,35 +75,24 @@
         <div class="centerText">
   				<a href="review_template.html" style="color:white" class="btn button">Create A New Review</a>
         </div>
+
+        <a href="#map"></a>
 				<div id="map"></div>
 			</section>
-							<script>
-		      function initMap() {
-		        var myLatLng = {lat: 34.066239, lng: -106.905656};
-		        var map = new google.maps.Map(document.getElementById('map'), {
-		          zoom: 15,
-		          center: new google.maps.LatLng(34.066239,-106.905656),
-		          mapTypeId:'roadmap'
-		        });
-		        var marker = new google.maps.Marker({
-		          position: myLatLng,
-		          map: map
-		        });
-      		}
-    		</script>
-    		<script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCS3xTyXT5UrvxdKH9g7D9PtG3H02TRi7c&callback=initMap">
-    		</script>
+
 		</div>
+
+    <hr class="line-separator">
+
+  	<footer>
+  		<p>
+  			Created by techies - To help out other techies
+  		</p>
+  		<p><a href="legal.html" class="link">Legal Disclaimer</a></p>
+  	</footer>
+
 	</body>
 
 		<!-- visually separate sections -->
-		<hr class="line-separator">
 
-	<footer>
-		<p>
-			Created by techies - To help out other techies
-		</p>
-		<p><a href="legal.html" class="link">Legal Disclaimer</a></p>
-	</footer>
 </html>
