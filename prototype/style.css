@@ -13,7 +13,7 @@ h1 {
   margin-bottom: 10px;
   font-family: 'Alegreya Sans SC', sans-serif;
   font-size: 500%;
-  color: #373737;
+  color: #414141;
   text-align: center;
 } 
 h2 {
@@ -27,7 +27,7 @@ h2 {
 }
 h2 span {
   text-align: center;
-  background-color: #373737;
+  background-color: #414141;
   position: relative;
   top: -0.7em;
   display: inline-block;
@@ -44,11 +44,11 @@ p {
 }
 a:link, a:visited {
   padding: 0 5px;
-  color: #373737;
+  color: #414141;
 }
 .link {
   font-family: 'Alegreya Sans SC', sans-serif;
-  color: #373737;
+  color: #414141;
   text-align: center;
   cursor: pointer;
 }
@@ -58,14 +58,14 @@ a:link, a:visited {
   width: 20%;
   margin:0 auto;
   padding: 15px 32px;
-  background-color: #4ABDAC;
-  border: 1px solid #373737;
+  background-color: #CCDFCB;
+  border: 1px solid #414141;
   text-decoration: none;
   font-family: 'Alegreya Sans SC', sans-serif;
   text-align: center;
   font-size: 125%;
 }
 .line-separator {
-  background-color: #373737;
-  border-bottom: 2px solid #373737;
+  background-color: #414141;
+  border-bottom: 2px solid #414141;
 }
