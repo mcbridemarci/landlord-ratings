@@ -2,68 +2,79 @@
 <html>
 	<head>
 		<title>Socorro Rental Reviews</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<!-- our stylesheets -->
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<link rel="stylesheet" type="text/css" href="main.css">
 	</head>
 	<body>
-		<section class="titleArea">
-			<!-- this area contains the title and/or any elements we want on other pages. -->
-			<h1>Socorro Rental Reviews </h1>
-		</section>
+		<div class="container-fluid">
+			<section class="titleArea">
+				<!-- this area contains the title and/or any elements we want on other pages. -->
+				<h1>Socorro Rental Reviews </h1>
+			</section>
 
-		<!-- visually separate sections -->
-		<hr class="line-separator">
+			<!-- visually separate sections -->
+			<hr class="line-separator">
 
-		<section class="mainDescriptionArea">
-			<!-- this area contain the main description and the purpose of this website -->
-			<h2><span>About</span></h2>
-			<p>
-				Socorro is a small community with a high demand for property rentals among us New Mexico Tech students, especially those that are near campus. Often landlords view this as the perfect opportunity to rent their homes, sadly without keeping up with basic home maintenance.
-			</p>
-			<p>
-				The goal of this website is to help other techies be informed about their soon-to-be landlord and rental property prior to signing their lease. 
-			</p>
-			<p>
-				So please help by leaving a review about your current home! This will help all other students know what to expect.
-			</p>
-			<p>
-				Click on the pins on the map bellow to look at the reviews left by other techies for their property rental. 
-				Or Click on "Create A New Review" to help out and review your place. 
-			</p>
-			<h2><span>Please Note</span></h2>
-			<p>
-				In order to leave a review, you must have a New Mexico Tech email.
-			</p>
-		</section>
+			<section class="mainDescriptionArea">
+				<!-- this area contain the main description and the purpose of this website -->
+				<h2><span>About</span></h2>
+				<p>
+					Socorro is a small community with a high demand for property rentals among us New Mexico Tech students, especially those that are near campus. Often landlords view this as the perfect opportunity to rent their homes, sadly without keeping up with basic home maintenance.
+				</p>
+				<p>
+					The goal of this website is to help other techies be informed about their soon-to-be landlord and rental property prior to signing their lease. 
+				</p>
+				<p>
+					So please help by leaving a review about your current home! This will help all other students know what to expect.
+				</p>
+				<p>
+					Click on the pins on the map bellow to look at the reviews left by other techies for their property rental. 
+					Or Click on "Create A New Review" to help out and review your place. 
+				</p>
+				<h2><span>Please Note</span></h2>
+				<p>
+					In order to leave a review, you must have a New Mexico Tech email.
+				</p>
+			</section>
 
-				<!-- visually separate sections -->
-		<hr class="line-separator">
+					<!-- visually separate sections -->
+			<hr class="line-separator">
 
-		<section class="mapArea">
-			<!-- this area contain a button to create new reviews and a map --> 
-			<div class="button">
-				Create A New Review 
-			</div>
-			<div class="map">
-				<script>
-		      function initMap() {
-		        var uluru = {lat: 34.066239, lng: 106.905656};
-		        var map = new google.maps.Map(document.getElementById('map'), {
-		          zoom: 4,
-		          center: uluru,
-		          mapTypeId:roadmap
-		        });
-		        var marker = new google.maps.Marker({
-		          position: uluru,
-		          map: map
-		        });
-      		}
-    		</script>
-    		<script async defer
-    			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCS3xTyXT5UrvxdKH9g7D9PtG3H02TRi7c&callback=initMap">
-    		</script>
-			</div>
-		</section>
+			<section class="mapArea">
+				<!-- this area contain a button to create new reviews and a map --> 
+				<div class="button">
+					Create A New Review 
+				</div>
+				<div id="map" style="width: 100%; height: 400px;">
+					<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false">
+			      function initMap() {
+			        var myLatLng = {lat: 34.066239, lng: 106.905656};
+			        var map = new google.maps.Map(document.getElementById('map'), {
+			          zoom: 4,
+			          center: myLatLng,
+			          mapTypeId:roadmap
+			        });
+			        var marker = new google.maps.Marker({
+			          position: myLatLng,
+			          map: map
+			        });
+	      		}
+	    		</script>
+	    		<script async defer
+	    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCS3xTyXT5UrvxdKH9g7D9PtG3H02TRi7c&callback=initMap">
+	    </script>
+				</div>
+			</section>
+		</div>
 	</body>
 
 		<!-- visually separate sections -->
