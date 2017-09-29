@@ -24,10 +24,10 @@
 			<!-- visually separate sections -->
 			<hr class="line-separator">
 
-			<section class="content">
+			<section class="content" id="contentSection">
 				<h3 class="subtitleArea">Basic Information:</h3>
 				<div class="question">
-					<Label for="rentaladd">Rental Address:</label> 
+					<Label for="rentaladd">Rental Address:</label>
 					<input type="text" id="rentaladd" name="location" placeholder ="Location of Property">
 				</div>
 
@@ -61,7 +61,7 @@
 							<input type="checkbox"  id= "month" name= "lease_allowed" value="monthly" />
 							<label for="month">Month-to-Month</label>
 						</div>
-						<div>		
+						<div>
 							<input type="checkbox"  id= "yearly" name= "lease_allowed" value="year" />
 							<label for="yearly">Yearly</label>
 						</div>
@@ -89,7 +89,7 @@
 							<input type="checkbox"  id= "check" name= "payments_allowed" value="checks" />
 							<label for="check">Check</label>
 						</div>
-						<div>		
+						<div>
 							<input type="checkbox"  id= "mobile_app" name= "payments_allowed" value="apps" />
 							<label for="mobile_app">Mobile App</label>
 						</div>
@@ -108,10 +108,10 @@
 					<Label for="deposit">Deposit amount:</label>
 					<input type="text" id="deposit" name="deposit_amnt">
 				</div>
-				
+
 				<div class="question">
 					<Label for="deposit_returned">Amount returned from deposit:</label>
-					<input type="text" id="deposit_returned" name="return_depo">	
+					<input type="text" id="deposit_returned" name="return_depo">
 				</div>
 
 				<div class="question">
@@ -123,9 +123,9 @@
 				</div>
 				<!--for next button at bottom of page-->
 				<!--<input type="Next" value="Next">-->
-				<section class="butt">
-					<a href="index.html" role="button">Next<span class="glyphicon glyphicon-chevron-right"></span></a>
-				</section>
+				<div>
+					<button onclick="window.location.href='index.html'" class="butt">Next<span class="glyphicon glyphicon-chevron-right"></span></button>
+				</div>
 			</section>
 
 			<hr class="line-separator">
