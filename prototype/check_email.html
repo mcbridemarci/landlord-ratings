@@ -1,43 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-
 	<head>
+		<title>Socorro Rental Reviews | Review Template | Email</title>
 		<meta charset="utf-8">
-		<link rel="stylesheet" type="text/css" href="">
-		<title>Socorro Rental Reviews</title>
-    <script>
-      function checkEmail() {
-          var x = document.getElementById("email");
-          var email = document.getElementById("email").value;
-          var split = email.split("@");
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="review_template.css">
 
-          var message = document.getElementById("message");
-
-          if (split.length == 2 && split[1] == "student.nmt.edu"){
-            message.innerHTML = "Email address valid";
-            message.style = "color: green;";
-          }
-          else {
-            message.innerHTML = "Email address invalid. Must end in @student.nmt.edu";
-            message.style = "color: red;";
-          }
-
-      }
-    </script>
-
-
+    <script src="js/checkEmail.js"></script>
 
 	</head>
 
 	<body>
 		<div class ="cointainer">
+			<section class="titleArea">
+				<h1><a href="index.html" class="link">Socorro Rental Reviews</a></h1>
+				<h2>Review Template</h2>
+			</section>
 
-			<Label for="email">Email Address:</label>
-			<input type="email" id="email" name="email" placeholder="john.smith@student.nmt.edu" onblur="checkEmail()">
-      <div>
-        <p id="message"></p>
-      </div>
+			<hr class="line-separator">
 
+			<section class="content">
+
+        <div class="question">
+          <Label for="email">Email Address:</label>
+          <input type="email" class="question" id="email" name="email" placeholder="john.smith@student.nmt.edu" onblur="checkEmail()">
+          <div>
+            <p id="message"></p>
+          </div>
+        </div>
+
+				<a href="index.html" id="link" class="btn " role="button">Next <span class="glyphicon glyphicon-chevron-right"></span></a>
+			</section>
+
+			<hr class="line-separator">
+	  	<footer>
+	  		<p>
+	  			1 section out of 5 complete... We promise the rest aren't as long :)
+	  		</p>
+	  		<p><a href="legal.html" class="link">Legal Disclaimer</a></p>
+	  	</footer>
 		</div>
 	</body>
 </html>
