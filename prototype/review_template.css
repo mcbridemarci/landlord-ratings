@@ -23,13 +23,19 @@ footer {
 }
 .titleArea h2{
   margin-top: 5px;
+  font-size: 250%;
   text-align: center;
   color: white;
 }
 .subtitleArea {
-  margin-top: 5px;
+  padding-top: 5px;
+  font-size: 225%;
   margin-left: 10%;
   font-family: 'Alegreya Sans SC', sans-serif;
+}
+section div {
+  letter-spacing: 0.5px;
+  margin-left: 10%;
 }
 .butt{
   color: white;
@@ -48,10 +54,6 @@ footer {
 a:link, a:visited {
   padding: 0 5px;
   color: white;
-}
-section div {
-  letter-spacing: 0.5px;
-  margin-left: 10%;
 }
 /*
 * input field for answers
