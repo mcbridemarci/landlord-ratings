@@ -70,7 +70,7 @@ a:link, a:visited {
 /*
 * input field for answers
 */
-input[type=text], select, textarea {
+input[type=text], select, textarea, input[type=email] {
 	width: 30%;
   background-color: white;
 	padding: 5px;
