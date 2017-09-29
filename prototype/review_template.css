@@ -13,11 +13,6 @@ footer {
   text-align: center;
   color: white;
 }
-.content {
-  margin:0;
-  padding:0;
-  background-color: var(--light-color);
-}
 .titleArea h1 {
   margin-top: 10px;
   margin-bottom: 5px;
@@ -31,30 +26,51 @@ footer {
   text-align: center;
   color: white;
 }
+.subtitleArea {
+  margin-top: 5px;
+  margin-left: 10%;
+  font-family: 'Alegreya Sans SC', sans-serif;
+}
+.butt{
+  color: white;
+  margin-left: 10%;
+  background-color: var(--light-color);
+}
 .line-separator {
   background-color: white);
   border-bottom: 2px solid white;
+}
+.content {
+  margin:0;
+  padding:0;
+  background-color: var(--light-color);
 }
 a:link, a:visited {
   padding: 0 5px;
   color: white;
 }
+section div {
+  letter-spacing: 0.5px;
+  margin-left: 10%;
+}
 /*
 * input field for answers
 */
 input[type=text], select, textarea {
-	width: 25%;
-	padding: 12px;
+	width: 30%;
+  background-color: white;
+	padding: 5px;
 	border: 1px solid #ccc; /*gray border*/
-	border-radius: 4px; /*for roundedness in borders */
-	box-sizing: border-box;
-	margin-top: 6px;
-	margin-bottom: 16px;
-
+	border-radius: 10px; /*for roundedness in borders */
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
-.link {
-  font-family: 'Alegreya Sans SC', sans-serif;
-  color: #2B2B2B;
-  text-align: center;
-  cursor: pointer;
+input[type=number], select, textarea {
+  width: 30%;
+  background-color: white;
+  padding: 5px;
+  border: 1px solid #ccc; /*gray border*/
+  border-radius: 10px; /*for roundedness in borders */
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
