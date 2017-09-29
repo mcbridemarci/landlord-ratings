@@ -1,9 +1,11 @@
 /* Fonts */
 @import url('https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:800|Faster+One');
 :root {
-  --light-color: #DCD0C0;
+  --light-color: #F4EEED;
   --dark-color: #373737;
   --button-color: #373737;
+  --line-color: #373737;
+  --bold-line-color: #3AA3D1;
 }
 
 body{
@@ -73,7 +75,11 @@ a.btn.button {
 .centerText {
   text-align: center;
 }
+.bold-line-separator {
+  background-color: var(--bold-line-color);
+  border-bottom: 2px solid var(--bold-line-color);
+}
 .line-separator {
-  background-color: var(--dark-color);
-  border-bottom: 2px solid var(--dark-color);
+  background-color: var(--line-color);
+  border-bottom: 3px solid var(--line-color);
 }
