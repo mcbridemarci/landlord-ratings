@@ -28,10 +28,16 @@ body{
   letter-spacing: 1px;
 }
 
-#innerDiv h1 {
+.titleArea {
   margin: 0;
-  font-size: 3.5em;
+  font-size: 150%;
   color: #ADADAD;
+  cursor: pointer;
+}
+
+a:link, a:visited {
+  padding: 0 5px;
+  color: var(--dark-color);
 }
 
 #innerDiv h2 {
