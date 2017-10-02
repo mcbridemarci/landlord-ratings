@@ -1,6 +1,7 @@
 /* Fonts */
 @import url('https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:800|Faster+One');
 :root {
+  --light-trans-color: rgba(244, 238, 237, 0.9);
   --light-color: #F4EEED;
   --dark-color: #373737;
   --button-color: #373737;

@@ -1,44 +1,55 @@
 @import url('https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:800|Faster+One');
 :root {
-  --light-color: #DCD0C0;
+  --light-color: rgba(244, 238, 237, 0.95);
   --dark-color: #373737;
   --button-color: #373737;
+  --line-color: #373737;
+  --bold-line-color: #3AA3D1;
 }
 body{
 	margin:0;
 	padding:0;
-	background-color: var(--dark-color);
+  background-image:url("img/bg6.jpg");
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+  background-position: absolute;
 }
 footer {
   text-align: center;
-  color: white;
+  color: var(--dark-color);
+}
+.titleArea{
+  background-color: rgba(255, 255, 255, 0.2);
 }
 .titleArea h1 {
   margin-top: 10px;
   margin-bottom: 5px;
   font-family: 'Alegreya Sans SC', sans-serif;
   font-size: 500%;
-  color: white;
+  color: var(--dark-color);
   text-align: center;
 }
 .titleArea h2{
   margin-top: 5px;
   font-size: 250%;
   text-align: center;
-  color: white;
+  color: var(--dark-color);
 }
 .subtitleArea {
-  padding-top: 5px;
+  padding-top: 2%;
   font-size: 225%;
-  margin-left: 10%;
   font-family: 'Alegreya Sans SC', sans-serif;
+}
+h3 {
+  padding-left: 0;
+  padding-right: 10%;
 }
 section div {
   letter-spacing: 0.5px;
 }
 #contentSection {
-  padding-left: 5em;
-  padding-right: 5em;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 .butt{
   text-decoration: none;
@@ -54,12 +65,10 @@ section div {
   letter-spacing: 0.5px;
 }
 .line-separator {
-  background-color: white);
-  border-bottom: 2px solid white;
+  background-color: var(--dark-color);
+  border-bottom: 2px solid var(--dark-color);
 }
 .content {
-  margin:0;
-  padding:0;
   background-color: var(--light-color);
 }
 form {
@@ -67,7 +76,7 @@ form {
 }
 a:link, a:visited {
   padding: 0 5px;
-  color: white;
+  color: var(--dark-color);
 }
 /*
 * input field for answers

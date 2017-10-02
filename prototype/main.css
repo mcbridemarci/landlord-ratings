@@ -1,5 +1,5 @@
 .mainDescriptionArea{
-  background-color: var(--light-color);
+  background-color: var(--light-trans-color);
   color:var(--dark-color);
   padding-top: 20px;
   padding-bottom: 20px;
