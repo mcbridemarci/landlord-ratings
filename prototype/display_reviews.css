@@ -1,0 +1,60 @@
+h3 {
+
+}
+
+
+.overall {
+  background-color: var(--dark-color);
+  color: #FFF;
+  border-radius: 10px;
+  margin-bottom: 2em;
+  margin-top: 2em;
+  max-width: 750px;
+}
+
+.centerText {
+  text-align: center;
+}
+
+.checked {
+  color: #FFA500;
+}
+
+div.overall h3 {
+  margin: 10px;
+}
+
+#address_overall {
+  text-decoration: underline;
+}
+
+.reviewBox {
+  max-width: 750px;
+  border: solid 1px #000;
+  border-radius: 10px;
+  background-color: #CCC;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+.reviewBox p {
+  text-align: left;
+  margin-bottom: 0;
+}
+
+.timeStamp {
+  margin-left: 10px;
+}
+
+.postHead {
+  color: #555;
+  display: run-in;
+}
+
+.overallDesc {
+  margin-left: 1.5em;
+}
+
+.stars {
+  font-weight: bold;
+}
