@@ -85,3 +85,8 @@ a.btn.button {
   background-color: var(--line-color);
   border-bottom: 3px solid var(--line-color);
 }
+
+footer p {
+  margin-left: auto;
+  margin-right: auto;
+}
