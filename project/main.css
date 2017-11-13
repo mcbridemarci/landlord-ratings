@@ -1,0 +1,14 @@
+.mainDescriptionArea{
+  background-color: var(--light-trans-color);
+  color:var(--dark-color);
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+#map{
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  height: 80%;
+  width: 100%;
+}

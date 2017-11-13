@@ -1,74 +1,78 @@
 <html>
-  <head>
-    <title>NMT CSE321 Project - Group 4</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-  </head>
+<!-- This page will be the main web page that will contain the title, description, map and button to create a new review -->
+	<head>
+		<title>Socorro Rental Reviews | Home</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<!-- our stylesheets -->
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="main.css">
 
-  <body>
-	  <!-- Header of webpage -->
-    <header class="header">
-			<h1>Socorro Rental Reviews<br>Project</h1>
-    </header>
+		<!-- Script for google maps --> 
+    <script src="js/map.js"></script>
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCS3xTyXT5UrvxdKH9g7D9PtG3H02TRi7c&callback=initMap">
+    </script>
+	</head>
 
-		<main>
-
-			<!-- Navigation for webpage -->
-			<nav class="line-separator nav">
-				<ul>
-					<li><a href="index.html" id="curPage">HOME</a></li>
-					<li><a href="members.html">MEMBERS</a></li>
-          <li><a href="../prototype/index.html">THE PROTOTYPE</a></li>
-					<li><a href="../finalSystem/index.html">THE PROJECT</a></li>
-				</ul>
-			</nav>
-
-     <hr class="line-separator">
-
-			<!-- Project Description -->
-			<section class="about">
-			  <h2 class="subtitle"><span>About</span></h2>
-				<p>Socorro is a small community with a high demand for property rentals among NMT students, especially those that are near campus. Often landlords view this as the perfect opportunity to rent their homes, sadly without keeping up with basic home maintenance.</p>
-				<p>The goal of our group project is to help other techies be informed about their soon-to-be landlord prior to signing their lease. The webpage will contain a map of Socorro that will allow its users to place a pin on the location of their property rental. It will then allow the user to rate their landlord by completing a form made from a set template, so each user can maintain a sense of comfort and familiarity. Furthermore, depending upon time, we will add features such as Google Maps integration and verification of email addresses from the domain student.nmt.edu. With these extended features -- the website will become more dynamic and enhance our users' overall experience. </p>
+	<body>
+		<div class="container-fluid">
+			<section class="titleArea">
+				<!-- this area contains the title and/or any elements we want on other pages. -->
+				<h1><a href="index.html" class="link">Socorro Rental Reviews</a></h1>
 			</section>
 
-			<!-- Project News -->
-			<section class="about">
-				<h2 class="subtitle"><span>Project News</span></h2>
-				<table class="table" align= "center">
-				<tr>
-						<th>Date</th>
-						<th>Desciption</th>
-					</tr>
-						<td>9/6</td>
-						<td>Began planning our project and set up gitlab.</td>
-				  <tr>
-						<td>9/15</td>
-						<td>Met with Dr. Kuo to discuss the storyboard.</td>
-					</tr>
-					<tr>
-						<td>9/20</td>
-						<td>Met with Dr. Kuo and presented corrected-storyboards.</td>
-					</tr>
-					<tr>
-						<td>9/25</td>
-						<td>Created a project introductory website in "project" directory.</td>
-					</tr>
-          <tr>
-						<td>10/2</td>
-						<td>Met with Rita who approved the prototype home page</td>
-					</tr>
-          <tr>
-						<td>10/7</td>
-						<td>Finished the basic prototype.</td>
-					</tr>
-				</table>
-		  </section>
-		</main>
+			<!-- visually separate sections -->
+			<hr class="line-separator">
+
+			<section class="mainDescriptionArea">
+				<!-- this area contain the main description and the purpose of this website -->
+				<h2><span>About</span></h2>
+				<p>
+					Socorro is a small community with a high demand for property rentals among us New Mexico Tech students, especially those that are near campus. Often landlords view this as the perfect opportunity to rent their homes, sadly without keeping up with basic home maintenance.
+				</p>
+				<p>
+					The goal of this website is to help other techies be informed about their soon-to-be landlord and rental property prior to signing their lease.
+				</p>
+				<p>
+					So please help by leaving a review about your current home! This will help all other students know what to expect.
+				</p>
+				<p>
+					Click on the pins on the map bellow to look at the reviews left by other techies for their property rental.
+					Or Click on <a href="review_template.html" style="color:black" class="inText">"Create A New Review"</a> to help out and review your place.
+				</p>
+				<h2><span>Please Note</span></h2>
+				<p>
+					In order to leave a review, you must have a New Mexico Tech email address.
+				</p>
+			</section>
+
+			<!-- visually separate sections -->
+			<hr class="line-separator">
+
+			<section class="mapArea">
+				<!-- this area contain a button to create new reviews and a map -->
+        <div class="centerText">
+  				<a href="check_email.html" style="color:white" class="btn button">Create A New Review<span class="glyphicon glyphicon-chevron-right"></span></a>
+        </div>
+
+        <a href="#map"></a>
+				<div id="map"></div>
+			</section>
+		</div>
 
     <hr class="line-separator">
-    <footer class="footer">
-			<p>GROUP4 - CSE321</p>
-    </footer>
-
-  </body>
+  	<footer>
+  		<p>
+  			Created by techies - To help out other techies
+  		</p>
+  		<p><a href="legal.html" class="link">Legal Disclaimer</a></p>
+  	</footer>
+	</body>
 </html>
