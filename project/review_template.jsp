@@ -1,3 +1,4 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -124,7 +125,7 @@
 				<!--for next button at bottom of page-->
 				<!--<input type="Next" value="Next">-->
 				<div>
-					<button onclick="window.location.href='amenities.html'" class="butt">Next<span class="glyphicon glyphicon-chevron-right"></span></button>
+					<button onclick="window.location.href='amenities.jsp'" class="butt">Next<span class="glyphicon glyphicon-chevron-right"></span></button>
 				</div>
 			</section>
 
