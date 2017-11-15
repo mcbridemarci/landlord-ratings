@@ -10,6 +10,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.*;
+import javax.servlet.*;
+import java.sql.*;
 
 /**
  *
@@ -29,17 +32,27 @@ public class javaServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet javaServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet javaServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        try{
+            String driver = "org.mariadb.jdbc.Driver";
+            Class.forName(driver);
+            String dbURL = "jdbc:mariadb://localhost:3306/apollo_4_project";
+            String username = "apollo.4";
+            String password = "zozoZOZO";
+            Connection connection = DriverManager.getConnection(dbURL, username, password);
+            Statement statement = connection.createStatement();
+            
+            
+            try (PrintWriter o = response.getWriter()) {
+                o.println("in try statement, in java");
+            }
+            
+            // now close statement & server connection
+            statement.close();
+            connection.close();
+        } catch (ClassNotFoundException ex) {
+            System.err.println("Error with connection: " + ex);
+        } catch (SQLException ex) {
+            System.err.println("Error loading driver: " + ex);
         }
     }
 
