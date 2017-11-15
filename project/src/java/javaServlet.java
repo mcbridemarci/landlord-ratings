@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import javax.servlet.*;
 import java.sql.*;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -41,9 +42,21 @@ public class javaServlet extends HttpServlet {
             Connection connection = DriverManager.getConnection(dbURL, username, password);
             Statement statement = connection.createStatement();
             
+            HttpSession session = request.getSession();
+            String sesh = "";
+            Integer accessCount = (Integer)session.getAttribute("accessCount");
+            if (accessCount == null) {
+                accessCount = 0;
+                sesh = "Welcome, Newcomer";
+            } else {
+                accessCount = accessCount + 1;
+                sesh = "Welcome Back";
+            }
+            session.setAttribute("accessCount", accessCount);
+            
             
             try (PrintWriter o = response.getWriter()) {
-                o.println("in try statement, in java");
+                o.println("in try statement, in java<br>" + sesh);
             }
             
             // now close statement & server connection
