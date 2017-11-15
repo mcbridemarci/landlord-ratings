@@ -10,7 +10,6 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="review_template.css">
 
-    <script src="js/checkEmail.js"></script>
 
 	</head>
 
@@ -36,7 +35,7 @@
         </div>
 
         <div>
-          <button onclick="window.location.href='review_template.html'" disabled="true" id="nextButton" class="butt">Next<span class="glyphicon glyphicon-chevron-right"></span></button>
+          <button onclick="window.location.href='review_template.jsp'" id="nextButton" class="butt">Next<span class="glyphicon glyphicon-chevron-right"></span></button>
         </div>
         <p>0 section out of 5 complete.</p>
 			</section>
