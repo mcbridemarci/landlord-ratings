@@ -1,0 +1,141 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Socorro Rental Reviews | Review Template | Basic Information:</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<!-- our stylesheets -->
+		<link rel="stylesheet" type="text/css" href="review_template.css">
+	</head>
+	<body>
+		<div class ="cointainer">
+			<section class="titleArea">
+				<h1><a href="index.html" class="link">Socorro Rental Reviews</a></h1>
+				<h2>Review Form</h2>
+			</section>
+
+			<!-- visually separate sections -->
+			<hr class="line-separator">
+
+			<section class="content" id="contentSection">
+				<h3 class="subtitleArea">Basic Information:</h3>
+				<div class="question">
+					<Label for="rentaladd">Rental Address:</label>
+					<input type="text" id="rentaladd" name="location" placeholder ="Location of Property">
+				</div>
+
+				<div class="question">
+					<Label for="numb_bed">Number of bedrooms:</label>
+					<input type="number" id="numbe_bed" name="bedrooms">
+				</div>
+
+				<div class="question">
+					<Label for="numb_bath">Number of bathrooms:</label>
+					<input type="number" id="numbe_bath" name="bathrooms">
+				</div>
+
+				<div class="question">
+					<Label for="lease_length">Length of lease:</label>
+					<input type="text" id="lease_length" name="lease">
+				</div>
+
+				<div class="question">
+					<Label for="furnished">Furnished:</label>
+					<form>
+						<input type="radio" name="furnished" value="Yes"> Yes
+						<input type="radio" name="furnished" value="No"> No<br>
+					</form>
+				</div>
+
+				<div class="question">
+					<Label for="lease_allowed">Type of lease allowed:</label><br />
+					<fieldset>
+						<div>
+							<input type="checkbox"  id= "month" name= "lease_allowed" value="monthly" />
+							<label for="month">Month-to-Month</label>
+						</div>
+						<div>
+							<input type="checkbox"  id= "yearly" name= "lease_allowed" value="year" />
+							<label for="yearly">Yearly</label>
+						</div>
+						<div>
+							<input type="checkbox"  id= "other" name= "lease_allowed" value="other" />
+							<label for="other">Other</label>
+					</div>
+				</fieldset>
+				</div>
+
+				<div class="question">
+					<Label for="late_fee">Late fee:</label>
+					<input type="text" id="late_fee" name="fee">
+				</div>
+
+				<div class="question">
+					<Label for="late_days">Late days allowed per month:</label>
+					<input type="text" id="late_days" name="late_days">
+				</div>
+
+				<div class="question">
+					<Label for="payment_methods">Payment Methods allowed:</label>
+					<fieldset>
+						<div>
+							<input type="checkbox"  id= "check" name= "payments_allowed" value="checks" />
+							<label for="check">Check</label>
+						</div>
+						<div>
+							<input type="checkbox"  id= "mobile_app" name= "payments_allowed" value="apps" />
+							<label for="mobile_app">Mobile App</label>
+						</div>
+						<div>
+							<input type="checkbox"  id= "direct_deposit" name= "payments_allowed" value="direct" />
+							<label for="direct_deposit">Direct Deposit</label>
+						</div>
+						<div>
+							<input type="checkbox"  id= "other" name= "payments_allowed" value="others" />
+							<label for="other">Other</label>
+						</div>
+					</fieldset>
+				</div>
+
+				<div class="question">
+					<Label for="deposit">Deposit amount:</label>
+					<input type="text" id="deposit" name="deposit_amnt">
+				</div>
+
+				<div class="question">
+					<Label for="deposit_returned">Amount returned from deposit:</label>
+					<input type="text" id="deposit_returned" name="return_depo">
+				</div>
+
+				<div class="question">
+					<Label for="item_recepit">Itemized receipt given with deposit decution</label>
+					<form>
+						<input type="radio" name="receipt" value="Yes"> Yes
+						<input type="radio" name="receipt" value="No"> No<br>
+					</form>
+				</div>
+				<!--for next button at bottom of page-->
+				<!--<input type="Next" value="Next">-->
+				<div>
+					<button onclick="window.location.href='amenities.jsp'" class="butt">Next<span class="glyphicon glyphicon-chevron-right"></span></button>
+				</div>
+			</section>
+
+			<hr class="line-separator">
+	  	<footer>
+	  		<p>
+	  			1 section out of 5 complete... We promise the rest aren't as long :)
+	  		</p>
+	  		<p><a href="legal.html" class="link">Legal Disclaimer</a></p>
+	  	</footer>
+		</div>
+	</body>
+</html>
