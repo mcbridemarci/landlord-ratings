@@ -29,7 +29,7 @@
         <form action="/project/javaServlet" method="post">
             <div class="question">
               <h4>Rental Address:</h4>
-              <input type="text" id="rentaladd" name="location" placeholder ="Location of Property">
+              <input type="text" id="rentaladd" name="location" placeholder ="Location of Property" required>
             </div>
 
             <div class="question">
@@ -39,24 +39,24 @@
 
             <div class="question">
               <h4>Number of bedrooms:</h4>
-              <input type="number" id="numbe_bed" name="bedrooms">
+              <input type="number" id="numbe_bed" name="bedrooms" required />
             </div>
 
             <div class="question">
               <h4>Number of bathrooms:</h4>
-              <input type="number" id="numbe_bath" name="bathrooms">
+              <input type="number" id="numbe_bath" name="bathrooms" required />
             </div>
 
             <div class="question">
-              <h4>Length of lease:</h4>
-              <input type="text" id="lease_length" name="lease">
+              <h4>Length of your lease:</h4>
+              <input type="text" id="lease_length" name="lease" required />
             </div>
 
             <div class="question">
               <h4 for="furnished">Furnished:</h4>
               <fieldset>
-                <label><input type="radio" name="furnished" value="Yes"> Yes</label>
-                <label><input type="radio" name="furnished" value="No"> No</label>
+                <label><input type="radio" name="furnished" value="Yes" required /> Yes</label>
+                <label><input type="radio" name="furnished" value="No" /> No</label>
               </fieldset>
             </div>
 
@@ -76,19 +76,19 @@
 
             <div class="question">
               <h4>Late fee:</h4>
-              <input type="text" id="late_fee" name="fee">
+              <input type="text" id="late_fee" name="fee" required />
             </div>
 
             <div class="question">
               <h4>Late days allowed per month:</h4>
-              <input type="text" id="late_days" name="late_days">
+              <input type="text" id="late_days" name="late_days" required />
             </div>
 
             <div class="question">
               <h4>Payment Methods allowed:</h4>
               <fieldset>
                 <label for="check">
-                  <input type="checkbox"  id= "check" name= "payments_allowed" value="checks" />
+                  <input type="checkbox"  id= "check" name= "payments_allowed" value="checks" required />
                   Check
                 </label>
                 <label for="mobile_app">
@@ -108,23 +108,23 @@
 
             <div class="question">
               <h4>Deposit amount:</h4>
-              <input type="text" id="deposit" name="deposit_amnt">
+              <input type="text" id="deposit" name="deposit_amnt" required />
             </div>
 
             <div class="question">
               <h4>Amount returned from deposit:</h4>
-              <input type="text" id="deposit_returned" name="return_depo">
+              <input type="text" id="deposit_returned" name="return_depo" required />
             </div>
 
             <div class="question">
               <h4>Itemized receipt given with deposit decution</h4>
               <fieldset>
-                <label><input type="radio" name="receipt" value="Yes"> Yes</label>
-                <label><input type="radio" name="receipt" value="No"> No</label>
+                <label><input type="radio" name="receipt" value="Yes" required /> Yes</label>
+                <label><input type="radio" name="receipt" value="No" /> No</label>
               </fieldset>
             </div>
 
-            <input type="hidden" name="action" value="basic_page">
+            <input type="hidden" name="action" value="basic_page" />
 
             <div>
               <button type="submit" id="nextButton" class="butt">Next<span class="glyphicon glyphicon-chevron-right"></span></button>
