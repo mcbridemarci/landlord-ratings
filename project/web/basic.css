@@ -89,6 +89,7 @@ input[type=text], select, textarea, input[type=email] {
 	border-radius: 10px; /*for roundedness in borders */
   margin-bottom: 5px;
   margin-top: 5px;
+  display: block;
 }
 input[type=number], select, textarea {
   width: 30%;
