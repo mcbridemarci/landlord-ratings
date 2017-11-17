@@ -9,8 +9,6 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="review_template.css">
-
-
 	</head>
 
 	<body>
@@ -27,8 +25,11 @@
           <p>Hi. Thanks for choosing to leave a review. To do so, please verify your New Mexico Tech email address.</p>
         </div>
         <div>
-          <Label for="email">Email Address:</label>
-          <input type="email" class="question" id="email" name="email" placeholder="john.smith@student.nmt.edu" onblur="checkEmail()">
+            <form action="/project/javaServlet" method="post">
+                <Label for="email">Email Address:</label>
+                <input type="hidden" name="action" value="email">
+                <input type="email" class="question" id="email" name="email" placeholder="john.smith@student.nmt.edu">
+            </form>
           <div>
             <p id="message"></p>
           </div>
