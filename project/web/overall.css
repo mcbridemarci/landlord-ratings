@@ -1,3 +1,24 @@
-.checked {
-  color: orange;
+
+#stars {
+  float: left;
 }
+#stars > input {
+  display: none;
+}
+
+#stars > label {
+  float: right;
+  margin: 3px;
+  font-size: 20px;
+}
+
+#stars > input:checked ~ label, /* show gold star when clicked */
+#stars:not(:checked) > label:hover, /* hover current star */
+#stars:not(:checked) > label:hover ~ label {  /* hover previous stars in list */
+  color: gold;
+}
+
+#stars > input:checked + label:hover, /* hover current star when changing rating */
+#stars > input:checked ~ label:hover,
+#stars > label:hover ~ input:checked ~ label, /* lighten current selection */
+#stars > input:checked ~ label:hover ~ label { color: red;  }

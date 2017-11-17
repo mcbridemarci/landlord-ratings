@@ -15,7 +15,7 @@
 		<link rel="stylesheet" type="text/css" href="basic.css">
 	</head>
 	<body>
-		<div class ="cointainer">
+		<div class ="container">
 			<section class="titleArea">
 				<h1><a href="index.html" class="link">Socorro Rental Reviews</a></h1>
 				<h2>Review Form</h2>
@@ -26,53 +26,54 @@
 
 			<section class="content" id="contentSection">
 				<h3 class="subtitleArea">Pets:</h3>
-                                <form action="/project/javaServelet" method="post">
-                                    <div class="question">
-                                            <Label for="allowed">Pet Allowed:</label>
-                                            <form>
-                                                    <input type="radio" name="allowed" value="Yes"> Yes
-                                                    <input type="radio" name="allowed" value="No"> No<br>
-                                            </form>
-                                    </div>
-                                    <div class="question">
-                                            <Label for="pet_deposit">Pet Deposit:</label>
-                                            <input type="text" id="pet_deposit" name="location" placeholder ="$">
-                                    </div>
-                                    <div class="question">
-                                            <Label for="weight">Weight Restriction:</label>
-                                            <input type="text" id="weight" name="location" placeholder ="in LBS.">
-                                    </div>
-                                    <div class="question">
-                                            <Label for="size">Size Restriction:</label><br />
-                                            <fieldset>
-                                                    <div>
-                                                            <input type="checkbox"  id= "small" name= "size" value="small" />
-                                                            <label for="small">Small</label>
-                                                    </div>
-                                                    <div>
-                                                            <input type="checkbox"  id= "medium" name= "size" value="medium" />
-                                                            <label for="medium">Medium</label>
-                                                    </div>
-                                                    <div>
-                                                            <input type="checkbox"  id= "large" name= "size" value="large" />
-                                                            <label for="large">Large</label>
-                                                    </div>
-                                            </fieldset>
-                                    </div>
-                                    <!--for next button at bottom of page-->
-                                    <!--<input type="Next" value="Next">-->
-                                    <div>
-                                            <button type="submit" onclick="window.location.href='landlord.jsp'" class="butt">Next<span class="glyphicon glyphicon-chevron-right"></span></button>
-                                    </div>
-                                    <input type="hidden" name="action" value="pets_page">
-                                </form>
+        <form action="/project/javaServelet" method="post">
+          <div class="question">
+            <h4>Pet Allowed:</h4>
+            <fieldset>
+              <label><input type="radio" name="allowed" value="Yes"> Yes</label>
+              <label><input type="radio" name="allowed" value="No"> No</label>
+            </fieldset>
+          </div>
+
+          <div class="question">
+            <h4>Pet Deposit:</h4>
+            <input type="text" id="pet_deposit" name="location" placeholder ="$">
+          </div>
+
+          <div class="question">
+            <h4>Weight Restriction:</h4>
+            <input type="text" id="weight" name="location" placeholder ="in LBS.">
+          </div>
+
+          <div class="question">
+            <h4>Size Restriction:</h4>
+            <fieldset>
+              <label for="small">
+                <input type="checkbox"  id= "small" name= "size" value="small" />
+                Small
+              </label>
+              <label for="medium">
+                <input type="checkbox"  id= "medium" name= "size" value="medium" />
+                Medium
+              </label>
+              <label for="large">
+                <input type="checkbox"  id= "large" name= "size" value="large" />
+                Large
+              </label>
+            </fieldset>
+          </div>
+          <!--for next button at bottom of page-->
+          <!--<input type="Next" value="Next">-->
+          <div>
+            <button type="submit" onclick="window.location.href='landlord.jsp'" class="butt">Next<span class="glyphicon glyphicon-chevron-right"></span></button>
+          </div>
+          <input type="hidden" name="action" value="pets_page">
+        </form>
 			</section>
 
-				<hr class="line-separator">
+      <hr class="line-separator">
 	  	<footer>
-	  		<p>
-	  			3rd section out of 5 complete... :)
-	  		</p>
+	  		<p>3rd section out of 5 complete... :)</p>
 	  		<p><a href="legal.html" class="link">Legal Disclaimer</a></p>
 	  	</footer>
 		</div>

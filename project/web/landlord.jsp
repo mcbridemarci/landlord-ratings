@@ -15,7 +15,7 @@
 		<link rel="stylesheet" type="text/css" href="basic.css">
 	</head>
 	<body>
-		<div class ="cointainer">
+		<div class ="container">
 			<section class="titleArea">
 				<h1><a href="index.html" class="link">Socorro Rental Reviews</a></h1>
 				<h2>Review Form</h2>
@@ -26,40 +26,40 @@
 
 			<section class="content" id="contentSection">
 				<h3 class="subtitleArea">Landlord:</h3>
-                                <form action="/project/javaServelet" method="post">
-                                    <div class="question">
-                                            <Label for="maintain">Lawn maintenance covered by landlord:</label>
-                                            <form>
-                                                    <input type="radio" name="maintain" value="Yes"> Yes
-                                                    <input type="radio" name="maintain" value="No"> No<br>
-                                            </form>
-                                    </div>
-                                    <div class="question">
-                                            <Label for="response">Landlord response time:</label>
-                                            <input type="text" id="response" name="location">
-                                    </div>
-                                    <div class="question">
-                                            <Label for="maintenance">Maintenance response time:</label>
-                                            <input type="text" id="maintenance" name="location" placeholder ="within days of request.">
-                                    </div>
-                                    <div class="question">
-                                            <Label for="quality">Maintenance quality:</label>
-                                            <input type="text" id="quality" name="location" placeholder ="you may be as expressive as you would like here.">
-                                    </div>
-                                    <!--for next button at bottom of page-->
-                                    <!--<input type="Next" value="Next">-->
-                                    <div>
-                                            <button type="submit" onclick="window.location.href='overall.jsp'" class="butt">Next<span class="glyphicon glyphicon-chevron-right"></span></button>
-                                    </div>
-                                    <input type="hidden" name="action" value="landloard_page">
-                                </form>
+        <form action="/project/javaServelet" method="post">
+
+          <div class="question">
+            <h4>Lawn maintenance covered by landlord:</h4>
+            <fieldset>
+              <label><input type="radio" name="maintain" value="Yes"> Yes</label>
+              <label><input type="radio" name="maintain" value="No"> No</label>
+            </fieldset>
+          </div>
+
+          <div class="question">
+            <h4>Landlord response time:</h4>
+            <input type="text" id="response" name="location">
+          </div>
+
+          <div class="question">
+            <h4>Maintenance response time:</h4>
+            <input type="text" id="maintenance" name="location" placeholder ="Within days of request">
+          </div>
+          
+          <div class="question">
+            <h4>Maintenance quality:</h4>
+            <input type="text" id="quality" name="location" placeholder ="140 Characters">
+          </div>
+            <!--for next button at bottom of page-->
+            <!--<input type="Next" value="Next">-->
+          <input type="hidden" name="action" value="landloard_page">
+          <button type="submit" onclick="window.location.href='overall.jsp'" class="butt">Next<span class="glyphicon glyphicon-chevron-right"></span></button>
+        </form>
 			</section>
 
 				<hr class="line-separator">
 	  	<footer>
-	  		<p>
-	  			4th section out of 5 complete... only one more page! :)
-	  		</p>
+	  		<p>4th section out of 5 complete... only one more page! :)</p>
 	  		<p><a href="legal.html" class="link">Legal Disclaimer</a></p>
 	  	</footer>
 		</div>
