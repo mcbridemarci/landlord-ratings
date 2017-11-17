@@ -17,11 +17,11 @@ and open the template in the editor.
 		<!-- Latest compiled JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<!-- our stylesheets -->
-		<link rel="stylesheet" type="text/css" href="style.css">
-		<link rel="stylesheet" type="text/css" href="main.css">
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/style.css">
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/main.css">
 
 		<!-- Script for google maps --> 
-    <script src="js/map.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/map.js"></script>
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCS3xTyXT5UrvxdKH9g7D9PtG3H02TRi7c&callback=initMap">
     </script>
