@@ -7,7 +7,7 @@
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet"
 		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<link rel= "stylesheet"
+		<link rel="stylesheet"
 		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<!-- jQuery library -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -19,7 +19,7 @@
 
 	</head>
 	<body>
-		<div class ="cointainer">
+		<div class="cointainer">
 			<section class="titleArea">
 				<h1><a href="index.html" class="link">Socorro Rental Reviews</a></h1>
 				<h2>Review Form</h2>
@@ -37,18 +37,13 @@
           </div>
 
           <div class="question">
-            <h4>Please input NMT student email:</h4>
-            <input type="text" id="student_email" name="location" placeholder ="xxxxx.xxxxx@student.nmt.edu email">
-          </div>
-
-          <div class="question">
             <h4>Overall Rating:</h4>
             <fieldset id="stars">
               <input type="radio" id="star1" value="1"/>
                 <label class="fa fa-star star"></label>
               <input type="radio" id="star2" value="2" />
                 <label class="fa fa-star star"></label>
-              <input type="radio" id="star3" value="3" />
+              <input type="radio" id="star3" value="3" checked /> <!-- TODO remove "checked" to remove default choice -->
                 <label class="fa fa-star star"></label>
               <input type="radio" id="star4" value="4" />
                 <label class="fa fa-star star"></label>
