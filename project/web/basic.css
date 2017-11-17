@@ -99,3 +99,12 @@ input[type=number], select, textarea {
   margin-bottom: 5px;
   margin-top: 5px;
 }
+label {
+  display: block;
+}
+fieldset {
+  padding-left: 25px;
+}
+.question {
+  margin-bottom: 20px;
+}

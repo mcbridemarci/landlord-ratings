@@ -27,94 +27,100 @@
 			<section class="content" id="contentSection">
 				<h3 class="subtitleArea">Amenities:</h3>
         <form>
+
   				<div class="question">
-  					<Label for="utilities">Utilities Included:</label>
-            <br>
-  					<form>
-  						<input type="radio" name="utilities" value="Yes"> Yes
-  						<input type="radio" name="utilities" value="No"> No<br>
-  					</form>
-  				</div>
-  				<div class="question">
-  					<Label for="appliances">Appliances Included:</label>
-  					<fieldset>
-  						<div>
-  							<input type="checkbox"  id= "refrigerator" name= "appliances" value="refrigerators" />
-  							<label for="refrigerator">Refrigerator</label>
-  						</div>
-  						<div>
-  							<input type="checkbox"  id= "stove_top" name= "appliances" value="stove_tops" />
-  							<label for="stove_top">Stove top</label>
-  						</div>
-  						<div>
-  							<input type="checkbox"  id= "oven" name= "appliances" value="oven" />
-  							<label for="oven">Oven</label>
-  						</div>
-  						<div>
-  							<input type="checkbox"  id= "microwave" name= "appliances" value="microwaves" />
-  							<label for="microwave">Microwave</label>
-  						</div>
+  					<h4 for="utilities">Utilities Included:</h4>
+  					<fieldset id="utilities">
+  						<label><input type="radio" name="utilities" value="Yes"> Yes</label>
+  						<label><input type="radio" name="utilities" value="No"> No</label>
   					</fieldset>
   				</div>
+
   				<div class="question">
-  					<Label for="cool">Cooling:</label><br />
+  					<h4 for="appliances">Appliances Included:</h4>
   					<fieldset>
-  						<div>
-  							<input type="checkbox"  id= "ac" name= "cool" value="cool" />
-  							<label for="ac">AC</label>
-  						</div>
-  						<div>
-  							<input type="checkbox"  id= "swamp" name= "cool" value="swamply" />
-  							<label for="swamp">Swamp Cooler</label>
-  						</div>
-  						<div>
-  							<input type="checkbox"  id= "fan" name= "cool" value="fan" />
-  							<label for="fan">Fan Only</label>
-  						</div>
-  						<div>
-  							<input type="checkbox"  id= "none" name= "cool" value="nada" />
-  							<label for="none">None</label>
-  						</div>
+							<label for="refrigerator">
+                <input type="checkbox"  id="refrigerator" name="appliances" value="refrigerators" />
+							  Refrigerator
+              </label>
+							<label for="stove_top">
+                <input type="checkbox"  id="stove_top" name="appliances" value="stove_tops" />
+							  Stove top
+              </label>
+              <label for="oven">
+                <input type="checkbox"  id="oven" name="appliances" value="oven" />
+  							Oven
+              </label>
+							<label for="microwave">
+                <input type="checkbox"  id="microwave" name="appliances" value="microwaves" />
+                Microwave
+              </label>
   					</fieldset>
   				</div>
+
   				<div class="question">
-  					<Label for="heating">Heating:</label>
-  					<form>
-  						<input type="radio" name="heating" value="Yes"> Yes
-  						<input type="radio" name="heating" value="No"> No<br>
-  					</form>
-  				</div>
-  				<div class="question">
-  					<Label for="park">Parking:</label><br />
+  					<h4 for="cool">Cooling:</h4>
   					<fieldset>
-  						<div>
-  							<input type="checkbox"  id= "cover" name= "park" value="covered" />
-  							<label for="cover">Covered</label>
-  						</div>
-  						<div>
-  							<input type="checkbox"  id= "garage" name= "park" value="garage" />
-  							<label for="garage">Garage</label>
-  						</div>
-  						<div>
-  							<input type="checkbox"  id= "street" name= "park" value="street" />
-  							<label for="street">Street Parking</label>
-  						</div>
-  						<div>
-  							<input type="checkbox"  id= "assigned" name= "park" value="assigned" />
-  							<label for="assigned">Assigned Parking</label>
-  						</div>
-  						<div>
-  							<input type="checkbox"  id= "other" name= "park" value="other" />
-  							<label for="other">Other</label>
-  						</div>
+  							<label for="ac">
+                  <input type="checkbox"  id="ac" name="cool" value="cool" />
+  							  AC
+                </label>
+
+  							<label for="swamp">
+                  <input type="checkbox"  id="swamp" name="cool" value="swamply" />
+  							  Swamp Cooler
+                </label>
+  							<label for="fan">
+                  <input type="checkbox"  id="fan" name="cool" value="fan" />
+				          Fan Only
+                </label>
+  							<label for="none">
+                  <input type="checkbox"  id="none" name="cool" value="nada" />
+  							  None
+                </label>
   					</fieldset>
   				</div>
+
   				<div class="question">
-  					<Label for="smoking">Smoking Permitted:</label>
-  					<form>
-  						<input type="radio" name="smoking" value="Yes"> Yes
-  						<input type="radio" name="smoking" value="No"> No<br>
-  					</form>
+  					<h4 for="heating">Heating:</h4>
+  					<fieldset id="radio2">
+  						<label><input type="radio" name="heating" value="Yes"> Yes</label>
+  						<label><input type="radio" name="heating" value="No"> No</label>
+  					</fieldset>
+  				</div>
+
+  				<div class="question">
+  					<h4 for="park">Parking:</h4>
+  					<fieldset>
+              <label for="cover">
+                <input type="checkbox"  id="cover" name="park" value="covered" />
+  							Covered
+              </label>
+							<label for="garage">
+                <input type="checkbox"  id="garage" name="park" value="garage" />
+							  Garage
+              </label>
+              <label for="street">
+                <input type="checkbox"  id="street" name="park" value="street" />
+							  Street Parking
+              </label>
+              <label for="assigned">
+							  <input type="checkbox"  id="assigned" name="park" value="assigned" />
+							  Assigned Parking
+              </label>
+              <label for="other">
+                <input type="checkbox"  id="other" name="park" value="other" />
+							  Other
+              </label>
+  					</fieldset>
+  				</div>
+
+  				<div class="question">
+  					<h4 for="smoking">Smoking Permitted:</h4>
+  					<fieldset id="radio3">
+    					<label><input type="radio" name="smoking" value="Yes"> Yes</label>
+    					<label><input type="radio" name="smoking" value="No"> No</label>
+  					</fieldset>
   				</div>
   				<!--for next button at bottom of page-->
   				<!--<input type="Next" value="Next">-->
