@@ -27,30 +27,33 @@
 
 			<section class="content" id="contentSection">
 				<h3 class="subtitleArea">Landlord:</h3>
-				<div class="question">
-					<Label for="maintain">Lawn maintenance covered by landlord:</label>
-					<form>
-						<input type="radio" name="maintain" value="Yes"> Yes
-						<input type="radio" name="maintain" value="No"> No<br>
-					</form>
-				</div>
-				<div class="question">
-					<Label for="response">Landlord response time:</label>
-					<input type="text" id="response" name="location">
-				</div>
-				<div class="question">
-					<Label for="maintenance">Maintenance response time:</label>
-					<input type="text" id="maintenance" name="location" placeholder ="within days of request.">
-				</div>
-				<div class="question">
-					<Label for="quality">Maintenance quality:</label>
-					<input type="text" id="quality" name="location" placeholder ="you may be as expressive as you would like here.">
-				</div>
-				<!--for next button at bottom of page-->
-				<!--<input type="Next" value="Next">-->
-				<div>
-					<button onclick="window.location.href='overall.jsp'" class="butt">Next<span class="glyphicon glyphicon-chevron-right"></span></button>
-				</div>
+                                <form action="/project/javaServelet" method="post">
+                                    <div class="question">
+                                            <Label for="maintain">Lawn maintenance covered by landlord:</label>
+                                            <form>
+                                                    <input type="radio" name="maintain" value="Yes"> Yes
+                                                    <input type="radio" name="maintain" value="No"> No<br>
+                                            </form>
+                                    </div>
+                                    <div class="question">
+                                            <Label for="response">Landlord response time:</label>
+                                            <input type="text" id="response" name="location">
+                                    </div>
+                                    <div class="question">
+                                            <Label for="maintenance">Maintenance response time:</label>
+                                            <input type="text" id="maintenance" name="location" placeholder ="within days of request.">
+                                    </div>
+                                    <div class="question">
+                                            <Label for="quality">Maintenance quality:</label>
+                                            <input type="text" id="quality" name="location" placeholder ="you may be as expressive as you would like here.">
+                                    </div>
+                                    <!--for next button at bottom of page-->
+                                    <!--<input type="Next" value="Next">-->
+                                    <div>
+                                            <button type="submit" onclick="window.location.href='overall.jsp'" class="butt">Next<span class="glyphicon glyphicon-chevron-right"></span></button>
+                                    </div>
+                                    <input type="hidden" name="action" value="landloard_page">
+                                </form>
 			</section>
 
 				<hr class="line-separator">

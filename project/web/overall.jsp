@@ -30,27 +30,30 @@
 
 			<section class="content" id="contentSection">
 				<h3 class="subtitleArea">Overall:</h3>
-				<div class="question">
-					<Label for="thoughts">Overall Thoughts:</label>
-					<input type="text" id="thoughts" name="location">
-				</div>
-				<div class="question">
-					<Label for="student_email">Please input NMT student email:</label>
-					<input type="text" id="student_email" name="location" placeholder ="xxxxx.xxxxx@student.nmt.edu email">
-				</div>
-				<div class="question">
-					<Label for="rating">Overall Rating:</label>
-					<span class= "fa fa-star checked"></span>
-					<span class= "fa fa-star checked"></span>
-					<span class= "fa fa-star"></span>
-					<span class= "fa fa-star"></span>
-					<span class= "fa fa-star"></span>
-				</div>
-				<!--for next button at bottom of page-->
-				<!--<input type="Next" value="Next">-->
-				<div>
-					<button onclick="window.location.href='index.html'" class="butt">VERIFY EMAIL TO SUBMIT<span class="glyphicon glyphicon-chevron-right"></span></button>
-				</div>
+                                <form action="/project/javaServelet" method="post">
+                                    <div class="question">
+                                            <Label for="thoughts">Overall Thoughts:</label>
+                                            <input type="text" id="thoughts" name="location">
+                                    </div>
+                                    <div class="question">
+                                            <Label for="student_email">Please input NMT student email:</label>
+                                            <input type="text" id="student_email" name="location" placeholder ="xxxxx.xxxxx@student.nmt.edu email">
+                                    </div>
+                                    <div class="question">
+                                            <Label for="rating">Overall Rating:</label>
+                                            <span class= "fa fa-star checked"></span>
+                                            <span class= "fa fa-star checked"></span>
+                                            <span class= "fa fa-star"></span>
+                                            <span class= "fa fa-star"></span>
+                                            <span class= "fa fa-star"></span>
+                                    </div>
+                                    <!--for next button at bottom of page-->
+                                    <!--<input type="Next" value="Next">-->
+                                    <div>
+                                            <button type="submit" onclick="window.location.href='index.html'" class="butt">VERIFY EMAIL TO SUBMIT<span class="glyphicon glyphicon-chevron-right"></span></button>
+                                    </div>
+                                    <input type="hidden" name="action" value="overall_page">
+                                </form>
 			</section>
 
 				<hr class="line-separator">
