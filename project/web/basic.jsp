@@ -26,8 +26,7 @@
 
       <section class="content" id="contentSection">
         <h3 class="subtitleArea">Basic Information:</h3>
-        <form action="/project/javaServelet" method="post">
-
+        <form action="/project/javaServlet" method="post">
             <div class="question">
               <h4>Rental Address:</h4>
               <input type="text" id="rentaladd" name="location" placeholder ="Location of Property">
@@ -124,11 +123,13 @@
                 <label><input type="radio" name="receipt" value="No"> No</label>
               </fieldset>
             </div>
-            
+
+            <input type="hidden" name="action" value="basic_page">
+
             <div>
               <button type="submit" id="nextButton" class="butt">Next<span class="glyphicon glyphicon-chevron-right"></span></button>
             </div>
-            <input type="hidden" name="action" value="basic_page">
+
         </form>
       </section>
 

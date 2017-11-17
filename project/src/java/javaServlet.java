@@ -38,6 +38,7 @@ public class javaServlet extends HttpServlet {
         String url = "";
         
         if (action.equals("email_page")) {
+            //TODO: check if null or not @student.nmt.edu and redirect to correct page
             String email = request.getParameter("email");
             System.out.println("\n\n" + email + "\n\n");
             String[] splitEmail = email.split("@");
@@ -46,8 +47,15 @@ public class javaServlet extends HttpServlet {
             if (splitEmail[1].equals("student.nmt.edu")) {
                 System.out.println("YES. IS A STUDENT");
             }
-            url = "/basic.jsp";
+            session.setAttribute("email", email);
+            url = "/basic.jsp"; //TODO: move to inside if email==student...
         } 
+        else if (action.equals("basic_page")) {
+            String tmp = (String)session.getAttribute("email");
+            System.out.println(tmp);
+            url = "/amenities.jsp";
+        }
+        
         
         RequestDispatcher dispatcher = request.getRequestDispatcher(url);
         dispatcher.forward(request, response);
