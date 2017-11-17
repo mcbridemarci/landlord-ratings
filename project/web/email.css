@@ -40,15 +40,42 @@ footer {
   font-family: 'Alegreya Sans SC', sans-serif;
 }
 h3 {
-  padding-left: 0;
-  padding-right: 10%;
+  margin-left:auto;
+    margin-right:auto;
+    position: relative;
+    text-align: center;
 }
 section div {
   letter-spacing: 0.5px;
 }
-#contentSection {
-  padding-left: 10%;
-  padding-right: 10%;
+p{
+    margin-left:auto;
+    margin-right:auto;
+    position: relative;
+    text-align: center;
+    letter-spacing: 1px;
+    max-width: 650px;
+    margin: 5 auto 5 auto;
+}
+input[type=text], select, textarea, input[type=email] {
+    width: 40%;
+    background-color: white;
+    padding: 5px;
+    margin-left:auto;
+    margin-right:auto;
+    position: relative;
+    text-align: center;
+    
+    border: 1px solid #ccc; /*gray border*/
+    border-radius: 10px; /*for roundedness in borders */
+    display: block;
+}
+form{
+    margin-left:auto;
+    margin-right:auto;
+    position: relative;
+    text-align: center;
+    letter-spacing: 1px;
 }
 .butt{
   text-decoration: none;
@@ -69,42 +96,11 @@ section div {
 }
 .content {
   background-color: var(--light-color);
-}
-form {
-  padding-bottom: 5px;
+  min-height: 350px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 a:link, a:visited {
   padding: 0 5px;
   color: var(--dark-color);
-}
-/*
-* input field for answers
-*/
-input[type=text], select, textarea, input[type=email] {
-	width: 30%;
-  background-color: white;
-	padding: 5px;
-	border: 1px solid #ccc; /*gray border*/
-	border-radius: 10px; /*for roundedness in borders */
-  margin-bottom: 5px;
-  margin-top: 5px;
-  display: block;
-}
-input[type=number], select, textarea {
-  width: 30%;
-  background-color: white;
-  padding: 5px;
-  border: 1px solid #ccc; /*gray border*/
-  border-radius: 10px; /*for roundedness in borders */
-  margin-bottom: 5px;
-  margin-top: 5px;
-}
-label {
-  display: block;
-}
-fieldset {
-  padding-left: 25px;
-}
-.question {
-  margin-bottom: 20px;
 }
