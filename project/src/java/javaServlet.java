@@ -34,18 +34,26 @@ public class javaServlet extends HttpServlet {
             throws ServletException, IOException {
         
         String action = request.getParameter("action");
-        
         HttpSession session = request.getSession();
+        String url = "";
         
-        if (action.equals("email")) {
+        if (action.equals("email_page")) {
             String email = request.getParameter("email");
             System.out.println("\n\n" + email + "\n\n");
-        }
+            String[] splitEmail = email.split("@");
+            for (String s : splitEmail)
+                System.out.println(s);
+            if (splitEmail[1].equals("student.nmt.edu")) {
+                System.out.println("YES. IS A STUDENT");
+            }
+            url = "/basic.jsp";
+        } 
+        
+        RequestDispatcher dispatcher = request.getRequestDispatcher(url);
+        dispatcher.forward(request, response);
         
         
-        
-        
-        response.setContentType("text/html;charset=UTF-8");
+        /*response.setContentType("text/html;charset=UTF-8");
         try{
             String driver = "org.mariadb.jdbc.Driver";
             Class.forName(driver);
@@ -57,7 +65,7 @@ public class javaServlet extends HttpServlet {
             
             
             try (PrintWriter o = response.getWriter()) {
-                o.println("in try statement, in java<br>" + sesh);
+                o.println("in try statement, in java<br>");
             }
             
             statement.close();
@@ -66,7 +74,7 @@ public class javaServlet extends HttpServlet {
             System.err.println("Error with connection: " + ex);
         } catch (SQLException ex) {
             System.err.println("Error loading driver: " + ex);
-        }
+        }*/
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
