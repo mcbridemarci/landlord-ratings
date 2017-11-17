@@ -54,12 +54,13 @@ h2 span {
   padding-right: 20px;
 }
 p {
-  padding-left: 10%;
-  //padding-right: 10%;
-  text-align: center;
-  letter-spacing: 1px;
-  max-width: 650px;
-  margin: 5 auto 5 auto;
+    margin-left:auto;
+    margin-right:auto;
+    position: relative;
+    text-align: center;
+    letter-spacing: 1px;
+    max-width: 650px;
+    margin: 5 auto 5 auto;
 }
 a:link, a:visited {
   padding: 0 5px;
