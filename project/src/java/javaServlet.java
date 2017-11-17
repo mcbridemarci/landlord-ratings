@@ -32,6 +32,19 @@ public class javaServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        String action = request.getParameter("action");
+        
+        HttpSession session = request.getSession();
+        
+        if (action.equals("email")) {
+            String email = request.getParameter("email");
+            System.out.println("\n\n" + email + "\n\n");
+        }
+        
+        
+        
+        
         response.setContentType("text/html;charset=UTF-8");
         try{
             String driver = "org.mariadb.jdbc.Driver";
@@ -42,24 +55,11 @@ public class javaServlet extends HttpServlet {
             Connection connection = DriverManager.getConnection(dbURL, username, password);
             Statement statement = connection.createStatement();
             
-            HttpSession session = request.getSession();
-            String sesh = "";
-            Integer accessCount = (Integer)session.getAttribute("accessCount");
-            if (accessCount == null) {
-                accessCount = 0;
-                sesh = "Welcome, Newcomer";
-            } else {
-                accessCount = accessCount + 1;
-                sesh = "Welcome Back";
-            }
-            session.setAttribute("accessCount", accessCount);
-            
             
             try (PrintWriter o = response.getWriter()) {
                 o.println("in try statement, in java<br>" + sesh);
             }
             
-            // now close statement & server connection
             statement.close();
             connection.close();
         } catch (ClassNotFoundException ex) {

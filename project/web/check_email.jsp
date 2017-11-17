@@ -25,18 +25,20 @@
           <p>Hi. Thanks for choosing to leave a review. To do so, please verify your New Mexico Tech email address.</p>
         </div>
         <div>
+          <p id="message"></p>
+        </div>
+        <div>
             <form action="/project/javaServlet" method="post">
                 <Label for="email">Email Address:</label>
-                <input type="hidden" name="action" value="email">
                 <input type="email" class="question" id="email" name="email" placeholder="john.smith@student.nmt.edu">
+                <input type="hidden" name="action" value="email">
+                <br>
+                <button type="submit" id="nextButton" class="butt">Next<span class="glyphicon glyphicon-chevron-right"></span></button>
             </form>
-          <div>
-            <p id="message"></p>
-          </div>
         </div>
 
         <div>
-          <button onclick="window.location.href='review_template.jsp'" id="nextButton" class="butt">Next<span class="glyphicon glyphicon-chevron-right"></span></button>
+          
         </div>
         <p>0 section out of 5 complete.</p>
 			</section>
