@@ -16,7 +16,7 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<!-- our stylesheets -->
 		<link rel="stylesheet" type="text/css" href="overall.css">
-		<link rel="stylesheet" type="text/css" href="review_template.css">
+		<link rel="stylesheet" type="text/css" href="basic.css">
 	</head>
 	<body>
 		<div class ="cointainer">
