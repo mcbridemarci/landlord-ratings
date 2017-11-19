@@ -4,8 +4,7 @@
  * and open the template in the editor.
  */
 
-import java.io.IOException;
-import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -38,21 +37,34 @@ public class javaServlet extends HttpServlet {
         String url = "";
         
         if (action.equals("email_page")) {
+            /* create Review obj and then store in the session */
+            
             //TODO: check if null or not @student.nmt.edu and redirect to correct page
             String email = request.getParameter("email");
-            System.out.println("\n\n" + email + "\n\n");
+            
             String[] splitEmail = email.split("@");
-            for (String s : splitEmail)
-                System.out.println(s);
+            
             if (splitEmail[1].equals("student.nmt.edu")) {
-                System.out.println("YES. IS A STUDENT");
+                
+                Review r = new Review(email);
+                
+                System.out.println("\n\nEmail: " + email + "\n\n"); //TODO: Remove
+                session.setAttribute("review", r);
+                url = "/basic.jsp";
             }
-            session.setAttribute("email", email);
-            url = "/basic.jsp"; //TODO: move to inside if email==student...
+            else {
+                ;//TODO url = "???"; ... error message, need @student...
+                //          maybe add error attrib on sesh and js in jsp to display error on page???
+            }
         } 
         else if (action.equals("basic_page")) {
-            String tmp = (String)session.getAttribute("email");
-            System.out.println(tmp);
+            Review r = (Review)session.getAttribute("review");
+            //System.out.println("Email after basic: " + r.email); //TODO: Remove
+            
+            
+            
+            
+            session.setAttribute("review", r);
             url = "/amenities.jsp";
         }
         

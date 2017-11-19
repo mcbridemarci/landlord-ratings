@@ -27,9 +27,8 @@
       <section class="content" id="contentSection">
         <h3 class="subtitleArea">Basic Information:</h3>
         <form action="/project/javaServlet" method="post">
-          <h3>Rental Address:</h3>
           <div class="question">
-            <h4>Address 1</h4>
+            <h4>Rental Address</h4>
             <input type="text" id="rentaladd" name="location" placeholder ="Location of Property" required>
           </div>
 
@@ -89,7 +88,7 @@
             <h4>Payment Methods allowed:</h4>
             <fieldset>
               <label for="check">
-                <input type="checkbox"  id= "check" name= "payments_allowed" value="checks" required />
+                <input type="checkbox"  id= "check" name= "payments_allowed" value="checks" />
                 Check
               </label>
               <label for="mobile_app">
