@@ -19,7 +19,8 @@ and open the template in the editor.
     margin-left:auto;
     margin-right:auto;
     position: relative;
-    height: 400px;
-    width: 500px;
+    max-width: 2000px;
+    height: 600px;
+    width: 100%;
 }
 
