@@ -66,10 +66,8 @@
           </div>
           <!--for next button at bottom of page-->
           <!--<input type="Next" value="Next">-->
-          <div>
-            <button type="submit" onclick="window.location.href='landlord.jsp'" class="butt">Next<span class="glyphicon glyphicon-chevron-right"></span></button>
-          </div>
-          <input type="hidden" name="action" value="pets_page">
+          <input type="hidden" name="action" value="pets_page" />
+				  <button onclick="window.location.href='pets.jsp'" class="butt">Next<span class="glyphicon glyphicon-chevron-right"></span></button>
         </form>
 			</section>
 
