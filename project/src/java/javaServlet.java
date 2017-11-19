@@ -1,10 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -199,6 +192,35 @@ public class javaServlet extends HttpServlet {
         }
         else if (action.equals("pets_page")) {
             Review r = (Review)session.getAttribute("review");
+            
+            r.petsAllowed = "Yes".equals(request.getParameter("allowed"));
+            
+            if (r.petsAllowed) { /* pull data from site, otherwise generate and fill in for none */
+                r.petDeposit = parseInt(request.getParameter("pet_deposit"));
+                r.petWeight = parseInt(request.getParameter("weight"));
+                
+                r.petSize = 0;
+                String switch6[] = request.getParameterValues("size");
+                for (String s : switch6) {
+                    switch (s) {
+                            case "small":
+                                r.petSize |= 0b001;
+                                break;
+                            case "medium":
+                                r.petSize |= 0b010;
+                                break;
+                            case "large":
+                                r.petSize |= 0b100;
+                                break;
+                    }
+                }
+            }
+            else {
+                r.petDeposit = -1;
+                r.petWeight = -1;
+                r.petSize = 0;
+            }
+            
             
             session.setAttribute("review", r);
             url = "/landlord.jsp";

@@ -30,7 +30,7 @@
           <div class="question">
             <h4>Pet Allowed:</h4>
             <fieldset>
-              <label><input type="radio" name="allowed" value="Yes" data-toggle="collapse" data-target=".hides:not(.in)"> Yes</label>
+              <label><input type="radio" name="allowed" value="Yes" data-toggle="collapse" data-target=".hides:not(.in)"  required /> Yes</label>
               <label><input type="radio" name="allowed" value="No" data-toggle="collapse" data-target=".hides.in"> No</label>
             </fieldset>
           </div>
@@ -38,12 +38,12 @@
           <div class="hides in">
             <div class="question">
               <h4>Pet Deposit:</h4>
-              <input type="text" id="pet_deposit" name="location" placeholder="$">
+              <input type="text" id="pet_deposit" name="pet_deposit" placeholder="$">
             </div>
 
             <div class="question">
               <h4>Weight Restriction:</h4>
-              <input type="text" id="weight" name="location" placeholder="in LBS.">
+              <input type="number" id="weight" name="weight" placeholder="number of lbs allowed">
             </div>
 
             <div class="question">
