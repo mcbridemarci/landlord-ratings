@@ -1,24 +1,20 @@
-
-#stars {
+#rating label {
   float: left;
+  padding: 1em;
 }
-#stars > input {
+
+#rating label input {
   display: none;
 }
 
-#stars > label {
-  float: right;
-  margin: 3px;
-  font-size: 20px;
+#rating label img {
+  height: 3.5em;
 }
 
-#stars > input:checked ~ label, /* show gold star when clicked */
-#stars:not(:checked) > label:hover, /* hover current star */
-#stars:not(:checked) > label:hover ~ label {  /* hover previous stars in list */
-  color: gold;
+#rating label:hover {
+  background-color: orange;
 }
 
-#stars > input:checked + label:hover, /* hover current star when changing rating */
-#stars > input:checked ~ label:hover,
-#stars > label:hover ~ input:checked ~ label, /* lighten current selection */
-#stars > input:checked ~ label:hover ~ label { color: red;  }
+.selected {
+  background-color: #000;
+}

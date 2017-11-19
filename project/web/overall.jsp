@@ -16,6 +16,25 @@
 		<!-- our stylesheets -->
 		<link rel="stylesheet" type="text/css" href="basic.css">
     <link rel="stylesheet" type="text/css" href="overall.css">
+    <script>
+      function selects(selected) {
+        console.log("\n\n");
+        var x = document.getElementsByClassName("emoji");
+        for (var i = 0; i < x.length; i++) {
+          x[i].style.backgroundColor = "transparent";
+          console.log(x[i]);
+        };
+        selected.style.backgroundColor = "gray";
+
+        console.log(selected);
+
+      }
+      </script>
+      <script>
+      $('#rating label').click(function() {
+        $(this).addClass('selected').siblings().removeClass('selected');
+      });
+    </script>
 
 	</head>
 	<body>
@@ -38,23 +57,39 @@
 
           <div class="question">
             <h4>Overall Rating:</h4>
-            <fieldset id="stars">
-              <input type="radio" id="star1" value="1"/>
-                <label class="fa fa-star star"></label>
-              <input type="radio" id="star2" value="2" />
-                <label class="fa fa-star star"></label>
-              <input type="radio" id="star3" value="3" checked /> <!-- TODO remove "checked" to remove default choice -->
-                <label class="fa fa-star star"></label>
-              <input type="radio" id="star4" value="4" />
-                <label class="fa fa-star star"></label>
-              <input type="radio" id="star5" value="5" />
-                <label class="fa fa-star star"></label>
-            </fieldset>
+
             <!-- TODO:
             <input type="radio" value="whatever" />
             <label><img src="put image here"></label>
             set input as display none; do the css to select image and set value
            -->
+           <fieldset id="rating">
+             <label class="emoji" onclick="selects(this)">
+               <input type="radio" name="rating" id="emoji1" value="1" />
+               <img src="img/trash.png">
+             </label>
+
+             <label class="emoji" onclick="selects(this)">
+               <input type="radio" name="rating" id="emoji2" value="2" />
+               <img src="img/settings.png">
+             </label>
+
+             <label class="emoji" onclick="selects(this)">
+               <input type="radio" name="rating" id="emoji3" value="3" />
+               <img src="img/settings.png">
+             </label>
+
+             <label class="emoji" onclick="selects(this)">
+               <input type="radio" name="rating" id="emoji4" value="4" />
+               <img src="img/settings.png">
+             </label>
+
+             <label class="emoji" onclick="selects(this)">
+               <input type="radio" name="rating" id="emoji5" value="5"/>
+               <img src="img/fancy.png">
+             </label>
+           </fieldset>
+
 
           </div>
 
