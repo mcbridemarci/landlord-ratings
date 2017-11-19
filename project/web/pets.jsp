@@ -15,7 +15,7 @@
 		<link rel="stylesheet" type="text/css" href="basic.css">
 	</head>
 	<body>
-		<div class ="container">
+		<div class="container">
 			<section class="titleArea">
 				<h1><a href="index.html" class="link">Socorro Rental Reviews</a></h1>
 				<h2>Review Form</h2>
@@ -30,37 +30,39 @@
           <div class="question">
             <h4>Pet Allowed:</h4>
             <fieldset>
-              <label><input type="radio" name="allowed" value="Yes"> Yes</label>
-              <label><input type="radio" name="allowed" value="No"> No</label>
+              <label><input type="radio" name="allowed" value="Yes" data-toggle="collapse" data-target=".hides:not(.in)"> Yes</label>
+              <label><input type="radio" name="allowed" value="No" data-toggle="collapse" data-target=".hides.in"> No</label>
             </fieldset>
           </div>
 
-          <div class="question">
-            <h4>Pet Deposit:</h4>
-            <input type="text" id="pet_deposit" name="location" placeholder ="$">
-          </div>
+          <div class="hides in">
+            <div class="question">
+              <h4>Pet Deposit:</h4>
+              <input type="text" id="pet_deposit" name="location" placeholder="$">
+            </div>
 
-          <div class="question">
-            <h4>Weight Restriction:</h4>
-            <input type="text" id="weight" name="location" placeholder ="in LBS.">
-          </div>
+            <div class="question">
+              <h4>Weight Restriction:</h4>
+              <input type="text" id="weight" name="location" placeholder="in LBS.">
+            </div>
 
-          <div class="question">
-            <h4>Size Restriction:</h4>
-            <fieldset>
-              <label for="small">
-                <input type="checkbox"  id= "small" name= "size" value="small" />
-                Small
-              </label>
-              <label for="medium">
-                <input type="checkbox"  id= "medium" name= "size" value="medium" />
-                Medium
-              </label>
-              <label for="large">
-                <input type="checkbox"  id= "large" name= "size" value="large" />
-                Large
-              </label>
-            </fieldset>
+            <div class="question">
+              <h4>Size Restriction:</h4>
+              <fieldset>
+                <label for="small">
+                  <input type="checkbox"  id="small" name="size" value="small" />
+                  Small
+                </label>
+                <label for="medium">
+                  <input type="checkbox"  id="medium" name="size" value="medium" />
+                  Medium
+                </label>
+                <label for="large">
+                  <input type="checkbox"  id="large" name="size" value="large" />
+                  Large
+                </label>
+              </fieldset>
+            </div>
           </div>
           <!--for next button at bottom of page-->
           <!--<input type="Next" value="Next">-->
