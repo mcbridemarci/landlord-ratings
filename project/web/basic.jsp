@@ -64,11 +64,11 @@
             <h4>Type of lease allowed:</h4>
             <fieldset>
                 <label for="month">
-                  <input type="checkbox"  id= "month" name= "lease_allowed" value="monthly" />
+                  <input type="checkbox" id="month" name="lease_allowed" value="monthly" />
                   Month-to-Month
                 </label>
                 <label for="yearly">
-                  <input type="checkbox"  id= "yearly" name= "lease_allowed" value="year" />
+                  <input type="checkbox" id="yearly" name="lease_allowed" value="year" />
                   Yearly
                 </label>
             </fieldset>
@@ -88,32 +88,28 @@
             <h4>Payment Methods allowed:</h4>
             <fieldset>
               <label for="check">
-                <input type="checkbox"  id= "check" name= "payments_allowed" value="checks" />
+                <input type="checkbox"  id="check" name="payments_allowed" value="checks" />
                 Check
               </label>
               <label for="mobile_app">
-                <input type="checkbox"  id= "mobile_app" name= "payments_allowed" value="apps" />
+                <input type="checkbox"  id="mobile_app" name="payments_allowed" value="apps" />
                 Mobile App
               </label>
               <label for="direct_deposit">
-                <input type="checkbox"  id= "direct_deposit" name= "payments_allowed" value="direct" />
+                <input type="checkbox"  id="direct_deposit" name="payments_allowed" value="direct" />
                 Direct Deposit
-              </label>
-              <label for="other">
-                <input type="checkbox"  id= "other" name= "payments_allowed" value="others" />
-                Other
               </label>
             </fieldset>
           </div>
 
           <div class="question">
             <h4>Deposit amount:</h4>
-            <input type="text" id="deposit" name="deposit_amnt" required />
+            <input type="number" id="deposit" name="deposit_amnt" required />
           </div>
 
           <div class="question">
             <h4>Amount returned from deposit:</h4>
-            <input type="text" id="deposit_returned" name="return_depo" required />
+            <input type="number" id="deposit_returned" name="return_deposit" required />
           </div>
 
           <div class="question">

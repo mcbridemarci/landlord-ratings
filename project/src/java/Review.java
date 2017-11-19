@@ -14,6 +14,7 @@ public class Review {
     String address1;
     String address2;
     String city;
+    String state;
     int zip;
     
     /* TABLE: rating */

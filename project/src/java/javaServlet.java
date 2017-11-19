@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
+import static java.lang.Integer.parseInt;
 import javax.servlet.*;
 import java.sql.*;
 import javax.servlet.http.HttpSession;
@@ -45,9 +46,7 @@ public class javaServlet extends HttpServlet {
             String[] splitEmail = email.split("@");
             
             if (splitEmail[1].equals("student.nmt.edu")) {
-                
-                Review r = new Review(email);
-                
+                Review r = new Review(email); /* create new Review obj */
                 System.out.println("\n\nEmail: " + email + "\n\n"); //TODO: Remove
                 session.setAttribute("review", r);
                 url = "/basic.jsp";
@@ -59,10 +58,56 @@ public class javaServlet extends HttpServlet {
         } 
         else if (action.equals("basic_page")) {
             Review r = (Review)session.getAttribute("review");
-            //System.out.println("Email after basic: " + r.email); //TODO: Remove
+            
+            r.address1 = request.getParameter("location");
+            r.address2 = request.getParameter("rentalunit");
+            r.bedrooms = parseInt(request.getParameter("bedrooms"));
+            r.bathrooms = parseInt(request.getParameter("bathrooms"));
+            r.leaseLength = request.getParameter("lease");
+            
+            /* Radio button parsing */
+            if ("Yes".equals(request.getParameter("furnished")))
+                r.furnished = true;
+            else
+                r.furnished = false;
             
             
+            /* checkbox processing */
+            r.leaseType = 0; /* initial value */
+            String select[] = request.getParameterValues("lease_allowed"); 
+            for (String s : select) {
+                if (s.equals("monthly")) { 
+                    r.leaseType |= 0b01;
+                } else if (s.equals("year"))
+                    r.leaseType |= 0b10;
+            }
             
+            r.lateFee = parseInt(request.getParameter("fee"));
+            r.lateDays = parseInt(request.getParameter("late_days"));
+            
+            r.paymentMethods = 0;
+            String select2[] = request.getParameterValues("payments_allowed");
+            for (String s : select2) {
+                if (s.equals("checks"))
+                    r.paymentMethods |= 0b001;
+                else if (s.equals("apps"))
+                    r.paymentMethods |= 0b010;
+                else if (s.equals("direct"))
+                    r.paymentMethods |= 0b100;
+            }
+            
+            r.deposit = parseInt(request.getParameter("deposit_amnt"));
+            r.depositReturned = parseInt(request.getParameter("return_deposit"));
+            
+            if ("Yes".equals(request.getParameter("receipt")))
+                r.receiptGiven = true;
+            else
+                r.receiptGiven = false;
+            
+            /* hidden inputs */
+            r.city = request.getParameter("city");
+            r.state = request.getParameter("state");
+            r.zip = parseInt(request.getParameter("zip"));
             
             session.setAttribute("review", r);
             url = "/amenities.jsp";
