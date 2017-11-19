@@ -221,12 +221,16 @@ public class javaServlet extends HttpServlet {
                 r.petSize = 0;
             }
             
-            
             session.setAttribute("review", r);
             url = "/landlord.jsp";
         }
         else if (action.equals("landlord")) {
             Review r = (Review)session.getAttribute("review");
+            
+            r.lawnMaintenance = "Yes".equals(request.getParameter("maintain"));
+            r.responseTime = parseInt(request.getParameter("response_time"));
+            r.maintenanceTime = parseInt(request.getParameter("maintenance_response"));
+            r.maintenanceQuality = request.getParameter("quality");
             
             session.setAttribute("review", r);
             url = "/overall.jsp";

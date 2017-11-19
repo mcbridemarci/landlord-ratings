@@ -38,17 +38,17 @@
 
           <div class="question">
             <h4>Landlord response time:</h4>
-            <input type="text" id="response" name="location" />
+            <input type="number" id="response" name="response_time" placeholder="Number of Days" required />
           </div>
 
           <div class="question">
             <h4>Maintenance response time:</h4>
-            <input type="text" id="maintenance" name="location" placeholder ="Within days of request" />
+            <input type="number" id="maintenance" name="maintenance_response" placeholder="Number of Days" required />
           </div>
 
           <div class="question">
             <h4>Maintenance quality:</h4>
-            <input type="text" id="quality" name="location" placeholder ="140 Characters" />
+            <input type="text" id="quality" name="quality" placeholder="140 Character Limit" required />
           </div>
             <!--for next button at bottom of page-->
             <!--<input type="Next" value="Next">-->
