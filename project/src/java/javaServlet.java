@@ -47,12 +47,12 @@ public class javaServlet extends HttpServlet {
             
             if (splitEmail[1].equals("student.nmt.edu")) {
                 Review r = new Review(email); /* create new Review obj */
-                System.out.println("\n\nEmail: " + email + "\n\n"); //TODO: Remove
+                System.out.println("Email: " + r.email); //TODO: Remove
                 session.setAttribute("review", r);
                 url = "/basic.jsp";
             }
             else {
-                ;//TODO url = "???"; ... error message, need @student...
+                //TODO url = "???"; ... error message, need @student...
                 //          maybe add error attrib on sesh and js in jsp to display error on page???
             }
         } 
@@ -65,21 +65,24 @@ public class javaServlet extends HttpServlet {
             r.bathrooms = parseInt(request.getParameter("bathrooms"));
             r.leaseLength = request.getParameter("lease");
             
-            /* Radio button parsing */
-            if ("Yes".equals(request.getParameter("furnished")))
-                r.furnished = true;
-            else
-                r.furnished = false;
+            /* Radio button parsing... .equals returns T/F */
+            r.furnished = "Yes".equals(request.getParameter("furnished"));
             
             
             /* checkbox processing */
             r.leaseType = 0; /* initial value */
             String select[] = request.getParameterValues("lease_allowed"); 
             for (String s : select) {
-                if (s.equals("monthly")) { 
-                    r.leaseType |= 0b01;
-                } else if (s.equals("year"))
-                    r.leaseType |= 0b10;
+                switch (s) {
+                    case "monthly":
+                        r.leaseType |= 0b01;
+                        break;
+                    case "year":
+                        r.leaseType |= 0b10;
+                        break;
+                    default:
+                        break;
+                }
             }
             
             r.lateFee = parseInt(request.getParameter("fee"));
@@ -88,21 +91,24 @@ public class javaServlet extends HttpServlet {
             r.paymentMethods = 0;
             String select2[] = request.getParameterValues("payments_allowed");
             for (String s : select2) {
-                if (s.equals("checks"))
-                    r.paymentMethods |= 0b001;
-                else if (s.equals("apps"))
-                    r.paymentMethods |= 0b010;
-                else if (s.equals("direct"))
-                    r.paymentMethods |= 0b100;
+                switch (s) {
+                    case "checks":
+                        r.paymentMethods |= 0b001;
+                        break;
+                    case "apps":
+                        r.paymentMethods |= 0b010;
+                        break;
+                    case "direct":
+                        r.paymentMethods |= 0b100;
+                        break;
+                    default:
+                        break;
+                }
             }
             
             r.deposit = parseInt(request.getParameter("deposit_amnt"));
             r.depositReturned = parseInt(request.getParameter("return_deposit"));
-            
-            if ("Yes".equals(request.getParameter("receipt")))
-                r.receiptGiven = true;
-            else
-                r.receiptGiven = false;
+            r.receiptGiven = "Yes".equals(request.getParameter("receipt"));
             
             /* hidden inputs */
             r.city = request.getParameter("city");
@@ -111,6 +117,103 @@ public class javaServlet extends HttpServlet {
             
             session.setAttribute("review", r);
             url = "/amenities.jsp";
+        }
+        else if (action.equals("amenities_page")) {
+            Review r = (Review)session.getAttribute("review");
+            
+            System.out.println("address1:" + r.address1 + " payments:" + r.paymentMethods); //TODO: Remove
+            
+            r.utilities = "Yes".equals(request.getParameter("utilities"));
+            
+            r.appliances = 0;
+            String select3[] = request.getParameterValues("appliances");
+            for (String s : select3) {
+                switch (s) {
+                    case "refrigerator":
+                        r.appliances |= 0b0001;
+                        break;
+                    case "stove_top":
+                        r.appliances |= 0b0010;
+                        break;
+                    case "oven":
+                        r.appliances |= 0b0100;
+                        break;
+                    case "microwave":
+                        r.appliances |= 0b1000;
+                        break;
+                    default: 
+                        break;
+                }
+            }
+            
+            r.cooling = 0;
+            String select4[] = request.getParameterValues("cool");
+            for (String s : select4) {
+                switch (s) {
+                    case "AC":
+                        r.cooling |= 0b0001;
+                        break;
+                    case "swamply":
+                        r.cooling |= 0b0010;
+                        break;
+                    case "fan":
+                        r.cooling |= 0b0100;
+                        break;
+                    default: 
+                        break;
+                }
+                if (s.equals("none")) { 
+                    r.cooling = 0b1000;
+                    break;
+                }
+                    
+            }
+            
+            r.heating = "Yes".equals(request.getParameter("heating"));
+            
+            r.parking = 0;
+            String switch5[] = request.getParameterValues("park");
+            for (String s : switch5) {
+                switch (s) {
+                    case "covered":
+                        r.parking |= 0b0001;
+                        break;
+                    case "garage":
+                        r.parking |= 0b0010;
+                        break;
+                    case "street":
+                        r.parking |= 0b0100;
+                        break;
+                    case "assigned":
+                        r.parking |= 0b1000;
+                        break;
+                    default:
+                        break;
+                }
+            }
+            
+            r.smoking = "Yes".equals(request.getParameter("smoking"));
+            
+            session.setAttribute("review", r);
+            url = "/pets.jsp";
+        }
+        else if (action.equals("pets_page")) {
+            Review r = (Review)session.getAttribute("review");
+            
+            session.setAttribute("review", r);
+            url = "/landlord.jsp";
+        }
+        else if (action.equals("landlord")) {
+            Review r = (Review)session.getAttribute("review");
+            
+            session.setAttribute("review", r);
+            url = "/overall.jsp";
+        }
+        else if (action.equals("overall_page")) {
+            Review r = (Review)session.getAttribute("review");
+            
+            session.setAttribute("review", r);
+            url = "/";
         }
         
         

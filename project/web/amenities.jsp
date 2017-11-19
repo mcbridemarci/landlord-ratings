@@ -26,7 +26,7 @@
 
 			<section class="content" id="contentSection">
 				<h3 class="subtitleArea">Amenities:</h3>
-        <form>
+        <form action="/project/javaServlet" method="post">
 
   				<div class="question">
   					<h4 for="utilities">Utilities Included:</h4>
@@ -38,13 +38,13 @@
 
   				<div class="question">
   					<h4 for="appliances">Appliances Included:</h4>
-  					<fieldset>
+  					<fieldset id="appliances">
 							<label for="refrigerator">
-                <input type="checkbox"  id="refrigerator" name="appliances" value="refrigerators" />
+                <input type="checkbox"  id="refrigerator" name="appliances" value="refrigerator" />
 							  Refrigerator
               </label>
 							<label for="stove_top">
-                <input type="checkbox"  id="stove_top" name="appliances" value="stove_tops" />
+                <input type="checkbox"  id="stove_top" name="appliances" value="stove_top" />
 							  Stove top
               </label>
               <label for="oven">
@@ -52,7 +52,7 @@
   							Oven
               </label>
 							<label for="microwave">
-                <input type="checkbox"  id="microwave" name="appliances" value="microwaves" />
+                <input type="checkbox"  id="microwave" name="appliances" value="microwave" />
                 Microwave
               </label>
   					</fieldset>
@@ -60,9 +60,9 @@
 
   				<div class="question">
   					<h4 for="cool">Cooling:</h4>
-  					<fieldset>
+  					<fieldset id="cool">
   							<label for="ac">
-                  <input type="checkbox"  id="ac" name="cool" value="cool" />
+                  <input type="checkbox"  id="ac" name="cool" value="AC" />
   							  AC
                 </label>
 
@@ -75,7 +75,7 @@
 				          Fan Only
                 </label>
   							<label for="none">
-                  <input type="checkbox"  id="none" name="cool" value="nada" />
+                  <input type="checkbox"  id="nada" name="cool" value="none" />
   							  None
                 </label>
   					</fieldset>
@@ -90,8 +90,8 @@
   				</div>
 
   				<div class="question">
-  					<h4 for="park">Parking:</h4>
-  					<fieldset>
+  					<h4>Parking:</h4>
+  					<fieldset id="parking">
               <label for="cover">
                 <input type="checkbox"  id="cover" name="park" value="covered" />
   							Covered
@@ -108,15 +108,11 @@
 							  <input type="checkbox"  id="assigned" name="park" value="assigned" />
 							  Assigned Parking
               </label>
-              <label for="other">
-                <input type="checkbox"  id="other" name="park" value="other" />
-							  Other
-              </label>
   					</fieldset>
   				</div>
 
   				<div class="question">
-  					<h4 for="smoking">Smoking Permitted:</h4>
+  					<h4>Smoking Permitted:</h4>
   					<fieldset id="radio3">
     					<label><input type="radio" name="smoking" value="Yes"> Yes</label>
     					<label><input type="radio" name="smoking" value="No"> No</label>
@@ -124,9 +120,8 @@
   				</div>
   				<!--for next button at bottom of page-->
   				<!--<input type="Next" value="Next">-->
-  				<div>
-  					<button onclick="window.location.href='pets.jsp'" class="butt">Next<span class="glyphicon glyphicon-chevron-right"></span></button>
-  				</div>
+          <input type="hidden" name="action" value="amenities_page" />
+				  <button onclick="window.location.href='pets.jsp'" class="butt">Next<span class="glyphicon glyphicon-chevron-right"></span></button>
         </form>
 			</section>
 

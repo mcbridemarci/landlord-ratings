@@ -18,6 +18,7 @@ public class Review {
     int zip;
     
     /* TABLE: rating */
+    /* basic.jsp */
     String email;
     int price;
     int bedrooms;
@@ -31,20 +32,24 @@ public class Review {
     int deposit;
     int depositReturned;
     boolean receiptGiven;
-    int utilities;
+    /* amenities.jsp */
+    boolean utilities;
     int appliances;
     int cooling;
     boolean heating;
     int parking;
     boolean smoking;
+    /* pets.jsp */
     boolean petsAllowed;
     int petDeposit;
     int petWeight;
     int petSize;
+    /* landlord.jsp */
     boolean lawnMaintenance;
     int responseTime;
     int maintenanceTime;
     String maintenanceQuality;
+    /* overall.jsp */
     String overallThoughts;
     int overallRating;
     
