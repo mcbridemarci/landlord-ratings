@@ -36,8 +36,8 @@
           <form action="/project/javaServlet" method="post">
               <Label for="email">Enter Your Email Address:</label>
               <input type="email" class="question" id="email" name="email" placeholder="john.smith@student.nmt.edu" required />
-              <input type="hidden" name="action" value="email_page">
-              <br>
+              <input type="hidden" name="action" value="email_page" />
+              <br />
               <button type="submit" id="nextButton" class="butt">Next<span class="glyphicon glyphicon-chevron-right"></span></button>
           </form>
         </div>

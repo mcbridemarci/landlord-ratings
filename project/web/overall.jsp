@@ -61,8 +61,8 @@
           <br>
           <!--for next button at bottom of page-->
           <!--<input type="Next" value="Next">-->
-          <input type="hidden" name="action" value="overall_page">
-          <button type="submit" onclick="window.location.href='index.html'" class="butt">VERIFY EMAIL TO SUBMIT<span class="glyphicon glyphicon-chevron-right"></span></button>
+          <input type="hidden" name="action" value="overall_page" />
+          <button type="submit" id="nextButton" class="butt">Next<span class="glyphicon glyphicon-chevron-right"></span></button>
         </form>
 			</section>
 

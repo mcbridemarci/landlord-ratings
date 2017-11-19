@@ -31,33 +31,33 @@
           <div class="question">
             <h4>Lawn maintenance covered by landlord:</h4>
             <fieldset>
-              <label><input type="radio" name="maintain" value="Yes"> Yes</label>
-              <label><input type="radio" name="maintain" value="No"> No</label>
+              <label><input type="radio" name="maintain" value="Yes" required /> Yes</label>
+              <label><input type="radio" name="maintain" value="No" /> No</label>
             </fieldset>
           </div>
 
           <div class="question">
             <h4>Landlord response time:</h4>
-            <input type="text" id="response" name="location">
+            <input type="text" id="response" name="location" />
           </div>
 
           <div class="question">
             <h4>Maintenance response time:</h4>
-            <input type="text" id="maintenance" name="location" placeholder ="Within days of request">
+            <input type="text" id="maintenance" name="location" placeholder ="Within days of request" />
           </div>
-          
+
           <div class="question">
             <h4>Maintenance quality:</h4>
-            <input type="text" id="quality" name="location" placeholder ="140 Characters">
+            <input type="text" id="quality" name="location" placeholder ="140 Characters" />
           </div>
             <!--for next button at bottom of page-->
             <!--<input type="Next" value="Next">-->
-          <input type="hidden" name="action" value="landloard_page">
-          <button type="submit" onclick="window.location.href='overall.jsp'" class="butt">Next<span class="glyphicon glyphicon-chevron-right"></span></button>
+          <input type="hidden" name="action" value="landloard_page" />
+          <button type="submit" id="nextButton" class="butt">Next<span class="glyphicon glyphicon-chevron-right"></span></button>
         </form>
 			</section>
 
-				<hr class="line-separator">
+			<hr class="line-separator">
 	  	<footer>
 	  		<p>4th section out of 5 complete... only one more page! :)</p>
 	  		<p><a href="legal.html" class="link">Legal Disclaimer</a></p>

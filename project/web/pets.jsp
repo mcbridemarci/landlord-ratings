@@ -67,7 +67,7 @@
           <!--for next button at bottom of page-->
           <!--<input type="Next" value="Next">-->
           <input type="hidden" name="action" value="pets_page" />
-				  <button onclick="window.location.href='pets.jsp'" class="butt">Next<span class="glyphicon glyphicon-chevron-right"></span></button>
+				  <button type="submit" id="nextButton" class="butt">Next<span class="glyphicon glyphicon-chevron-right"></span></button>
         </form>
 			</section>
 

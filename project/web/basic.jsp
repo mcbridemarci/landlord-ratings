@@ -127,10 +127,7 @@
           <input type="hidden" name="zip" value="87801" />
 
           <input type="hidden" name="action" value="basic_page" />
-
-          <div>
-            <button type="submit" id="nextButton" class="butt">Next<span class="glyphicon glyphicon-chevron-right"></span></button>
-          </div>
+          <button type="submit" id="nextButton" class="butt">Next<span class="glyphicon glyphicon-chevron-right"></span></button>
 
         </form>
       </section>
