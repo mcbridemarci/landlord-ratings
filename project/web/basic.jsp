@@ -35,31 +35,37 @@
             <input id="autocomplete" placeholder="Enter your address here, the rest of the fields bellow should autocomplete"
              onFocus="geolocate()" type="text"></input>
           </div>
+
           <div class="question">
             <h4>Rental Street Address</h4>
-            <input type="hidden" id="street_number" name="location" >
-            <input type="text" id="route" name="location" required>
+            <input type="hidden" id="street_number" name="location_" />
+            <input type="text" id="route" name="location" required />
           </div>
+
           <div class="question">
             <h4>Rental Unit:</h4>
-            <input type="text" id="unit" name="unit">
+            <input type="text" id="unit" name="unit" />
           </div>
+
           <div class="question">
             <h4>Rental City</h4>
-            <input type="text" id="locality" name="city" required>
+            <input type="text" id="locality" name="city" required />
           </div>
+
           <div class="question">
             <h4>Rental State</h4>
-            <input type="text" id="administrative_area_level_1" name="state"  required>
+            <input type="text" id="administrative_area_level_1" name="state" required />
           </div>
+
           <div class="question">
             <h4>Zip Code</h4>
-            <input type="text" id="postal_code" name="zip" required>
+            <input type="text" id="postal_code" name="zip" required />
           </div>
+
           <div class="question">
             <h4>Rental Country</h4>
             <input type="text" id="country" name="country" required>
-          </div> 
+          </div>
           
           <div class="question">
             <h4>Number of bedrooms:</h4>
