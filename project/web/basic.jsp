@@ -27,10 +27,10 @@
 			<hr class="line-separator">
 
       <section class="content" id="contentSection">
-        <input type="text" id="coordinate" name="coordinate" >  
-        <input type="text" id="completeAddr" name="completeAddr" > 
         <h3 class="subtitleArea">Basic Information:</h3>
         <form action="/project/javaServlet" method="post">
+					<input type="hidden" id="coordinate" name="coordinate" >  
+					<input type="hidden" id="completeAddr" name="completeAddr" > 
           <div class="question">
             <h4>Rental Address</h4>
             <input id="autocomplete" placeholder="Enter your address here, the rest of the fields bellow should autocomplete"
