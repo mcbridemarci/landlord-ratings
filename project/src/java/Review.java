@@ -11,6 +11,7 @@ public class Review {
     String city;
     String state;
     int zip;
+    String country;
     
     /* TABLE: rating */
     /* basic.jsp */

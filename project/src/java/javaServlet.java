@@ -50,6 +50,10 @@ public class javaServlet extends HttpServlet {
             r.coordinate = "tmpCoordinate";
             r.address1 = request.getParameter("location");
             r.address2 = request.getParameter("rentalunit");
+            r.city = request.getParameter("city");
+            r.state = request.getParameter("state");
+            r.zip = parseInt(request.getParameter("zip"));
+            r.country = request.getParameter("country");
             r.bedrooms = parseInt(request.getParameter("bedrooms"));
             r.bathrooms = parseInt(request.getParameter("bathrooms"));
             r.leaseLength = request.getParameter("lease");
