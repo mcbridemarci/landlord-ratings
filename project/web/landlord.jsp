@@ -52,7 +52,7 @@
           </div>
             <!--for next button at bottom of page-->
             <!--<input type="Next" value="Next">-->
-          <input type="hidden" name="action" value="landloard_page" />
+          <input type="hidden" name="action" value="landlord_page" />
           <button type="submit" id="nextButton" class="butt">Next<span class="glyphicon glyphicon-chevron-right"></span></button>
         </form>
 			</section>

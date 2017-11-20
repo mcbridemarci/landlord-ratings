@@ -229,7 +229,7 @@ public class javaServlet extends HttpServlet {
             session.setAttribute("review", r);
             url = "/landlord.jsp";
         }
-        else if (action.equals("landlord")) {
+        else if (action.equals("landlord_page")) {
             Review r = (Review)session.getAttribute("review");
             
             r.lawnMaintenance = "Yes".equals(request.getParameter("maintain"));
@@ -255,9 +255,10 @@ public class javaServlet extends HttpServlet {
                 String dbURL = "jdbc:mariadb://localhost:3306/apollo_4_project";
                 Connection connection = DriverManager.getConnection(dbURL, "apollo.4", "zozoZOZO");
                 Statement statement = connection.createStatement();
+                System.out.println("Before query");
                 ResultSet query = statement.executeQuery(
                     "INSERT INTO `apollo_4_project`.`address` "
-                        + "(`coordinatePair`, `postNumber`, `address1`, `address2`, `city`, `state`, `zip`, `postDate`) VALUES ("
+                        + "(`coordinatePair`, `postNumber`, `address1`, `address2`, `city`, `state`, `zip`, `country`, `postDate`) VALUES ("
                         + r.address1 + ","  //TODO: change to r.coordinate
                         + "NULL"  + ","
                         + r.address1  + "," 
@@ -265,9 +266,10 @@ public class javaServlet extends HttpServlet {
                         + r.city + ","
                         + r.state + ","
                         + r.zip + ","
+                        + r.country + ","
                         + "CURRENT_TIMESTAMP);"
                 );
-                
+                System.out.println(query);
                 //TODO: get and set r.postNumber
                     
                 query = statement.executeQuery(
