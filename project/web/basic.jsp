@@ -28,10 +28,25 @@
         <h3 class="subtitleArea">Basic Information:</h3>
         <form action="/project/javaServlet" method="post">
           <div class="question">
-            <h4>Rental Address</h4>
-            <input type="text" id="rentaladd" name="location" placeholder ="Location of Property" required>
+            <h4>Rental Street Address</h4>
+            <input type="text" id="rentaladd" name="location" placeholder = "Location of Property" required>
           </div>
-
+          <div class="question">
+            <h4>Rental City</h4>
+            <input type="text" id="rentaladd" name="city" value ="Socorro" placeholder = "city" required>
+          </div>
+          <div class="question">
+            <h4>Rental State</h4>
+            <input type="text" id="rentaladd" name="state" value ="NM" placeholder = "state" required>
+          </div>
+          <div class="question">
+            <h4>Zip Code</h4>
+            <input type="text" id="rentaladd" name="zip" value ="87801" placeholder = "Zip" required>
+          </div>
+          <div class="question">
+            <h4>Rental Country Address</h4>
+            <input type="text" id="rentaladd" name="location" value ="USA" placeholder = "Country" required>
+          </div>
           <div class="question">
             <h4>Rental Unit:</h4>
             <input type="text" id="rentalunit" name="unit">
@@ -39,17 +54,17 @@
 
           <div class="question">
             <h4>Number of bedrooms:</h4>
-            <input type="number" id="numbe_bed" name="bedrooms" required />
+            <input type="number" id="numbe_bed" value ="1" name="bedrooms" required />
           </div>
 
           <div class="question">
             <h4>Number of bathrooms:</h4>
-            <input type="number" id="numbe_bath" name="bathrooms" required />
+            <input type="number" id="numbe_bath" value ="1" name="bathrooms" required />
           </div>
 
           <div class="question">
             <h4>Length of your lease:</h4>
-            <input type="text" id="lease_length" name="lease" required />
+            <input type="text" id="lease_length" placeholder ="e.g. One Year" name="lease" required />
           </div>
 
           <div class="question">
@@ -76,7 +91,7 @@
 
           <div class="question">
             <h4>Late fee:</h4>
-            <input type="text" id="late_fee" name="fee" required />
+            <input type="text" id="late_fee" name="fee" placeholder = "Dollar amount" required />
           </div>
 
           <div class="question">
@@ -119,13 +134,6 @@
               <label><input type="radio" name="receipt" value="No" /> No</label>
             </fieldset>
           </div>
-
-          <!-- these three hidden inputs (city, state, zip) can later be
-               changed to actual inputs when site is expanded -->
-          <input type="hidden" name="city" value="Socorro" />
-          <input type="hidden" name="state" value="NM" />
-          <input type="hidden" name="zip" value="87801" />
-
           <input type="hidden" name="action" value="basic_page" />
           <button type="submit" id="nextButton" class="butt">Next<span class="glyphicon glyphicon-chevron-right"></span></button>
 
