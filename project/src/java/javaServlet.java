@@ -47,9 +47,9 @@ public class javaServlet extends HttpServlet {
         } 
         else if (action.equals("basic_page")) {
             Review r = (Review)session.getAttribute("review");
-            r.coordinate = "tmpCoordinate";
+            r.coordinate = request.getParameter("coordinates");
             r.address1 = request.getParameter("location");
-            r.address2 = request.getParameter("rentalunit");
+            r.address2 = request.getParameter("unit");
             r.city = request.getParameter("city");
             r.state = request.getParameter("state");
             r.zip = parseInt(request.getParameter("zip"));
@@ -258,15 +258,14 @@ public class javaServlet extends HttpServlet {
                 System.out.println("Before query");
                 ResultSet query = statement.executeQuery(
                     "INSERT INTO `apollo_4_project`.`address` "
-                        + "(`coordinatePair`, `postNumber`, `address1`, `address2`, `city`, `state`, `zip`, `country`, `postDate`) VALUES ("
-                        + r.address1 + ","  //TODO: change to r.coordinate
-                        + "NULL"  + ","
-                        + r.address1  + "," 
-                        + r.address2 + ","
-                        + r.city + ","
-                        + r.state + ","
-                        + r.zip + ","
-                        + r.country + ","
+                        + "(`coordinatePair`, `address1`, `address2`, `city`, `state`, `zip`, `country`, `postDate`) VALUES (\""
+                        + r.coordinate + "\",\""
+                        + r.address1  + "\",\"" 
+                        + r.address2 + "\",\""
+                        + r.city + "\",\""
+                        + r.state + "\","
+                        + r.zip + ",\""
+                        + r.country + "\","
                         + "CURRENT_TIMESTAMP);"
                 );
                 System.out.println(query);
