@@ -47,7 +47,7 @@ public class javaServlet extends HttpServlet {
         } 
         else if (action.equals("basic_page")) {
             Review r = (Review)session.getAttribute("review");
-            r.coordinate = request.getParameter("coordinates");
+            r.coordinate = request.getParameter("coordinate");
             r.address1 = request.getParameter("location");
             r.address2 = request.getParameter("unit");
             r.city = request.getParameter("city");
