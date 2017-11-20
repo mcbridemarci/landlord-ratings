@@ -8,10 +8,6 @@ import javax.servlet.*;
 import java.sql.*;
 import javax.servlet.http.HttpSession;
 
-/**
- *
- * @author marci_home
- */
 public class javaServlet extends HttpServlet {
 
     /**
@@ -40,7 +36,7 @@ public class javaServlet extends HttpServlet {
             
             if (splitEmail[1].equals("student.nmt.edu")) {
                 Review r = new Review(email); /* create new Review obj */
-                System.out.println("Email: " + r.email); //TODO: Remove
+                //System.out.println("Email: " + r.email); //TODO: Remove
                 session.setAttribute("review", r);
                 url = "/basic.jsp";
             }
@@ -114,7 +110,7 @@ public class javaServlet extends HttpServlet {
         else if (action.equals("amenities_page")) {
             Review r = (Review)session.getAttribute("review");
             
-            System.out.println("address1:" + r.address1 + " payments:" + r.paymentMethods); //TODO: Remove
+            //System.out.println("address1:" + r.address1 + " payments:" + r.paymentMethods); //TODO: Remove
             
             r.utilities = "Yes".equals(request.getParameter("utilities"));
             
@@ -158,8 +154,7 @@ public class javaServlet extends HttpServlet {
                 if (s.equals("none")) { 
                     r.cooling = 0b1000;
                     break;
-                }
-                    
+                } 
             }
             
             r.heating = "Yes".equals(request.getParameter("heating"));
@@ -238,8 +233,30 @@ public class javaServlet extends HttpServlet {
         else if (action.equals("overall_page")) {
             Review r = (Review)session.getAttribute("review");
             
+            r.overallThoughts = request.getParameter("overall_thoughts");
+            r.overallRating = parseInt(request.getParameter("rating"));
             session.setAttribute("review", r);
-            url = "/";
+            url = "/index.html";
+            
+            /* send to database */
+            try{
+                String driver = "org.mariadb.jdbc.Driver";
+                Class.forName(driver);
+                String dbURL = "jdbc:mariadb://localhost:3306/apollo_4_project";
+                Connection connection = DriverManager.getConnection(dbURL, "apollo.4", "zozoZOZO");
+                Statement statement = connection.createStatement();
+                
+                
+                
+                
+                
+                statement.close();
+                connection.close();
+            } catch (ClassNotFoundException ex) {
+                System.err.println("Error with connection: " + ex);
+            } catch (SQLException ex) {
+                System.err.println("Error loading driver: " + ex);
+            }
         }
         
         
@@ -247,28 +264,7 @@ public class javaServlet extends HttpServlet {
         dispatcher.forward(request, response);
         
         
-        /*response.setContentType("text/html;charset=UTF-8");
-        try{
-            String driver = "org.mariadb.jdbc.Driver";
-            Class.forName(driver);
-            String dbURL = "jdbc:mariadb://localhost:3306/apollo_4_project";
-            String username = "apollo.4";
-            String password = "zozoZOZO";
-            Connection connection = DriverManager.getConnection(dbURL, username, password);
-            Statement statement = connection.createStatement();
-            
-            
-            try (PrintWriter o = response.getWriter()) {
-                o.println("in try statement, in java<br>");
-            }
-            
-            statement.close();
-            connection.close();
-        } catch (ClassNotFoundException ex) {
-            System.err.println("Error with connection: " + ex);
-        } catch (SQLException ex) {
-            System.err.println("Error loading driver: " + ex);
-        }*/
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

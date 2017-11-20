@@ -1,13 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Class for holding all the data and storing in the http session.
  */
 
-/**
- *
- * @author Johnathan
- */
 public class Review {
     /* TABLE: address */
     String coordinate;

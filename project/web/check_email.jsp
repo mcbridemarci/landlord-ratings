@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Socorro Rental Reviews | Review Form | Email</title>
+		<title>Email | Socorro Rental Reviews</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet"
@@ -14,8 +14,8 @@
 	<body>
 		<div class ="cointainer">
     <section class="titleArea">
-            <h1><a href="index.html" class="link">Socorro Rental Reviews</a></h1>
-            <h2>Verify Your Email</h2>
+      <h1><a href="index.html" class="link">Socorro Rental Reviews</a></h1>
+      <h2>Verify Your Email</h2>
     </section>
 
     <hr class="line-separator">

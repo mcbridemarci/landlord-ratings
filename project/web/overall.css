@@ -1,20 +1,16 @@
-#rating label {
+#emoji_rating label {
   float: left;
   padding: 1em;
 }
 
-#rating label input {
+#emoji_rating label input {
   display: none;
 }
 
-#rating label img {
+#emoji_rating label img {
   height: 3.5em;
 }
 
-#rating label:hover {
-  background-color: orange;
-}
-
-.selected {
-  background-color: #000;
+.emoji:hover {
+  background-color: gray!important;
 }

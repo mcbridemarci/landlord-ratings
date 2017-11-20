@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Socorro Rental Reviews | Review Template | Amenities:</title>
+		<title>Overall Rating | Socorro Rental Reviews</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- Latest compiled and minified CSS -->
@@ -18,23 +18,22 @@
     <link rel="stylesheet" type="text/css" href="overall.css">
     <script>
       function selects(selected) {
-        console.log("\n\n");
+        //console.log("\n\n");
         var x = document.getElementsByClassName("emoji");
         for (var i = 0; i < x.length; i++) {
           x[i].style.backgroundColor = "transparent";
-          console.log(x[i]);
+          //console.log(x[i]);
         };
-        selected.style.backgroundColor = "gray";
-
-        console.log(selected);
-
+        selected.style.backgroundColor = "black";
+        //var y = document.getElementsByClassName("emoji");
+        /* for (var i = 0; i < y.length; i++) {
+              console.log(i +" " + y[i].childNodes[1].checked);
+          }*/
+        //console.log(selected.childNodes[1].checked);
+        //console.log(selected);
       }
       </script>
-      <script>
-      $('#rating label').click(function() {
-        $(this).addClass('selected').siblings().removeClass('selected');
-      });
-    </script>
+
 
 	</head>
 	<body>
@@ -52,41 +51,35 @@
         <form action="/project/javaServelet" method="post">
           <div class="question">
             <h4>Overall Thoughts:</h4>
-            <input type="text" id="thoughts" name="location">
+            <input type="text" id="thoughts" name="overall_thoughts" placeholder="140 character limit" maxlength="140" />
           </div>
 
           <div class="question">
             <h4>Overall Rating:</h4>
+            <fieldset id="emoji_rating">
+              <label class="emoji" onclick="selects(this)">
+                <input type="radio" name="rating" id="emoji1" value="1" />
+                <img src="img/trash.png" />
+              </label>
 
-            <!-- TODO:
-            <input type="radio" value="whatever" />
-            <label><img src="put image here"></label>
-            set input as display none; do the css to select image and set value
-           -->
-           <fieldset id="rating">
-             <label class="emoji" onclick="selects(this)">
-               <input type="radio" name="rating" id="emoji1" value="1" />
-               <img src="img/trash.png">
-             </label>
+              <label class="emoji" onclick="selects(this)">
+                <input type="radio" name="rating" id="emoji2" value="2" />
+                <img src="img/settings.png" />
+              </label>
 
-             <label class="emoji" onclick="selects(this)">
-               <input type="radio" name="rating" id="emoji2" value="2" />
-               <img src="img/settings.png">
-             </label>
+              <label class="emoji" onclick="selects(this)">
+                <input type="radio" name="rating" id="emoji3" value="3" />
+                <img src="img/settings.png" />
+              </label>
 
-             <label class="emoji" onclick="selects(this)">
-               <input type="radio" name="rating" id="emoji3" value="3" />
-               <img src="img/settings.png">
-             </label>
-
-             <label class="emoji" onclick="selects(this)">
-               <input type="radio" name="rating" id="emoji4" value="4" />
-               <img src="img/settings.png">
-             </label>
+              <label class="emoji" onclick="selects(this)">
+                <input type="radio" name="rating" id="emoji4" value="4" />
+                <img src="img/settings.png" />
+              </label>
 
              <label class="emoji" onclick="selects(this)">
-               <input type="radio" name="rating" id="emoji5" value="5"/>
-               <img src="img/fancy.png">
+               <input type="radio" name="rating" id="emoji5" value="5" />
+               <img src="img/fancy.png" />
              </label>
            </fieldset>
 
