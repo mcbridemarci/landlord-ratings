@@ -260,9 +260,9 @@ public class javaServlet extends HttpServlet {
                 
                 //TODO: get and set r.postNumber
                     
-                ResultSet query = statement.executeQuery(
+                query = statement.executeQuery(
                     "INSERT INTO `apollo_4_project`.`rating` "
-                            + + "(`postNumber`, `email`, `price`, `bedrooms`, "
+                            + "(`postNumber`, `email`, `price`, `bedrooms`, "
                             + "`bathrooms`, `leaseLength`, `furnished`, "
                             + "`leaseType`, `lateFee`, `lateDays`, "
                             + "`paymentMethods`, `deposit`, `depositReturned`, "
