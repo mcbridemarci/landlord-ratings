@@ -33,7 +33,7 @@
           <p id="message"></p>
         </div>
         <div>
-          <form action="/project/javaServlet" method="post">
+          <form action="/apollo.4/project/javaServlet" method="post">
               <Label for="email">Enter Your Email Address:</label>
               <input type="email" class="question" id="email" name="email" placeholder="john.smith@student.nmt.edu" required />
               <input type="hidden" name="action" value="email_page" />
