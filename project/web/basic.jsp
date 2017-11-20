@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+        <script type="text/javascript" src="js/basic.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCS3xTyXT5UrvxdKH9g7D9PtG3H02TRi7c&libraries=places&callback=initAutocomplete" async defer>
+        </script>
 	<head>
 		<title>Basic Information | Socorro Rental Reviews</title>
 		<meta charset="utf-8">
@@ -28,30 +31,38 @@
         <h3 class="subtitleArea">Basic Information:</h3>
         <form action="/project/javaServlet" method="post">
           <div class="question">
+            <h4>Rental Address</h4>
+            <input id="autocomplete" placeholder="Enter your address here, the rest of the fields bellow should autocomplete"
+             onFocus="geolocate()" type="text"></input>
+          </div>
+          <div class="question">
             <h4>Rental Street Address</h4>
-            <input type="text" id="rentaladd" name="location" placeholder = "Location of Property" required>
-          </div>
-          <div class="question">
-            <h4>Rental City</h4>
-            <input type="text" id="rentaladd" name="city" value ="Socorro" placeholder = "city" required>
-          </div>
-          <div class="question">
-            <h4>Rental State</h4>
-            <input type="text" id="rentaladd" name="state" value ="NM" placeholder = "state" required>
-          </div>
-          <div class="question">
-            <h4>Zip Code</h4>
-            <input type="text" id="rentaladd" name="zip" value ="87801" placeholder = "Zip" required>
-          </div>
-          <div class="question">
-            <h4>Rental Country Address</h4>
-            <input type="text" id="rentaladd" name="location" value ="USA" placeholder = "Country" required>
+            <input type="hidden" id="street_number" name="location" >
+            <input type="text" id="route" name="location" required>
           </div>
           <div class="question">
             <h4>Rental Unit:</h4>
-            <input type="text" id="rentalunit" name="unit">
+            <input type="text" id="unit" name="unit">
           </div>
-
+          <div class="question">
+            <h4>Rental City</h4>
+            <input type="text" id="locality" name="city" required>
+          </div>
+          <div class="question">
+            <h4>Rental State</h4>
+            <input type="text" id="administrative_area_level_1" name="state"  required>
+          </div>
+          <div class="question">
+            <h4>Zip Code</h4>
+            <input type="text" id="postal_code" name="zip" required>
+          </div>
+          <div class="question">
+            <h4>Rental Country</h4>
+            <input type="text" id="country" name="country" required>
+          </div>
+            
+          <input type="hidden" id="coordinates" value="123" name="coordinates" >   
+          
           <div class="question">
             <h4>Number of bedrooms:</h4>
             <input type="number" id="numbe_bed" value ="1" name="bedrooms" required />
