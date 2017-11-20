@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-        <script type="text/javascript" src="js/basic.js"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCS3xTyXT5UrvxdKH9g7D9PtG3H02TRi7c&libraries=places&callback=initAutocomplete" async defer>
-        </script>
 	<head>
 		<title>Basic Information | Socorro Rental Reviews</title>
 		<meta charset="utf-8">
@@ -16,7 +13,9 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<!-- our stylesheets -->
 		<link rel="stylesheet" type="text/css" href="basic.css">
-	</head>
+                <script type="text/javascript" src="js/basic.js"></script>
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCS3xTyXT5UrvxdKH9g7D9PtG3H02TRi7c&libraries=places&callback=initAutocomplete" async defer></script>
+        </head>
 	<body>
 		<div class ="container">
 			<section class="titleArea">
@@ -28,7 +27,7 @@
 			<hr class="line-separator">
 
       <section class="content" id="contentSection">
-                    <input type="text" id="coordinate" name="coordinate" >  
+        <input type="hidden" id="coordinate" name="coordinate" >  
         <h3 class="subtitleArea">Basic Information:</h3>
         <form action="/project/javaServlet" method="post">
           <div class="question">

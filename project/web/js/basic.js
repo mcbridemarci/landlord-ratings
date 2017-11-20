@@ -66,9 +66,10 @@ function geolocate() {
     });
   }
 }
-var geocoder = new google.maps.Geocoder;
   function codeAddress(place) {  
+    var geocoder;
     var address = place;
+    geocoder = new google.maps.Geocoder();
     geocoder.geocode({'address': address}, function(results, status) {
       if (status == 'OK') {
           coordinate = results[0].geometry.location;
