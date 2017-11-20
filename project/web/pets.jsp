@@ -26,7 +26,7 @@
 
 			<section class="content" id="contentSection">
 				<h3 class="subtitleArea">Pets:</h3>
-        <form action="/project/javaServelet" method="post">
+        <form action="/project/javaServlet" method="post">
           <div class="question">
             <h4>Pet Allowed:</h4>
             <fieldset>
