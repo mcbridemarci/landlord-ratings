@@ -28,6 +28,7 @@
 			<hr class="line-separator">
 
       <section class="content" id="contentSection">
+                    <input type="text" id="coordinate" name="coordinate" >
         <h3 class="subtitleArea">Basic Information:</h3>
         <form action="/project/javaServlet" method="post">
           <div class="question">
@@ -64,11 +65,9 @@
 
           <div class="question">
             <h4>Rental Country</h4>
-            <input type="text" id="country" name="country" required />
+            <input type="text" id="country" name="country" required>
           </div>
-
-          <input type="hidden" id="coordinates" value="123" name="coordinates" />
-
+          
           <div class="question">
             <h4>Number of bedrooms:</h4>
             <input type="number" id="numbe_bed" value ="1" name="bedrooms" required />
