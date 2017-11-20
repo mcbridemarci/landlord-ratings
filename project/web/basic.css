@@ -108,3 +108,7 @@ fieldset {
 .question {
   margin-bottom: 20px;
 }
+
+form h4 {
+  margin-bottom: 5px;
+}
