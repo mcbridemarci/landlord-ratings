@@ -1,0 +1,16 @@
+#emoji_rating label {
+  float: left;
+  padding: 1em;
+}
+
+#emoji_rating label input {
+  display: none;
+}
+
+#emoji_rating label img {
+  height: 3.5em;
+}
+
+.emoji:hover {
+  background-color: gray!important;
+}

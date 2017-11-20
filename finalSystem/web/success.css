@@ -1,0 +1,58 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:800|Faster+One');
+
+body{
+	margin:0;
+	padding:0;
+	background-image:url("img/bg.jpg");
+	background-repeat:no-repeat;
+	background-size:100% 100%;
+}
+
+#outerDiv {
+  max-width: 800px;
+}
+
+#innerDiv {
+  background-color: #2B2B2B;
+  padding: 3em;
+  margin-top: 2em;
+  text-align: center;
+  border-radius: 10px;
+}
+
+
+#innerDiv h1,h2,h3,h4,h5,h6 {
+  font-family: 'Alegreya Sans SC', sans-serif;
+  color: #FFF;
+  letter-spacing: 1px;
+}
+
+.titleArea {
+  margin: 0;
+  font-size: 150%;
+  color: #ADADAD;
+  cursor: pointer;
+}
+
+a:link, a:visited {
+  padding: 0 5px;
+  color: var(--dark-color);
+}
+
+#innerDiv h2 {
+  margin: 0;
+  font-size: 2.5em;
+}
+
+#innerDiv p {
+  color: #FFF;
+  letter-spacing: unset;
+  font-style: italic;
+}
+
+#link {
+  margin-top: 1em;
+  background-color: #FFF;
+  color: #000;
+}
