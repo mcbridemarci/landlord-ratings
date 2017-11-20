@@ -47,7 +47,7 @@ public class javaServlet extends HttpServlet {
         } 
         else if (action.equals("basic_page")) {
             Review r = (Review)session.getAttribute("review");
-            
+            r.coordinate = "tmpCoordinate";
             r.address1 = request.getParameter("location");
             r.address2 = request.getParameter("rentalunit");
             r.bedrooms = parseInt(request.getParameter("bedrooms"));
@@ -238,18 +238,76 @@ public class javaServlet extends HttpServlet {
             session.setAttribute("review", r);
             url = "/index.html";
             
-            /* send to database */
+            /* send all data to database */
             try{
                 String driver = "org.mariadb.jdbc.Driver";
                 Class.forName(driver);
                 String dbURL = "jdbc:mariadb://localhost:3306/apollo_4_project";
                 Connection connection = DriverManager.getConnection(dbURL, "apollo.4", "zozoZOZO");
                 Statement statement = connection.createStatement();
+                ResultSet query = statement.executeQuery(
+                    "INSERT INTO `apollo_4_project`.`address` "
+                        + "(`coordinatePair`, `postNumber`, `address1`, `address2`, `city`, `state`, `zip`, `postDate`) VALUES ("
+                        + r.address1 + ","  //TODO: change to r.coordinate
+                        + "NULL"  + ","
+                        + r.address1  + "," 
+                        + r.address2 + ","
+                        + r.city + ","
+                        + r.state + ","
+                        + r.zip + ","
+                        + "CURRENT_TIMESTAMP);"
+                );
+                
+                //TODO: get and set r.postNumber
+                    
+                ResultSet query = statement.executeQuery(
+                    "INSERT INTO `apollo_4_project`.`rating` "
+                            + + "(`postNumber`, `email`, `price`, `bedrooms`, "
+                            + "`bathrooms`, `leaseLength`, `furnished`, "
+                            + "`leaseType`, `lateFee`, `lateDays`, "
+                            + "`paymentMethods`, `deposit`, `depositReturned`, "
+                            + "`receiptGiven`, `utilities`, `appliances`, `cooling`, "
+                            + "`heating`, `parking`, `smoking`, `petsAllowed`, "
+                            + "`petDeposit`, `petWeight`, `petSize`, "
+                            + "`lawnMaintenance`, `responseTime`, `maintenanceTime`, "
+                            + "`maintenanceQuality`, `overallThoughts`, `overallRating`) "
+                            + "VALUES ("
+                            + r.postNumber + ","
+                            + r.email + ","
+                            + r.price + ","
+                            + r.bedrooms + ","
+                            + r.bathrooms + ","
+                            + r.leaseLength + ","
+                            + r.furnished  + ","
+                            + r.leaseType + ","
+                            + r.lateFee + ","
+                            + r.lateDays + ","
+                            + r.paymentMethods + ","
+                            + r.deposit + ","
+                            + r.depositReturned + ","
+                            + r.receiptGiven + ","
+                            + r.utilities + ","
+                            + r.appliances + ","
+                            + r.cooling + ","
+                            + r.heating + ","
+                            + r.parking + ","
+                            + r.smoking + ","
+                            + r.petsAllowed + ","
+                            + r.petDeposit + ","
+                            + r.petWeight + ","
+                            + r.petSize + ","
+                            + r.lawnMaintenance + ","
+                            + r.responseTime  + ","
+                            + r.maintenanceTime + ","
+                            + r.maintenanceQuality + ","
+                            + r.overallThoughts + ","
+                            + r.overallRating
+                            + ");"
+                
+                );
                 
                 
-                
-                
-                
+                query.close();
                 statement.close();
                 connection.close();
             } catch (ClassNotFoundException ex) {

@@ -3,6 +3,7 @@
  */
 
 public class Review {
+    int postNumber;
     /* TABLE: address */
     String coordinate;
     String address1;
