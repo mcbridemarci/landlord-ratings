@@ -26,7 +26,7 @@
 
 			<section class="content" id="contentSection">
 				<h3 class="subtitleArea">Landlord:</h3>
-        <form action="/project/javaServelet" method="post">
+        <form action="/project/javaServlet" method="post">
 
           <div class="question">
             <h4>Lawn maintenance covered by landlord:</h4>
