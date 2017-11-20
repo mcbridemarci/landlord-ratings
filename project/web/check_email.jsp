@@ -12,7 +12,7 @@
 	</head>
 
 	<body>
-		<div class ="cointainer">
+		<div class ="container">
     <section class="titleArea">
       <h1><a href="index.html" class="link">Socorro Rental Reviews</a></h1>
       <h2>Verify Your Email</h2>
