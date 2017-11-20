@@ -80,6 +80,9 @@ a:link, a:visited {
 /*
 * input field for answers
 */
+#autocomplete {
+    width: 65%;
+}
 input[type=text], select, textarea, input[type=email] {
 	width: 30%;
   background-color: white;
