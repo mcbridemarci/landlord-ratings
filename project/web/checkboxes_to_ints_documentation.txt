@@ -1,0 +1,66 @@
+Checkbox Values
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ If value is 0, no options were selected                         +
++                                                                 +
++  FORMAT:                                                        +
++    *  "String on Website above question" = nameIn_Review.java  +
++        optionName = binary value                               +
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+===============
+ check_email.jsp
+===============
+-- None --
+
+===============
+ basic.jsp
+===============
+*  "Type of lease allowed" = leaseType
+    Month-to-Month = 0b01
+    Yearly =         0b10
+
+*  "Payment Methods allowed:" = paymentMethods
+    Check =          0b001
+	Mobile App =     0b010
+	Direct Deposit = 0b100
+
+===============
+ amenities.jsp
+===============
+*  "Appliances Included" = appliances
+    Refrigerator = 0b0001	
+	Stove top   =  0b0010
+	Oven   =       0b0100
+	Microwave =    0b1000
+	
+*  "Cooling" = cooling
+    AC =            0b0001	
+	Swamp Cooler =  0b0010
+	Fan Only  =     0b0100
+	None =          0b1000
+
+*  "Parking" = parking
+    Covered =          0b0001	
+	Garage =           0b0010
+	Street Parking  =  0b0100
+	Assigned Parking = 0b1000
+	
+
+===============
+ pets.jsp
+===============
+*  "Size Restriction" = size
+    Small =  0b001
+	Medium = 0b010
+	Large =  0b100
+
+===============
+ landlord.jsp
+===============
+-- None --
+
+===============
+ overall.jsp
+===============
+*  "" = 
+
