@@ -46,7 +46,8 @@ function fillInAddress() {
     }
     }
   }
-  codeAddress(everything);
+  document.getElementById('completeAddr').value = everything;
+  codeAddress();
 }
 
 // Bias the autocomplete object to the user's geographical location,
@@ -66,15 +67,15 @@ function geolocate() {
     });
   }
 }
-  function codeAddress(place) {  
+  function codeAddress() {  
     var geocoder;
-    var address = place;
+    var address = document.getElementById('completeAddr').value;
     geocoder = new google.maps.Geocoder();
     geocoder.geocode({'address': address}, function(results, status) {
       if (status == 'OK') {
           coordinate = results[0].geometry.location;
           document.getElementById('coordinate').value = coordinate;
-          alert('sucessful! the address: '+ place+ ' The geocode: '+coordinate);
+          alert('sucessful! the address: '+ address + ' The geocode: '+ coordinate);
       } else {
         alert('Geocode was not successful for the following reason: ' + status);
       }
