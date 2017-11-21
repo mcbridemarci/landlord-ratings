@@ -36,4 +36,9 @@ main {
 	border: solid #FFF 2px;
 }
 
+.us {
+	padding-left: 15px;
+	list-style-type: square;
+	text-align: left;
+}
 
