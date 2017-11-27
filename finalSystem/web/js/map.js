@@ -9,9 +9,8 @@ function initMap() {
   setMarkers(map);
 }
 /* Get locations that have reviews */
-var reviewLocations;
-$.getJSON('js/locate.json', function (json) {
-    reviewLocations = [];
+var reviewLocations=[];
+$.getJSON('js/locations.json', function (json) {
     for (var key in json) {
         if (json.hasOwnProperty(key)) {
             var item = json[key];
@@ -24,8 +23,9 @@ $.getJSON('js/locate.json', function (json) {
 /* create and ddd markers to the map */
 function setMarkers(map) {
   var infowindow = new google.maps.InfoWindow();
+  var len = reviewLocations.length;
   /* Now iterate and add them to the map */
-  for (var i = 0; i < reviewLocations.length; i++) {
+  for (var i = 0; i < len; i++) {
     var review = reviewLocations[i];
     /* add markers to the map */
     var marker = new google.maps.Marker({
@@ -45,9 +45,9 @@ function setMarkers(map) {
       })(marker, i)); 
   }
 }
-
+/*
 function setup(){
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.open("POST", "https://takyon.cs.nmt.edu/apollo.4/finalSystem/MapServlet", true);
   xmlhttp.send();
-}
+}*/

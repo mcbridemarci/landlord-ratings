@@ -40,18 +40,24 @@ public class MapServlet extends HttpServlet {
                 String query ="SELECT * FROM `apollo_4_project`.`address`";
                 
                 ResultSet result = statement.executeQuery(query);
-                String fileName = "locate.json";
+
+                String fileName = "/Users/marci_home/landlord-ratings/finalSystem/web/js/locations.json";
+
                 BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, false));
-                
+                int counter = 0;
                 writer.append("{");
                 while (result.next())
                  {
-                   out.println("result set");
+                   out.println("here");
                    int postNumber = result.getInt("postNumber");
                    float lat = result.getFloat("latitude");
                    float lng = result.getFloat("longitude");
                    String addr1 = result.getString("address1");
                    String addr2 = result.getString("address2");
+                   if (counter != 0) {
+                        writer.append(',');
+                        writer.append('\n');
+                   }
                    writer.append('"');
                    writer.append(Integer.toString(postNumber));
                    writer.append('\"');
@@ -62,8 +68,7 @@ public class MapServlet extends HttpServlet {
                    writer.append('"'+"address1"+'"'+':'+'"'+addr1+'"'+','+'\n');
                    writer.append('"'+"address2"+'"'+':'+'"'+addr2+'"'+'\n');
                    writer.append('}');
-                   writer.append(',');
-                   writer.append('\n');
+                   counter +=1;
                    
                    // create json file 
                    
