@@ -40,8 +40,8 @@ public class MapServlet extends HttpServlet {
                 String query ="SELECT * FROM `apollo_4_project`.`address`";
                 
                 ResultSet result = statement.executeQuery(query);
-                String fileName = "../../landlord-ratings/finalSystem/web/js/locations.json";
-                PrintWriter writer = new PrintWriter(new FileWriter(fileName));
+                String fileName = "locate.json";
+                BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, false));
                 
                 writer.append("{");
                 while (result.next())
@@ -52,27 +52,26 @@ public class MapServlet extends HttpServlet {
                    float lng = result.getFloat("longitude");
                    String addr1 = result.getString("address1");
                    String addr2 = result.getString("address2");
-                   StringBuffer sb = new StringBuffer(' ');
-                   sb.append('"');
-                   sb.append(postNumber);
-                   sb.append('\"');
-                   sb.append(':');
-                   sb.append('{');
-                   sb.append('"'+"latitude"+'"'+':'+lat+','+'\n');
-                   sb.append('"'+"longitude"+'"'+':'+lng+','+'\n');
-                   sb.append('"'+"address1"+'"'+':'+'"'+addr1+'"'+','+'\n');
-                   sb.append('"'+"address2"+'"'+':'+'"'+addr2+'"'+'\n');
-                   sb.append('}');
-                   sb.append(',');
+                   writer.append('"');
+                   writer.append(Integer.toString(postNumber));
+                   writer.append('\"');
+                   writer.append(':');
+                   writer.append('{');
+                   writer.append('"'+"latitude"+'"'+':'+lat+','+'\n');
+                   writer.append('"'+"longitude"+'"'+':'+lng+','+'\n');
+                   writer.append('"'+"address1"+'"'+':'+'"'+addr1+'"'+','+'\n');
+                   writer.append('"'+"address2"+'"'+':'+'"'+addr2+'"'+'\n');
+                   writer.append('}');
+                   writer.append(',');
+                   writer.append('\n');
                    
                    // create json file 
-                   writer.append(sb);
                    
                    // print the results
                    out.println("data: "+postNumber + lat + lng + addr1 + addr2);
                  }
                 
-                writer.append("\n}");
+                writer.append("}");
                 writer.close();
                 statement.close();
                 connection.close();

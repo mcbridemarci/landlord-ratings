@@ -10,7 +10,7 @@ function initMap() {
 }
 /* Get locations that have reviews */
 var reviewLocations;
-$.getJSON('js/locations.json', function (json) {
+$.getJSON('js/locate.json', function (json) {
     reviewLocations = [];
     for (var key in json) {
         if (json.hasOwnProperty(key)) {
@@ -49,5 +49,5 @@ function setMarkers(map) {
 function setup(){
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.open("POST", "https://takyon.cs.nmt.edu/apollo.4/finalSystem/MapServlet", true);
-  /*xmlhttp.send();*/
+  xmlhttp.send();
 }
