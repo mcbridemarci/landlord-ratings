@@ -1,9 +1,3 @@
-function setup(){
-  var xmlhttp = new XMLHttpRequest();
-  xmlhttp.open("POST", "https://takyon.cs.nmt.edu/apollo.4/finalSystem/MapServlet", true);
-  xmlhttp.send();
-}
-
 function initMap() {
   /* initialize the map */
   var map = new google.maps.Map(document.getElementById('map'), {
@@ -50,4 +44,10 @@ function setMarkers(map) {
           }
       })(marker, i)); 
   }
+}
+
+function setup(){
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.open("POST", "https://takyon.cs.nmt.edu/apollo.4/finalSystem/MapServlet", true);
+  /*xmlhttp.send();*/
 }

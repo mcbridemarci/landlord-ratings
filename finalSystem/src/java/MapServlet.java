@@ -10,8 +10,6 @@ import javax.servlet.http.HttpSession;
 import java.io.FileWriter;
 import java.io.IOException;
  
-//import org.json.simple.JSONArray;
-//import org.json.simple.JSONObject;
 
 public class MapServlet extends HttpServlet {
 
@@ -42,7 +40,10 @@ public class MapServlet extends HttpServlet {
                 String query ="SELECT * FROM `apollo_4_project`.`address`";
                 
                 ResultSet result = statement.executeQuery(query);
-
+                String fileName = "../../landlord-ratings/finalSystem/web/js/locate.json";
+                BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true));
+                
+                writer.append("{");
                 while (result.next())
                  {
                    out.println("result set");
@@ -51,17 +52,28 @@ public class MapServlet extends HttpServlet {
                    float lng = result.getFloat("longitude");
                    String addr1 = result.getString("address1");
                    String addr2 = result.getString("address2");
-
+                   StringBuffer sb = new StringBuffer(' ');
+                   sb.append('"');
+                   sb.append(postNumber);
+                   sb.append('\"');
+                   sb.append(':');
+                   sb.append('{');
+                   sb.append('"'+"latitude"+'"'+':'+lat+','+'\n');
+                   sb.append('"'+"longitude"+'"'+':'+lng+','+'\n');
+                   sb.append('"'+"address1"+'"'+':'+'"'+addr1+'"'+','+'\n');
+                   sb.append('"'+"address2"+'"'+':'+'"'+addr2+'"'+'\n');
+                   sb.append('}');
+                   sb.append(',');
+                   
+                   // create json file 
+                   writer.append(sb);
+                   
                    // print the results
                    out.println("data: "+postNumber + lat + lng + addr1 + addr2);
                  }
- 
-		/*try (FileWriter file = new FileWriter("/js/locate.json")) {
-			file.write(obj.toJSONString());
-			System.out.println("Successfully Copied JSON Object to File...");
-			System.out.println("\nJSON Object: " + obj);
-		}*/
                 
+                writer.append("\n}");
+                writer.close();
                 statement.close();
                 connection.close();
             } catch (ClassNotFoundException ex) {
