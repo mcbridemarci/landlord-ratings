@@ -4,13 +4,11 @@
  * and open the template in the editor.
  */
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+import java.sql.*;
 /**
  *
  */
@@ -28,8 +26,25 @@ public class Populator extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
+        try {
+            PrintWriter out = response.getWriter();
+            String driver = "org.mariadb.jdbc.Driver";
+            Class.forName(driver);
+            String dbURL = "jdbc:mariadb://localhost:3306/apollo_4_project?allowMultiQueries=true";
+            Connection connection = DriverManager.getConnection(dbURL, "apollo.4", "zozoZOZO");
+            Statement statement = connection.createStatement();
+            ResultSet r = statement.executeQuery("");
+            
+            /* TODO:
+                need to link be a GET - .jsp?name1=value1&name2=value2
+                insert data into page through ajax 
+                need servlet to return data based on get?
+            */
+            
+            r.close();
+            statement.close();
+            connection.close();
+            
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
@@ -39,7 +54,12 @@ public class Populator extends HttpServlet {
             out.println("<h1>Servlet MapServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
+        } catch (ClassNotFoundException e) {
+            System.err.println("Connection error: " + e);
+        } catch (SQLException ex) {
+            System.err.println("Error loading driver: " + ex);
         }
+            
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
