@@ -10,8 +10,8 @@ import javax.servlet.http.HttpSession;
 import java.io.FileWriter;
 import java.io.IOException;
  
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
+//import org.json.simple.JSONArray;
+//import org.json.simple.JSONObject;
 
 public class MapServlet extends HttpServlet {
 
@@ -54,11 +54,11 @@ public class MapServlet extends HttpServlet {
                  }
  
 		// try-with-resources statement based on post comment below :)
-		try (FileWriter file = new FileWriter("/js/locate.json")) {
+		/*try (FileWriter file = new FileWriter("/js/locate.json")) {
 			file.write(obj.toJSONString());
 			System.out.println("Successfully Copied JSON Object to File...");
 			System.out.println("\nJSON Object: " + obj);
-		}
+		}*/
                 
                 statement.close();
                 connection.close();
