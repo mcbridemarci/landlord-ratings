@@ -20,7 +20,7 @@ echo ""
 
 echo "remove content of ../finalSystem"
 rm -r ../finalSystem/* 
-cp -r finalSystem/* ../finalSystem/
+cp -r finalSystem/web/* ../finalSystem/
 echo "copied finalSystem/* into ../finalSystem/"
 echo ""
 echo "DONE"
