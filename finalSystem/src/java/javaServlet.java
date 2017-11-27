@@ -50,12 +50,14 @@ public class javaServlet extends HttpServlet {
             
             r.latitude = Float.parseFloat(request.getParameter("latitude"));
             r.longitude = Float.parseFloat(request.getParameter("longitude"));
+            System.out.println("lat/long:("+ r.latitude + ","+ r.longitude + ")");
             r.address1 = request.getParameter("location");
             r.address2 = request.getParameter("unit");
             r.city = request.getParameter("city");
             r.state = request.getParameter("state");
             r.zip = parseInt(request.getParameter("zip"));
             r.country = request.getParameter("country");
+            r.price = parseInt(request.getParameter("price"));
             r.bedrooms = parseInt(request.getParameter("bedrooms"));
             r.bathrooms = parseInt(request.getParameter("bathrooms"));
             r.leaseLength = request.getParameter("lease");
@@ -252,10 +254,9 @@ public class javaServlet extends HttpServlet {
             try{
                 String driver = "org.mariadb.jdbc.Driver";
                 Class.forName(driver);
-                String dbURL = "jdbc:mariadb://localhost:3306/apollo_4_project";
+                String dbURL = "jdbc:mariadb://localhost:3306/apollo_4_project?allowMultiQueries=true";
                 Connection connection = DriverManager.getConnection(dbURL, "apollo.4", "zozoZOZO");
                 Statement statement = connection.createStatement();
-                System.out.println("Before query");
                 ResultSet query = statement.executeQuery(
                     "INSERT INTO `apollo_4_project`.`address` "
                         + "(`latitude`, `longitude`, `address1`, `address2`, `city`, "
@@ -269,11 +270,14 @@ public class javaServlet extends HttpServlet {
                         + r.zip + "','"
                         + r.country + "',"
                         + "CURRENT_TIMESTAMP);"
-                        + "Select * from `apollo_4_project`.`address` WHERE postNumber = LAST_INSERT_ID();" 
+                        //+ "Select * from `apollo_4_project`.`address` WHERE postNumber=LAST_INSERT_ID();" 
+                        + "select last_insert_id();"
                         /* above Select should return row from last insert with correct postNumber */
                 );
-                
-                r.postNumber = query.getInt("postNumber");
+                if (query.next()) {
+                    System.out.println("PostNumber:" + query.getInt("last_insert_id()"));
+                    r.postNumber = query.getInt("last_insert_id()");
+                }
                 
                 query = statement.executeQuery(
                     "INSERT INTO `apollo_4_project`.`rating` "
@@ -293,25 +297,25 @@ public class javaServlet extends HttpServlet {
                             + r.bedrooms + "','"
                             + r.bathrooms + "','"
                             + r.leaseLength + "','"
-                            + r.furnished  + "','"
+                            + (r.furnished ? 1 : 0)  + "','"
                             + r.leaseType + "','"
                             + r.lateFee + "','"
                             + r.lateDays + "','"
                             + r.paymentMethods + "','"
                             + r.deposit + "','"
                             + r.depositReturned + "','"
-                            + r.receiptGiven + "','"
-                            + r.utilities + "','"
+                            + (r.receiptGiven ? 1 : 0) + "','"
+                            + (r.utilities ? 1 : 0) + "','"
                             + r.appliances + "','"
                             + r.cooling + "','"
-                            + r.heating + "','"
+                            + (r.heating ? 1 : 0) + "','"
                             + r.parking + "','"
-                            + r.smoking + "','"
-                            + r.petsAllowed + "','"
+                            + (r.smoking ? 1 : 0) + "','"
+                            + (r.petsAllowed ? 1 : 0) + "','"
                             + r.petDeposit + "','"
                             + r.petWeight + "','"
                             + r.petSize + "','"
-                            + r.lawnMaintenance + "','"
+                            + (r.lawnMaintenance ? 1 : 0) + "','"
                             + r.responseTime  + "','"
                             + r.maintenanceTime + "','"
                             + r.maintenanceQuality + "','"

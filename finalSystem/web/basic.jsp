@@ -29,10 +29,10 @@
       <section class="content" id="contentSection">
         <h3 class="subtitleArea">Basic Information:</h3>
         <form action="/project/javaServlet" method="post">
-                                        <input type="hidden" id="coordinate" name="coordinate" >  
-					<input type="hidden" id="latitude" name="latitude" >  
-                                        <input type="hidden" id="longitude" name="longitude" >  
-					<input type="hidden" id="completeAddr" name="completeAddr" > 
+                                        <input type="hidden" id="coordinate" name="coordinate" >
+					<input type="hidden" id="latitude" name="latitude" >
+                                        <input type="hidden" id="longitude" name="longitude" >
+					<input type="hidden" id="completeAddr" name="completeAddr" >
           <div class="question">
             <h4>Rental Address</h4>
             <input id="autocomplete" placeholder="Enter your address here, the rest of the fields bellow should autocomplete"
@@ -67,9 +67,13 @@
 
           <div class="question">
             <h4>Rental Country</h4>
-            <input type="text" id="country" name="country" required>
+            <input type="text" id="country" name="country" required />
           </div>
-          
+
+          <div class="question">
+            <h4>Price per Month $</h4>
+            <input type="text" id="price" name="price" placeholder="$ (round to nearest dollar)" required />
+          </div>
           <div class="question">
             <h4>Number of bedrooms:</h4>
             <input type="number" id="numbe_bed" value ="1" name="bedrooms" required />
