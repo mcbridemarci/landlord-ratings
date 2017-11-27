@@ -111,9 +111,7 @@ public class javaServlet extends HttpServlet {
         }
         else if (action.equals("amenities_page")) {
             Review r = (Review)session.getAttribute("review");
-            
-            //System.out.println("address1:" + r.address1 + " payments:" + r.paymentMethods); //TODO: Remove
-            
+                        
             r.utilities = "Yes".equals(request.getParameter("utilities"));
             
             r.appliances = 0;
@@ -258,14 +256,14 @@ public class javaServlet extends HttpServlet {
                 System.out.println("Before query");
                 ResultSet query = statement.executeQuery(
                     "INSERT INTO `apollo_4_project`.`address` "
-                        + "(`coordinatePair`, `address1`, `address2`, `city`, `state`, `zip`, `country`, `postDate`) VALUES (\""
-                        + r.coordinate + "\",\""
-                        + r.address1  + "\",\"" 
-                        + r.address2 + "\",\""
-                        + r.city + "\",\""
-                        + r.state + "\","
-                        + r.zip + ",\""
-                        + r.country + "\","
+                        + "(`coordinatePair`, `address1`, `address2`, `city`, `state`, `zip`, `country`, `postDate`) VALUES ('"
+                        + r.coordinate + "','"
+                        + r.address1  + "','" 
+                        + r.address2 + "','"
+                        + r.city + "\",'"
+                        + r.state + "',"
+                        + r.zip + ",'"
+                        + r.country + "',"
                         + "CURRENT_TIMESTAMP);"
                 );
                 System.out.println(query);
@@ -282,39 +280,38 @@ public class javaServlet extends HttpServlet {
                             + "`petDeposit`, `petWeight`, `petSize`, "
                             + "`lawnMaintenance`, `responseTime`, `maintenanceTime`, "
                             + "`maintenanceQuality`, `overallThoughts`, `overallRating`) "
-                            + "VALUES ("
-                            + r.postNumber + ","
-                            + r.email + ","
-                            + r.price + ","
-                            + r.bedrooms + ","
-                            + r.bathrooms + ","
-                            + r.leaseLength + ","
-                            + r.furnished  + ","
-                            + r.leaseType + ","
-                            + r.lateFee + ","
-                            + r.lateDays + ","
-                            + r.paymentMethods + ","
-                            + r.deposit + ","
-                            + r.depositReturned + ","
-                            + r.receiptGiven + ","
-                            + r.utilities + ","
-                            + r.appliances + ","
-                            + r.cooling + ","
-                            + r.heating + ","
-                            + r.parking + ","
-                            + r.smoking + ","
-                            + r.petsAllowed + ","
-                            + r.petDeposit + ","
-                            + r.petWeight + ","
-                            + r.petSize + ","
-                            + r.lawnMaintenance + ","
-                            + r.responseTime  + ","
-                            + r.maintenanceTime + ","
-                            + r.maintenanceQuality + ","
-                            + r.overallThoughts + ","
+                            + "VALUES ('"
+                            + r.postNumber + "','"
+                            + r.email + "','"
+                            + r.price + "','"
+                            + r.bedrooms + "','"
+                            + r.bathrooms + "','"
+                            + r.leaseLength + "','"
+                            + r.furnished  + "','"
+                            + r.leaseType + "','"
+                            + r.lateFee + "','"
+                            + r.lateDays + "','"
+                            + r.paymentMethods + "','"
+                            + r.deposit + "','"
+                            + r.depositReturned + "','"
+                            + r.receiptGiven + "','"
+                            + r.utilities + "','"
+                            + r.appliances + "','"
+                            + r.cooling + "','"
+                            + r.heating + "','"
+                            + r.parking + "','"
+                            + r.smoking + "','"
+                            + r.petsAllowed + "','"
+                            + r.petDeposit + "','"
+                            + r.petWeight + "','"
+                            + r.petSize + "','"
+                            + r.lawnMaintenance + "','"
+                            + r.responseTime  + "','"
+                            + r.maintenanceTime + "','"
+                            + r.maintenanceQuality + "','"
+                            + r.overallThoughts + "','"
                             + r.overallRating
-                            + ");"
-                
+                            + "');"
                 );
                 
                 
