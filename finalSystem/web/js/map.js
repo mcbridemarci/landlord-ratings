@@ -9,29 +9,17 @@ function initMap() {
   setMarkers(map);
 }
 /* Get locations that have reviews */
+var reviewLocations;
 $.getJSON('js/locations.json', function (json) {
-    var array = [];
+    reviewLocations = [];
     for (var key in json) {
         if (json.hasOwnProperty(key)) {
             var item = json[key];
-            array.push({ addr: item.address1, lat: item.latitude, long: item.longitude, zindex: 4});            
+            reviewLocations.push([item.address1, item.latitude, item.longitude, 4]);            
         }
     }
-    console.log(array);
-});
-
-/* expected jason file format 
-{
-    "key":{
-        "address1":"1234 Main Street",
-        "address2":"1",
-        "lat":34.067599,
-        "long":-106.902407
-    },
-*/
-var reviewLocations = [
-  ['1234 Main Street', 34.067599, -106.902407, 4]
-]; 
+    console.log(reviewLocations);
+}); 
 
 /* create and ddd markers to the map */
 function setMarkers(map) {
