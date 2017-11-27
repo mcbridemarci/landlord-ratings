@@ -36,7 +36,6 @@ public class javaServlet extends HttpServlet {
             
             if (splitEmail[1].equals("student.nmt.edu")) {
                 Review r = new Review(email); /* create new Review obj */
-                //System.out.println("Email: " + r.email); //TODO: Remove
                 session.setAttribute("review", r);
                 url = "/basic.jsp";
             }
@@ -50,7 +49,6 @@ public class javaServlet extends HttpServlet {
             
             r.latitude = Float.parseFloat(request.getParameter("latitude"));
             r.longitude = Float.parseFloat(request.getParameter("longitude"));
-            System.out.println("lat/long:("+ r.latitude + ","+ r.longitude + ")");
             r.address1 = request.getParameter("location");
             r.address2 = request.getParameter("unit");
             r.city = request.getParameter("city");
@@ -270,10 +268,10 @@ public class javaServlet extends HttpServlet {
                         + r.zip + "','"
                         + r.country + "',"
                         + "CURRENT_TIMESTAMP);"
-                        //+ "Select * from `apollo_4_project`.`address` WHERE postNumber=LAST_INSERT_ID();" 
-                        + "select last_insert_id();"
-                        /* above Select should return row from last insert with correct postNumber */
                 );
+                
+                /* below Select should return postNumber from the above insert */
+                query = statement.executeQuery("select last_insert_id();");
                 if (query.next()) {
                     System.out.println("PostNumber:" + query.getInt("last_insert_id()"));
                     r.postNumber = query.getInt("last_insert_id()");
