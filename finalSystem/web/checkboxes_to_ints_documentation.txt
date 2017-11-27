@@ -49,10 +49,16 @@ Checkbox Values
 ===============
  pets.jsp
 ===============
+Note:
+	if petDeposit and petWeight are -1
+	then pets were not allowed
+
 *  "Size Restriction" = size
     Small =  0b001
 	Medium = 0b010
 	Large =  0b100
+
+Note:
 
 ===============
  landlord.jsp
