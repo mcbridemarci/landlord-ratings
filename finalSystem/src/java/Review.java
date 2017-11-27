@@ -5,8 +5,8 @@
 public class Review {
     int postNumber;
     /* TABLE: address */
-    int latitude;
-    int longitude;
+    float latitude;
+    float longitude;
     String address1;
     String address2;
     String city;

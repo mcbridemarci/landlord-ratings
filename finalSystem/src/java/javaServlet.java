@@ -47,8 +47,9 @@ public class javaServlet extends HttpServlet {
         } 
         else if (action.equals("basic_page")) {
             Review r = (Review)session.getAttribute("review");
-            r.latitude = parseInt(request.getParameter("latitude"));
-            r.longitude = parseInt(request.getParameter("longitude"));
+            
+            r.latitude = Float.parseFloat(request.getParameter("latitude"));
+            r.longitude = Float.parseFloat(request.getParameter("longitude"));
             r.address1 = request.getParameter("location");
             r.address2 = request.getParameter("unit");
             r.city = request.getParameter("city");
@@ -268,10 +269,12 @@ public class javaServlet extends HttpServlet {
                         + r.zip + "','"
                         + r.country + "',"
                         + "CURRENT_TIMESTAMP);"
+                        + "Select * from `apollo_4_project`.`address` WHERE postNumber = LAST_INSERT_ID();" 
+                        /* above Select should return row from last insert with correct postNumber */
                 );
-                System.out.println(query);
-                //TODO: get and set r.postNumber
-                    
+                
+                r.postNumber = query.getInt("postNumber");
+                
                 query = statement.executeQuery(
                     "INSERT INTO `apollo_4_project`.`rating` "
                             + "(`postNumber`, `email`, `price`, `bedrooms`, "
