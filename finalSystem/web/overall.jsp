@@ -43,27 +43,27 @@
             <fieldset id="emoji_rating">
               <label class="emoji" onclick="selects(this)">
                 <input type="radio" name="rating" id="emoji1" value="1" />
-                <img src="img/trash.png" />
+                <img src="img/terrible.png" />
               </label>
 
               <label class="emoji" onclick="selects(this)">
                 <input type="radio" name="rating" id="emoji2" value="2" />
-                <img src="img/settings.png" />
+                <img src="img/bad.png" />
               </label>
 
               <label class="emoji" onclick="selects(this)">
                 <input type="radio" name="rating" id="emoji3" value="3" />
-                <img src="img/settings.png" />
+                <img src="img/neutral.png" />
               </label>
 
               <label class="emoji" onclick="selects(this)">
                 <input type="radio" name="rating" id="emoji4" value="4" />
-                <img src="img/settings.png" />
+                <img src="img/ok.png" />
               </label>
 
              <label class="emoji" onclick="selects(this)">
                <input type="radio" name="rating" id="emoji5" value="5" />
-               <img src="img/fancy.png" />
+               <img src="img/happy.png" />
              </label>
            </fieldset>
 
