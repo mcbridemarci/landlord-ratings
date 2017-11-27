@@ -29,7 +29,9 @@
       <section class="content" id="contentSection">
         <h3 class="subtitleArea">Basic Information:</h3>
         <form action="/project/javaServlet" method="post">
-					<input type="hidden" id="coordinate" name="coordinate" >  
+                                        <input type="hidden" id="coordinate" name="coordinate" >  
+					<input type="hidden" id="latitude" name="latitude" >  
+                                        <input type="hidden" id="longitude" name="longitude" >  
 					<input type="hidden" id="completeAddr" name="completeAddr" > 
           <div class="question">
             <h4>Rental Address</h4>

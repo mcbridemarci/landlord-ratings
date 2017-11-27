@@ -75,7 +75,9 @@ function geolocate() {
       if (status == 'OK') {
           coordinate = results[0].geometry.location;
           document.getElementById('coordinate').value = coordinate;
-          alert('sucessful! the address: '+ address + ' The geocode: '+ coordinate);
+          document.getElementById('latitude').value = results[0].geometry.location.lat();
+          document.getElementById('longitude').value = results[0].geometry.location.lng();
+          /*alert('sucessful! the address: '+ address + ' The geocode: '+ coordinate);*/
       } else {
         alert('Geocode was not successful for the following reason: ' + status);
       }
