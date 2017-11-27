@@ -1,3 +1,9 @@
+function setup(){
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.open("GET", "https://takyon.cs.nmt.edu/apollo.4/finalSystem/MapServlet", true);
+  xmlhttp.send();
+}
+
 function initMap() {
   /* initialize the map */
   var map = new google.maps.Map(document.getElementById('map'), {
@@ -18,7 +24,7 @@ $.getJSON('js/locations.json', function (json) {
             reviewLocations.push([item.address1, item.latitude, item.longitude, 4]);            
         }
     }
-    console.log(reviewLocations);
+   /* console.log(reviewLocations);*/
 }); 
 
 /* create and ddd markers to the map */
@@ -39,7 +45,7 @@ function setMarkers(map) {
     /* create place details */
     google.maps.event.addListener(marker, 'click', (function (marker, i) {
           return function () {
-              infowindow.setContent('<h5>'+reviewLocations[i][0]+'</h5><h6><a href="review_preview.jsp">Click here to see the reviews for this home</a></h6>');
+              infowindow.setContent('<h5>'+reviewLocations[i][0]+'</h5><h6><a href="review_preview.jsp" id='+reviewLocations[i][1]+','+reviewLocations[i][2]+'>Click here to see the reviews for this home</a></h6>');
               infowindow.open(map, marker);
           }
       })(marker, i)); 

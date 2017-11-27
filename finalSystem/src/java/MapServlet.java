@@ -35,29 +35,31 @@ public class MapServlet extends HttpServlet {
                 
                 System.out.println("connected");
                 
-                String sql = (
-                    "SELECT 'postNumber', `latitude`, `longitude`, `address1`,`address2`" + "FROM `apollo_4_project`.`address`"
-                );
+                String query ="SELECT 'postNumber', `latitude`, `longitude`, `address1`,`address2`" + "FROM `apollo_4_project`.`address`";
+                
+                ResultSet result = statement.executeQuery(query);
+                
                 //https://stackoverflow.com/questions/12041354/java-getting-data-from-mysql-database
                 //https://alvinalexander.com/java/java-mysql-select-query-example
-                System.out.println(sql);
- 
-		JSONArray company = new JSONArray();
-		company.add("latitude: eBay");
-		company.add("longitude: Paypal");
-		company.add("address1: Google");
-                company.add("address2: Google");
-		obj.put(postNumber,company);
+                while (result.next())
+                 {
+                   int postNumber = result.getInt("postNumber");
+                   float lat = result.getFloat("latitude");
+                   float lng = result.getFloat("longitude");
+                   String addr1 = result.getString("address1");
+                   String addr2 = result.getString("address2");
+
+                   // print the results
+                   System.out.format("%s, %s, %s, %s, %s\n", postNumber, lat, lng, addr1, addr2);
+                 }
  
 		// try-with-resources statement based on post comment below :)
-		try (FileWriter file = new FileWriter("/Users/<username>/Documents/file1.txt")) {
+		try (FileWriter file = new FileWriter("/js/locate.json")) {
 			file.write(obj.toJSONString());
 			System.out.println("Successfully Copied JSON Object to File...");
 			System.out.println("\nJSON Object: " + obj);
 		}
                 
-                
-                query.close();
                 statement.close();
                 connection.close();
             } catch (ClassNotFoundException ex) {
