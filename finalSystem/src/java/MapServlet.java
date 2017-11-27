@@ -40,8 +40,8 @@ public class MapServlet extends HttpServlet {
                 String query ="SELECT * FROM `apollo_4_project`.`address`";
                 
                 ResultSet result = statement.executeQuery(query);
-                String fileName = "../../landlord-ratings/finalSystem/web/js/locate.json";
-                BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true));
+                String fileName = "../../landlord-ratings/finalSystem/web/js/locations.json";
+                PrintWriter writer = new PrintWriter(new FileWriter(fileName));
                 
                 writer.append("{");
                 while (result.next())
