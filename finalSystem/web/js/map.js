@@ -1,6 +1,6 @@
 function setup(){
   var xmlhttp = new XMLHttpRequest();
-  xmlhttp.open("GET", "https://takyon.cs.nmt.edu/apollo.4/finalSystem/MapServlet", true);
+  xmlhttp.open("POST", "https://takyon.cs.nmt.edu/apollo.4/finalSystem/MapServlet", true);
   xmlhttp.send();
 }
 
