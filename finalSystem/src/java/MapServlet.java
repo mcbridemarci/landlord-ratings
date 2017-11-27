@@ -27,13 +27,17 @@ public class MapServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
             try{
+                
+                PrintWriter out = response.getWriter();
+                
                 String driver = "org.mariadb.jdbc.Driver";
                 Class.forName(driver);
                 String dbURL = "jdbc:mariadb://localhost:3306/apollo_4_project";
                 Connection connection = DriverManager.getConnection(dbURL, "apollo.4", "zozoZOZO");
                 Statement statement = connection.createStatement();
                 
-                System.out.println("connected");
+                //System.out.println("connected");
+                out.println("connected");
                 
                 String query ="SELECT 'postNumber', `latitude`, `longitude`, `address1`,`address2`" + "FROM `apollo_4_project`.`address`";
                 
@@ -43,6 +47,7 @@ public class MapServlet extends HttpServlet {
                 //https://alvinalexander.com/java/java-mysql-select-query-example
                 while (result.next())
                  {
+                   out.println("<br>result set");
                    int postNumber = result.getInt("postNumber");
                    float lat = result.getFloat("latitude");
                    float lng = result.getFloat("longitude");
@@ -50,7 +55,7 @@ public class MapServlet extends HttpServlet {
                    String addr2 = result.getString("address2");
 
                    // print the results
-                   System.out.format("%s, %s, %s, %s, %s\n", postNumber, lat, lng, addr1, addr2);
+                   out.println("data: "+postNumber + lat + lng + addr1 + addr2);
                  }
  
 		// try-with-resources statement based on post comment below :)
