@@ -47,8 +47,8 @@ public class javaServlet extends HttpServlet {
         } 
         else if (action.equals("basic_page")) {
             Review r = (Review)session.getAttribute("review");
-            r.latitude = request.getParameter("latitude");
-            r.longitude = request.getParameter("longitude");
+            r.latitude = parseInt(request.getParameter("latitude"));
+            r.longitude = parseInt(request.getParameter("longitude"));
             r.address1 = request.getParameter("location");
             r.address2 = request.getParameter("unit");
             r.city = request.getParameter("city");
@@ -112,9 +112,7 @@ public class javaServlet extends HttpServlet {
         }
         else if (action.equals("amenities_page")) {
             Review r = (Review)session.getAttribute("review");
-            
-            //System.out.println("address1:" + r.address1 + " payments:" + r.paymentMethods); //TODO: Remove
-            
+                        
             r.utilities = "Yes".equals(request.getParameter("utilities"));
             
             r.appliances = 0;
@@ -259,15 +257,16 @@ public class javaServlet extends HttpServlet {
                 System.out.println("Before query");
                 ResultSet query = statement.executeQuery(
                     "INSERT INTO `apollo_4_project`.`address` "
-                        + "(`latitude`, `longitude`, `address1`, `address2`, `city`, `state`, `zip`, `country`, `postDate`) VALUES (\""
-                        + r.latitude + "\",\""
-                        + r.longitude + "\",\""
-                        + r.address1  + "\",\"" 
-                        + r.address2 + "\",\""
-                        + r.city + "\",\""
-                        + r.state + "\","
-                        + r.zip + ",\""
-                        + r.country + "\","
+                        + "(`latitude`, `longitude`, `address1`, `address2`, `city`, "
+                        + "`state`, `zip`, `country`, `postDate`) VALUES ('"
+                        + r.latitude + "','"
+                        + r.longitude + "','"
+                        + r.address1  + "','" 
+                        + r.address2 + "','"
+                        + r.city + "','"
+                        + r.state + "','"
+                        + r.zip + "','"
+                        + r.country + "',"
                         + "CURRENT_TIMESTAMP);"
                 );
                 System.out.println(query);
@@ -284,38 +283,38 @@ public class javaServlet extends HttpServlet {
                             + "`petDeposit`, `petWeight`, `petSize`, "
                             + "`lawnMaintenance`, `responseTime`, `maintenanceTime`, "
                             + "`maintenanceQuality`, `overallThoughts`, `overallRating`) "
-                            + "VALUES ("
-                            + r.postNumber + ","
-                            + r.email + ","
-                            + r.price + ","
-                            + r.bedrooms + ","
-                            + r.bathrooms + ","
-                            + r.leaseLength + ","
-                            + r.furnished  + ","
-                            + r.leaseType + ","
-                            + r.lateFee + ","
-                            + r.lateDays + ","
-                            + r.paymentMethods + ","
-                            + r.deposit + ","
-                            + r.depositReturned + ","
-                            + r.receiptGiven + ","
-                            + r.utilities + ","
-                            + r.appliances + ","
-                            + r.cooling + ","
-                            + r.heating + ","
-                            + r.parking + ","
-                            + r.smoking + ","
-                            + r.petsAllowed + ","
-                            + r.petDeposit + ","
-                            + r.petWeight + ","
-                            + r.petSize + ","
-                            + r.lawnMaintenance + ","
-                            + r.responseTime  + ","
-                            + r.maintenanceTime + ","
-                            + r.maintenanceQuality + ","
-                            + r.overallThoughts + ","
+                            + "VALUES ('"
+                            + r.postNumber + "','"
+                            + r.email + "','"
+                            + r.price + "','"
+                            + r.bedrooms + "','"
+                            + r.bathrooms + "','"
+                            + r.leaseLength + "','"
+                            + r.furnished  + "','"
+                            + r.leaseType + "','"
+                            + r.lateFee + "','"
+                            + r.lateDays + "','"
+                            + r.paymentMethods + "','"
+                            + r.deposit + "','"
+                            + r.depositReturned + "','"
+                            + r.receiptGiven + "','"
+                            + r.utilities + "','"
+                            + r.appliances + "','"
+                            + r.cooling + "','"
+                            + r.heating + "','"
+                            + r.parking + "','"
+                            + r.smoking + "','"
+                            + r.petsAllowed + "','"
+                            + r.petDeposit + "','"
+                            + r.petWeight + "','"
+                            + r.petSize + "','"
+                            + r.lawnMaintenance + "','"
+                            + r.responseTime  + "','"
+                            + r.maintenanceTime + "','"
+                            + r.maintenanceQuality + "','"
+                            + r.overallThoughts + "','"
                             + r.overallRating
-                            + ");"
+                            + "');"
                 
                 );
                 
