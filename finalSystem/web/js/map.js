@@ -9,7 +9,7 @@ function initMap() {
   setMarkers(map);
 }
 /* Get locations that have reviews */
-$.getJSON('locations.json', function (json) {
+$.getJSON('js/locations.json', function (json) {
     var array = [];
     for (var key in json) {
         if (json.hasOwnProperty(key)) {
