@@ -39,15 +39,13 @@ public class MapServlet extends HttpServlet {
                 //System.out.println("connected");
                 out.println("connected");
                 
-                String query ="SELECT 'postNumber', `latitude`, `longitude`, `address1`,`address2`" + "FROM `apollo_4_project`.`address`";
+                String query ="SELECT * FROM `apollo_4_project`.`address`";
                 
                 ResultSet result = statement.executeQuery(query);
-                
-                //https://stackoverflow.com/questions/12041354/java-getting-data-from-mysql-database
-                //https://alvinalexander.com/java/java-mysql-select-query-example
+
                 while (result.next())
                  {
-                   out.println("<br>result set");
+                   out.println("result set");
                    int postNumber = result.getInt("postNumber");
                    float lat = result.getFloat("latitude");
                    float lng = result.getFloat("longitude");
@@ -58,7 +56,6 @@ public class MapServlet extends HttpServlet {
                    out.println("data: "+postNumber + lat + lng + addr1 + addr2);
                  }
  
-		// try-with-resources statement based on post comment below :)
 		/*try (FileWriter file = new FileWriter("/js/locate.json")) {
 			file.write(obj.toJSONString());
 			System.out.println("Successfully Copied JSON Object to File...");
