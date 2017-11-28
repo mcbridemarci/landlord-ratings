@@ -246,7 +246,7 @@ public class javaServlet extends HttpServlet {
             r.overallThoughts = request.getParameter("overall_thoughts");
             r.overallRating = parseInt(request.getParameter("rating"));
             session.setAttribute("review", r);
-            url = "/index.html";
+            url = "/success.jsp";
             
             /* send all data to database */
             try{
