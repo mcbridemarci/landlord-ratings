@@ -41,7 +41,7 @@ public class MapServlet extends HttpServlet {
                 
                 ResultSet result = statement.executeQuery(query);
 
-                String fileName = "/Users/marci_home/landlord-ratings/finalSystem/web/js/locations.json";
+                String fileName = "/home/apollo.4/landlord-ratings/finalSystem/web/js/locations.json";
 
                 BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, false));
                 int counter = 0;
