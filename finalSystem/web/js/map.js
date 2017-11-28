@@ -34,8 +34,10 @@ function setMarkers(map) {
       draggable: false,
       /*label: "R",*/
       title: review[0],
-      zIndex: review[3]
+      zIndex: review[3],
     });
+    
+    marker.set('id',reviewLocations[i][1]+','+reviewLocations[i][2]);
     /* create place details */
     google.maps.event.addListener(marker, 'click', (function (marker, i) {
           return function () {
