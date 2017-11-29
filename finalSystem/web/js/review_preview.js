@@ -1,28 +1,8 @@
-/*function loadData(){;
-  var xml = <%= (String)request.getAttribute("xml")%>;
-  console.log(xml);
-  show(xml);
-  var xmlhttp = new XMLHttpRequest();
-  //Check HTTP statuses before display the data
-  xmlhttp.onreadystatechange = function() {
-//alert(this.readyState + ":" + this.status);
-    if (this.readyState == 4 && this.status == 200) {
-      show(this);
-    }
-  };
-//alert("load data");
-  xmlhttp.open("GET", "https://takyon.cs.nmt.edu/apollo.4/finalSystem/Populator", true);
-  //xmlhttp.open("GET", "populatorTest.xml", true);
-  xmlhttp.send();
-}*/
-
 function showXML(xmlStr) {
-  console.log(xmlStr);
   var doc = (new DOMParser()).parseFromString(xmlStr, "text/xml");
 
-  console.log(doc);
   var i;
-  //var doc = xml.responseXML;
+
   //Get the address for the review page
   var y = doc.getElementsByTagName("address")[0].childNodes[0].nodeValue;
   var address = "Rental Review for ";
