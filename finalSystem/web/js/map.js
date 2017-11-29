@@ -41,7 +41,7 @@ function setMarkers(map) {
     /* create place details */
     google.maps.event.addListener(marker, 'click', (function (marker, i) {
           return function () {
-              infowindow.setContent('<h5>'+reviewLocations[i][0]+'</h5><h6><a href="review_preview.jsp?lat=reviewLocations[i][1]&lon=reviewLocations[i][2]">Click here to see the reviews for this home</a></h6>');
+              infowindow.setContent('<h5>'+reviewLocations[i][0]+'</h5><h6><a href="/apollo.4/finalSystem/review_preview.jsp?lat=reviewLocations[i][1]&lon=reviewLocations[i][2]">Click here to see the reviews for this home</a></h6>');
               infowindow.open(map, marker);
           }
       })(marker, i));
