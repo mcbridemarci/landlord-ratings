@@ -28,7 +28,7 @@ public class Populator extends HttpServlet {
             String dbURL = "jdbc:mariadb://localhost:3306/apollo_4_project";
             Connection connection = DriverManager.getConnection(dbURL, "apollo.4", "zozoZOZO");
             Statement statement = connection.createStatement();
-            
+         
             String tmp = request.getParameter("lat");
             double lat = 0.0;
             double lon = 0.0;
@@ -121,6 +121,10 @@ public class Populator extends HttpServlet {
             result.close();
             statement.close();
             connection.close();
+            
+            request.getRequestDispatcher("review_preview.jsp").forward(request,response);
+            
+            
         } catch (ClassNotFoundException ex) {
             System.err.println("Error with connection: " + ex);
         } catch (SQLException ex) {
