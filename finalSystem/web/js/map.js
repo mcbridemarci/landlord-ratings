@@ -52,8 +52,8 @@ function setMarkers(map) {
                 + reviewLocations[i][0]
                 + `</h5>`
                 + `<form action="/apollo.4/finalSystem/Populator" method="post">`
-                + `<input type="hidden" name="lon" value="` + reviewLocations[i][1] + `" />`
-                + `<input type="hidden" name="lat" value="` + reviewLocations[i][2] + `" />`
+                + `<input type="hidden" name="lat" value="` + reviewLocations[i][1] + `" />`
+                + `<input type="hidden" name="lon" value="` + reviewLocations[i][2] + `" />`
                 + `<button type="submit">Click here to see the reviews for this location</button>`
                 + `</form></div>`
               );
