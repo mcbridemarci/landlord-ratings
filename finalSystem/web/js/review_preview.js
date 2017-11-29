@@ -153,6 +153,7 @@ function show(xml) {
     if ((park & 0b0010) != 0) {
       parking += "Garage, ";
     }
+    
     if ((park & 0b0100) != 0) {
       parking += "Street Parking, ";
     }
