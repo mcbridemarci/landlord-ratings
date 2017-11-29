@@ -126,7 +126,7 @@ function show(xml) {
     if ((cool & 0b0010) != 0) {
       cooling += "Swamp Cooler, ";
     }
-    if ((cool & ) != 0) {
+    if ((cool & 0b0100) != 0) {
       cooling += "Fan Only, ";
     }
     if ((cool & 0b1000) != 0) {
