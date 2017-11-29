@@ -17,9 +17,15 @@
     <link rel="stylesheet" type="text/css" href="display_reviews.css">
     <script src="js/main.js"></script>
     <script src="js/review_preview.js"></script>
+    <script> /* moving this js to external file breaks it due to JSP */
+      function loadData() {
+        var xml = `<%= (String)request.getAttribute("xml")%>`;
+        showXML(xml);
+      }
+    </script>
   </head>
 
-  <body onload="loadData()">
+  <body onload="loadData();">
     <section class="titleArea">
       <!-- this area contains the title and/or any elements we want on other pages. -->
       <h1><a href="index.html" class="link">Socorro Rental Reviews</a></h1>
