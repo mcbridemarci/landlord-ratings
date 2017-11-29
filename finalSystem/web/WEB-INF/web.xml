@@ -8,6 +8,14 @@
         <servlet-name>Populator</servlet-name>
         <servlet-class>servlets.Populator</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>MapServlet</servlet-name>
+        <servlet-class>MapServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Mapper</servlet-name>
+        <servlet-class>servlets.Mapper</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>javaServlet</servlet-name>
         <url-pattern>/javaServlet</url-pattern>
@@ -15,6 +23,14 @@
     <servlet-mapping>
         <servlet-name>Populator</servlet-name>
         <url-pattern>/Populator</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MapServlet</servlet-name>
+        <url-pattern>/MapServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Mapper</servlet-name>
+        <url-pattern>/Mapper</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

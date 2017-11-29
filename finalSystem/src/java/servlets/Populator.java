@@ -29,9 +29,15 @@ public class Populator extends HttpServlet {
             Connection connection = DriverManager.getConnection(dbURL, "apollo.4", "zozoZOZO");
             Statement statement = connection.createStatement();
             
+            String tmp = request.getParameter("lat");
+            double lat = 0.0;
+            double lon = 0.0;
+            if (tmp != null)
+                lat = Double.parseDouble(tmp);
+            tmp = request.getParameter("lon");
+            if (tmp != null)
+                lon = Double.parseDouble(tmp);
             
-            double lat = Double.parseDouble(request.getParameter("lat")); //34.0584;
-            double lon = Double.parseDouble(request.getParameter("lon")); //-106.898;
             
 
             /* upper/lower bounds for SQL query due to select on float */
