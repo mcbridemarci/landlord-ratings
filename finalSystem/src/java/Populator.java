@@ -3,12 +3,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
-import static java.lang.Integer.parseInt;
-import javax.servlet.*;
 import java.sql.*;
-import javax.servlet.http.HttpSession;
-import java.io.FileWriter;
-import java.io.IOException;
  
 
 public class Populator extends HttpServlet {
@@ -24,67 +19,108 @@ public class Populator extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            try{
-                
-                PrintWriter out = response.getWriter();
-                
-                String driver = "org.mariadb.jdbc.Driver";
-                Class.forName(driver);
-                String dbURL = "jdbc:mariadb://localhost:3306/apollo_4_project";
-                Connection connection = DriverManager.getConnection(dbURL, "apollo.4", "zozoZOZO");
-                Statement statement = connection.createStatement();
-                
-                //System.out.println("connected");
-                out.println("connected");
-                
-                String query ="SELECT * FROM `apollo_4_project`.`rating`";
-                
-                ResultSet result = statement.executeQuery(query);
+        response.setContentType("text/xml;charset=UTF-8");
+        try{
+            String driver = "org.mariadb.jdbc.Driver";
+            Class.forName(driver);
+            String dbURL = "jdbc:mariadb://localhost:3306/apollo_4_project";
+            Connection connection = DriverManager.getConnection(dbURL, "apollo.4", "zozoZOZO");
+            Statement statement = connection.createStatement();
+            
+            
+            
+            double lat = Double.parseDouble(request.getParameter("lat")); //34.0584;
+            double lon = Double.parseDouble(request.getParameter("lon")); //-106.898;
+            
+            System.out.println("lat,long:" + lat + "," + lon);
 
-                String fileName = "/home/apollo.4/landlord-ratings/finalSystem/web/js/reviewData.xml";
+            /* upper/lower bounds for SQL query due to select on float */
+            double latUp = lat + 0.0001;
+            double latLow = lat - 0.0001;
+            double longUp = lon + 0.0001;
+            double longLow = lon - 0.0001;
 
-                BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, false));
-                int counter = 0;
-                writer.append("{");
-                while (result.next())
-                 {
-                   out.println("here");
-                   int postNumber = result.getInt("postNumber");
-                   float lat = result.getFloat("latitude");
-                   float lng = result.getFloat("longitude");
-                   String addr1 = result.getString("address1");
-                   String addr2 = result.getString("address2");
-                   if (counter != 0) {
-                        writer.append(',');
-                        writer.append('\n');
-                   }
-                   writer.append('"');
-                   writer.append(Integer.toString(postNumber));
-                   writer.append('\"');
-                   writer.append(':');
-                   writer.append('{');
-                   writer.append('"'+"latitude"+'"'+':'+lat+','+'\n');
-                   writer.append('"'+"longitude"+'"'+':'+lng+','+'\n');
-                   writer.append('"'+"address1"+'"'+':'+'"'+addr1+'"'+','+'\n');
-                   writer.append('"'+"address2"+'"'+':'+'"'+addr2+'"'+'\n');
-                   writer.append('}');
-                   counter +=1;
-                   
-                   // create json file 
-                   
-                   // print the results
-                   out.println("data: "+postNumber + lat + lng + addr1 + addr2);
-                 }
-                
-                writer.append("}");
-                writer.close();
-                statement.close();
-                connection.close();
-            } catch (ClassNotFoundException ex) {
-                System.err.println("Error with connection: " + ex);
-            } catch (SQLException ex) {
-                System.err.println("Error loading driver: " + ex);
+            String query = "SELECT postNumber,address1 FROM `apollo_4_project`.`address` WHERE "
+                + " latitude >= " + latLow 
+                + "AND latitude <= " + latUp 
+                + "AND longitude >= " + longLow 
+                + "AND longitude <= " + longUp;
+
+            ResultSet result = statement.executeQuery(query);
+
+
+            
+            /* builds query. e.g. query = `select * from rating where postNumber IN (0,2);` 
+             * Also sets address1 for building XML later
+            */
+            String address1 = "";
+            query = "SELECT * FROM `apollo_4_project`.`rating` WHERE postNumber IN (";
+            while (result.next()) {
+                query += result.getInt("postNumber") + ",";
+                address1 = result.getString("address1");
             }
+            System.out.println(address1);
+            query = query.substring(0, query.length() - 1); /* delete last comma */
+            query += ");";
+            
+            result = statement.executeQuery(query);
+            
+            
+            /* begin building XML */
+            
+            String xml = "<data>"
+                    + "<address>"
+                    + address1
+                    + "</address>";
+            
+            while (result.next()) {
+                xml += "<review>"
+                    + "<postNumber>" + result.getInt("postNumber") + "</postNumber>"
+                    + "<price>" + result.getInt("price") + "</price>"
+                    + "<bedrooms>" + result.getInt("bedrooms") + "</bedrooms>"
+                    + "<bathrooms>" + result.getInt("bathrooms")+ "</bathrooms>"
+                    + "<leaseLength>" + result.getString("leaseLength") + "</leaseLength>"
+                    + "<furnished>" + result.getInt("furnished") + "</furnished>"
+                    + "<leaseType>" + result.getInt("leaseType") + "</leaseType>"
+                    + "<lateFee>" + result.getInt("lateFee") + "</lateFee>"
+                    + "<lateDays>" + result.getInt("lateDays") + "</lateDays>"
+                    + "<paymentMethods>" + result.getInt("paymentMethods") + "</paymentMethods>"
+                    + "<deposit>" + result.getInt("deposit") + "</deposit>"
+                    + "<depositReturned>" + result.getInt("depositReturned") + "</depositReturned>"
+                    + "<receiptGiven>" + result.getInt("receiptGiven") + "</receiptGiven>"
+                    + "<utilities>" + result.getInt("utilities") + "</utilities>"
+                    + "<appliances>" + result.getInt("appliances") + "</appliances>"
+                    + "<cooling>" + result.getInt("cooling") + "</cooling>"
+                    + "<heating>" + result.getInt("heating") + "</heating>"
+                    + "<parking>" + result.getInt("parking") + "</parking>"
+                    + "<smoking>" + result.getInt("smoking") + "</smoking>"
+                    + "<petsAllowed>" + result.getInt("petsAllowed") + "</petsAllowed>"
+                    + "<petDeposit>" + result.getInt("petDeposit") + "</petDeposit>"
+                    + "<petWeight>" + result.getInt("petWeight") + "</petWeight>"
+                    + "<petSize>" + result.getInt("petSize") + "</petSize>"
+                    + "<lawnMaintenance>" + result.getInt("lawnMaintenance") + "</lawnMaintenance>"
+                    + "<responseTime>" + result.getInt("responseTime") + "</responseTime>"
+                    + "<maintenanceTime>" + result.getInt("maintenanceTime") + "</maintenanceTime>"
+                    + "<maintenanceQuality>" + result.getString("maintenanceQuality") + "</maintenanceQuality>"
+                    + "<overallThoughts>" + result.getString("overallThoughts") + "</overallThoughts>"
+                    + "<overallRating>" + result.getInt("overallRating") + "</overallRating>"
+                + "</review>";
+            }
+            
+            xml += "</data>";
+            
+            PrintWriter out = response.getWriter();
+            out.println(xml);
+            
+            out.close();
+            result.close();
+            statement.close();
+            connection.close();
+        } catch (ClassNotFoundException ex) {
+            System.err.println("Error with connection: " + ex);
+        } catch (SQLException ex) {
+            System.err.println("Error loading driver: " + ex);
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
