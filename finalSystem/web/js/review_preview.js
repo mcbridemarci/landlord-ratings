@@ -16,20 +16,20 @@ function loadData(){;
 function show(xml) {
   var i;
   var doc = xml.responseXML;
-  //Get the address for the review page 
+  //Get the address for the review page
   var y = doc.getElementsByTagName("address")[0].childNodes[0].nodeValue;
   var address = "Rental Review for ";
   address += y;
-  // Now put it on the web page 
+  // Now put it on the web page
   document.getElementById("address").innerHTML = address;
   document.getElementById("address_overall").innerHTML = address;
-  
-  
-  //Now lets get all the info for each review 
+
+
+  //Now lets get all the info for each review
   var x = doc.getElementsByTagName("review");
   var html = "";
 
-  for (i = 0; i < x.length; i++) { 
+  for (i = 0; i < x.length; i++) {
     var price = x[i].getElementsByTagName("price")[0].childNodes[0].nodeValue;
     var postNumber = x[i].getElementsByTagName("postNumber")[0].childNodes[0].nodeValue;
     var overallDesc = x[i].getElementsByTagName("overallThoughts")[0].childNodes[0].nodeValue;
@@ -45,7 +45,7 @@ function show(xml) {
     }else if (emoji == 5) {
         var emojiChoice = "<img class='emoji' src='img/happy.png'/>";
     }
-    
+
     var furnished = x[i].getElementsByTagName("furnished")[0].childNodes[0].nodeValue;
     if (furnished == 1){
         furnished = "Yes";
@@ -92,43 +92,80 @@ function show(xml) {
     } else {
         utilities = "No";
     }
-    // TODO: Parse Appliances 
-    var ap = x[i].getElementsByTagName("appliances")[0].childNodes[0].nodeValue;
-    ap = Number(ap).toString(2);
-    var apResult = ap+"";
 
-    if (ap == 001) {
-        apResult += "Refrigerator ";
+    // TODO: Check for correctness... don't know what Number(ap).toString(2) does.
+    var ap = x[i].getElementsByTagName("appliances")[0].childNodes[0].nodeValue;
+    //ap = Number(ap).toString(2); // this would be strcmp. better to compare with ints
+    ap = Number(ap);
+    var apResult = ap + "";
+
+    if ((ap & 0b0001) != 0) {
+      apResult += "Refrigerator, ";
     }
-    else if (ap == 10){
-        apResult += "Stove top ";
+    if ((ap & 0b0001) != 0) {
+      apResult += "Stove Top, ";
     }
-    else if (ap == 11) {
-        apResult += "Refrigerator & Stove top ";
+    if ((ap & 0b0001) != 0) {
+      apResult += "Oven, ";
     }
-    else if (ap ==100){
-        apResult += "Oven ";
+    if ((ap & 0b0001) != 0) {
+      apResult += "Microwave, ";
     }
-    else if (ap == 111) {
-        apResult += "Refrigerator, Oven & Stove top ";
+    if (ap == 0) {
+      apResult = "Unknown";
+    } else { /* delete last space and comma, this is lazy but who cares */
+      apResult = apResult.substring(0, str.length - 2);
     }
-    else if (ap== 1000){
-        apResult += "Microwave";
-    } 
-    else if (ap == 1111) {
-        apResult += "Refrigerator, Oven, Stove top & Microwave";
+
+    //TODO: check for correctness
+    var cool = Number(x[i].getElementsByTagName("cooling")[0].childNodes[0].nodeValue);
+    var cooling = "";
+    if ((cool & 0b0001) != 0) {
+      cooling += "AC, ";
     }
-    else {
-        apResult = "Unknown";
+    if ((cool & 0b0010) != 0) {
+      cooling += "Swamp Cooler, ";
     }
-    
+    if ((cool & ) != 0) {
+      cooling += "Fan Only, ";
+    }
+    if ((cool & 0b1000) != 0) {
+      cooling = "None, ";
+    }
+    if (cool == 0) {
+      cooling = "Unknown";
+    } else { /* delete last space and comma, this is lazy but who cares */
+      cooling = cooling.substring(0, str.length - 2);
+    }
+
     var heating = x[i].getElementsByTagName("heating")[0].childNodes[0].nodeValue;
     if (heating == 1){
         heating = "Yes";
     } else {
         heating = "No";
     }
-    //TODO parse parking 
+    //TODO: check for correctness
+    var park = Number(x[i].getElementsByTagName("parking")[0].childNodes[0].nodeValue);
+    var parking = "";
+    if ((park & 0b0001) != 0) {
+      parking += "Covered, ";
+    }
+    if ((park & 0b0010) != 0) {
+      parking += "Garage, ";
+    }
+    if ((park & 0b0100) != 0) {
+      parking += "Street Parking, ";
+    }
+    if ((park & 0b1000) != 0) {
+      parking += "Assigned Parking, ";
+    }
+    if (park == 0) {
+      parking = "Unknown";
+    } else { /* delete last space and comma */
+      parking = parking.substring(0, str.length - 2);
+    }
+
+
     var smoking = x[i].getElementsByTagName("smoking")[0].childNodes[0].nodeValue;
     if (smoking == 1){
         smoking = "Yes";
@@ -171,14 +208,14 @@ function show(xml) {
             "<p class='stars'>Rental Rating: "+emojiChoice+"</p>"+
             "<p class='stars'> Overall thoughts: </p>"+
             "<p id='overallDesc'>"+overallDesc+"</p>";
-    
+
     var collapse = "collapseExample";
     collapse += postNumber;
     html += "<div class='more'><a data-toggle='collapse' href='#"+collapse+"'"+
             "aria-expanded='false' aria-controls='collapseExample'>" +
             "More<span class='glyphicon glyphicon-chevron-down'></a></div>";
-     
-    html += "<div class='collapse' id='"+collapse+"'>"+ 
+
+    html += "<div class='collapse' id='"+collapse+"'>"+
             "<p><span class='info'>Number of bedrooms: </span>"+
             x[i].getElementsByTagName("bedrooms")[0].childNodes[0].nodeValue+"</p>"+
             "<p><span class='info'>Number of bathrooms: </span> "+
@@ -206,11 +243,11 @@ function show(xml) {
             "<p><span class='info'>Appliances Included: </span>"+
             apResult+"</p>"+
             "<p><span class='info'>Cooling: </span>"+
-            x[i].getElementsByTagName("cooling")[0].childNodes[0].nodeValue +"</p>"+
+            cooling +"</p>"+
             "<p><span class='info'>Heating: </span>"+
             heating +"</p>"+
             "<p><span class='info'>Parking: </span>"+
-            x[i].getElementsByTagName("parking")[0].childNodes[0].nodeValue +"</p>"+
+            parking +"</p>"+
             "<p><span class='info'>Smoking Permitted: </span>"+
             smoking+"</p>"+
             "<p><span class='info'>Are pets allowed: </span>"+
@@ -230,7 +267,7 @@ function show(xml) {
             "<p><span class='info'>Maintenance quality: </span>"+
             x[i].getElementsByTagName("maintenanceQuality")[0].childNodes[0].nodeValue +"</p>"+
             + "</div>";
-    html += "</div></div>";        
+    html += "</div></div>";
     }
     document.getElementById("allReviews").innerHTML = html;
 }
