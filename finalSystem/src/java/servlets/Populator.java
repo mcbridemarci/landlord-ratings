@@ -22,7 +22,6 @@ public class Populator extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/xml;charset=UTF-8");
-        request.getRequestDispatcher("review_preview.jsp").forward(request,response);
         try{
             String driver = "org.mariadb.jdbc.Driver";
             Class.forName(driver);
@@ -123,10 +122,12 @@ public class Populator extends HttpServlet {
             
             xml += "</data>";
             
-            PrintWriter out = response.getWriter();
-            out.println(xml);
+            request.setAttribute("xml", xml);
             
-            out.close();
+            //PrintWriter out = response.getWriter();
+            //out.println(xml);
+            
+            //out.close();
             result.close();
             statement.close();
             connection.close();
@@ -137,6 +138,9 @@ public class Populator extends HttpServlet {
         } catch (SQLException ex) {
             System.err.println("Error loading driver: " + ex);
         }
+        
+        request.getRequestDispatcher("review_preview.jsp").forward(request,response);
+    
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
