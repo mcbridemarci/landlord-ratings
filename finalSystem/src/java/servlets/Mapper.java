@@ -40,7 +40,7 @@ public class Mapper extends HttpServlet {
 
             int counter = 0;
 
-            writer.print("{");
+            writer.println("{");
             while (result.next()) {
                 int postNumber = result.getInt("postNumber");
                 float lat = result.getFloat("latitude");
@@ -51,11 +51,7 @@ public class Mapper extends HttpServlet {
                      writer.print(',');
                      writer.print('\n');
                 }
-                writer.print('"');
-                writer.print(Integer.toString(postNumber));
-                writer.print('\"');
-                writer.print(':');
-                writer.print('{');
+                writer.print('"' + Integer.toString(postNumber) + "\" : {");
                 writer.print('"'+"latitude"+'"'+':'+lat+','+'\n');
                 writer.print('"'+"longitude"+'"'+':'+lng+','+'\n');
                 writer.print('"'+"address1"+'"'+':'+'"'+addr1+'"'+','+'\n');
@@ -64,7 +60,7 @@ public class Mapper extends HttpServlet {
                 counter +=1;
             }
 
-                writer.print("}");
+                writer.print("\n}");
                 writer.close();
                 statement.close();
 
