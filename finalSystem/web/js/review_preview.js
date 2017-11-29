@@ -62,6 +62,8 @@ function show(xml) {
     } else{
         leaseType = "Unknown";
     }
+    
+    //TODO
     var payment = x[i].getElementsByTagName("paymentMethods")[0].childNodes[0].nodeValue;
     if (payment == 4){
         payment = "Direct Deposit";
@@ -95,20 +97,18 @@ function show(xml) {
 
     // TODO: Check for correctness... don't know what Number(ap).toString(2) does.
     var ap = x[i].getElementsByTagName("appliances")[0].childNodes[0].nodeValue;
-    //ap = Number(ap).toString(2); // this would be strcmp. better to compare with ints
-    ap = Number(ap);
-    var apResult = ap + "";
-
+    var apResult = "";
+      
     if ((ap & 0b0001) != 0) {
       apResult += "Refrigerator, ";
     }
-    if ((ap & 0b0001) != 0) {
+    if ((ap & 0b0010) != 0) {
       apResult += "Stove Top, ";
     }
-    if ((ap & 0b0001) != 0) {
+    if ((ap & 0b0100) != 0) {
       apResult += "Oven, ";
     }
-    if ((ap & 0b0001) != 0) {
+    if ((ap & 0b1000) != 0) {
       apResult += "Microwave, ";
     }
     if (ap == 0) {
@@ -152,8 +152,7 @@ function show(xml) {
     }
     if ((park & 0b0010) != 0) {
       parking += "Garage, ";
-    }
-    
+    } 
     if ((park & 0b0100) != 0) {
       parking += "Street Parking, ";
     }
