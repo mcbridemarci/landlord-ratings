@@ -6,7 +6,7 @@
     </servlet>
     <servlet>
         <servlet-name>Populator</servlet-name>
-        <servlet-class>servlets.Populator</servlet-class>
+        <servlet-class>Populator</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>javaServlet</servlet-name>
