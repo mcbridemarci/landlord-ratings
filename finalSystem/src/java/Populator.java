@@ -32,7 +32,6 @@ public class Populator extends HttpServlet {
             double lat = Double.parseDouble(request.getParameter("lat")); //34.0584;
             double lon = Double.parseDouble(request.getParameter("lon")); //-106.898;
             
-            System.out.println("lat,long:" + lat + "," + lon);
 
             /* upper/lower bounds for SQL query due to select on float */
             double latUp = lat + 0.0001;
@@ -42,10 +41,9 @@ public class Populator extends HttpServlet {
 
             String query = "SELECT postNumber,address1 FROM `apollo_4_project`.`address` WHERE "
                 + " latitude >= " + latLow 
-                + "AND latitude <= " + latUp 
-                + "AND longitude >= " + longLow 
-                + "AND longitude <= " + longUp;
-
+                + " AND latitude <= " + latUp 
+                + " AND longitude >= " + longLow 
+                + " AND longitude <= " + longUp + ";";
             ResultSet result = statement.executeQuery(query);
 
 
@@ -56,10 +54,10 @@ public class Populator extends HttpServlet {
             String address1 = "";
             query = "SELECT * FROM `apollo_4_project`.`rating` WHERE postNumber IN (";
             while (result.next()) {
-                query += result.getInt("postNumber") + ",";
+                int pn = result.getInt("postNumber");
+                query += pn + ",";
                 address1 = result.getString("address1");
             }
-            System.out.println(address1);
             query = query.substring(0, query.length() - 1); /* delete last comma */
             query += ");";
             
