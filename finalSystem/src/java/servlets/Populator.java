@@ -54,6 +54,14 @@ public class Populator extends HttpServlet {
                 + " AND longitude <= " + longUp + ";";
             ResultSet result = statement.executeQuery(query);
 
+            /* TODO: Convert to the above sql to a prepared statement 
+            PreparedStatement stmt = connection.prepareStatement("SELECT postNumber,address1 FROM `apollo_4_project`.`address` WHERE latitude >= ? AND latitude <= ? AND longitude >= ? AND longitude <= ?;");
+            stmt.setDouble(1, latLow);
+            stmt.setDouble(2, latUp);
+            stmt.setDouble(3, longLow);
+            stmt.setDouble(4, longUp);
+            stmt.execute();
+            */
 
             
             /* builds query. e.g. query = `select * from rating where postNumber IN (0,2);` 
