@@ -2,7 +2,7 @@
 
 <html>
   <head>
-    <title>Socorro Rental Reviews | Legal</title>
+    <title>Socorro Rental Reviews | Overall</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet"
@@ -29,40 +29,23 @@
     <hr class="line-separator">
 
     <section class="mainDescriptionArea">
-      <h2><span id="address">Rental Review: 1234 Main Street</span></h2>
-
+      <h2><span id="address"></span></h2>
       <h3 id="address" class="centerText"> </h3>
-
       <div class="container overall">
-        <h3 class="centerText">Overall for <span id="address_overall">1234 Main Street</span></h3>
-        <h4 class="centerText">Rating Average:
-          <span>
-            <span class="glyphicon glyphicon-star checked"></span>
-  					<span class="glyphicon glyphicon-star checked"></span>
-  					<span class="glyphicon glyphicon-star checked"></span>
-  					<span class="glyphicon glyphicon-star-empty"></span>
-  					<span class="glyphicon glyphicon-star-empty"></span>
-          </span>
-        </h4>
+        <h3 class="centerText">All <span id="address_overall"></span></h3>
       </div>
 
-
       <div id="allReviews">
-
         <div class="container reviewBox">
-          <p class="postHead">Post #<span class="postNum">1</span><span class="timeStamp">2015/08/15</span></p>
-          <p class="stars">Rental Rating:
-            <span>
-              <span class="glyphicon glyphicon-star checked"></span>
-    					<span class="glyphicon glyphicon-star checked"></span>
-    					<span class="glyphicon glyphicon-star-empty"></span>
-    					<span class="glyphicon glyphicon-star-empty"></span>
-    					<span class="glyphicon glyphicon-star-empty"></span>
-            </span>
-          </p>
-          <p class="overallDesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at ultrices mauris. Curabitur congue laoreet rutrum. Mauris et molestie elit. Curabitur a tristique diam. Vestibulum sollicitudin libero quis nunc laoreet auctor. Nunc accumsan, nibh at fringilla euismod, nulla purus tempor arcu, id aliquet dolor metus ut est. Maecenas nec hendrerit mauris.</p>
+          <p class="postHead">Post #<span class="postNum"></span><span class="price"></span></p>
+          <p class="stars">Rental Rating: <span class="emoji"> </span></p>
+          <p class="overallDesc"></p>
+          <!--<input type="radio" name="allowed" value="Yes" data-toggle="collapse" data-target=".hides:not(.in)"  required /> Yes</label>-->
         </div>
-
+          
+         
+          
+        <!--
         <div class="container reviewBox">
           <p class="postHead">Post #<span class="postNum">2</span><span class="timeStamp">2016/03/22</span></p>
           <p class="stars">Rental Rating:
@@ -90,8 +73,8 @@
           </p>
           <p class="overallDesc">Pellentesque viverra odio semper, tristique quam non, pellentesque justo. Fusce quis elit posuere, venenatis eros eget, ultrices ipsum. Nam pellentesque erat risus, sit amet fermentum felis tincidunt ut. Nam blandit hendrerit urna non scelerisque. Nunc vel pharetra eros. Duis rutrum accumsan imperdiet. Nam gravida dui efficitur turpis vehicula lobortis. Nam nec venenatis magna, a egestas sem.</p>
         </div>
-
-      </div><!-- END allReviews -->
+        -->
+      </div>
 
       <br><br><br>
 
