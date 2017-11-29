@@ -18,7 +18,7 @@ function initMap() {
           }
       }
       setMarkers(map);
-    }).catch(err => { throw err });
+    }).catch(err => { console.log(err); });
 
 
 
