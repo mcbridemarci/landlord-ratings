@@ -38,12 +38,12 @@
           <div class="hides in">
             <div class="question">
               <h4>Pet Deposit:</h4>
-              <input type="text" id="pet_deposit" name="pet_deposit" placeholder="$">
+              <p>$ <input type="number" id="pet_deposit" name="pet_deposit" placeholder="Dollar amount"></p>
             </div>
 
             <div class="question">
               <h4>Weight Restriction:</h4>
-              <input type="number" id="weight" name="weight" placeholder="number of lbs allowed">
+              <p><input type="number" id="weight" name="weight" placeholder="Max lbs allowed"> lbs</p>
             </div>
 
             <div class="question">
