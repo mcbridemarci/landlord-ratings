@@ -1,0 +1,936 @@
+﻿Theme: Rating Website
+Group Name: Landlord Ratings
+Members: Johnathan Smith, Marci McBride, Iseah Olguin 
+
+
+1. Background: 
+Socorro is a small community with a high demand for rentals, especially those that are near campus. Often landlords view this as the perfect opportunity to rent their homes, sadly without keeping up with basic home maintenance.
+The goal of our group project is to help other techies be informed about their soon-to-be landlord prior to signing their lease. The webpage will contain a map of Socorro that will allow its users to put in a pin on the location of their rental. It will then allow the user to rate their landlord by completing a form made from a set template. Furthermore, depending upon time, we will add features such as Google Maps integration and verification of email addresses from the domain student.nmt.edu. With these extended features -- the website will become more dynamic and enhance the users’ experience. 
+2. Website Analysis 
+2.a. The following is a list of five existing websites that are relevant to our theme:
+1. Yelp.com: A star rating system is utilized to show the overall rating of restaurants.
+2. Angie’s List: Verification process eliminates false reviews and guarantees true, credible reviews. 
+3. Glassdoor.com: Set template forms to create uniform information -- gathered from users. 
+4. Foursquare City Guide: Users are able to discover new places because of recommendations from other users. 
+5. Tripadvisor.com: A map is used to show the exact location of reviews. 
+6. Airbnb.com: An interactive map allows users to hover over pins and see the basic information of a rental.
+2.b. The following are functions our website will have:
+1. Star Rating -- simplistic overall rating of landlord (easy to understand). 
+2. Reviewers must enter a tech email to verify they are a tech student. 
+3. Users will have to input their information into a form in order to provide more detailed description of review and rating. 
+4. Utilize a static map to indicate the location of the house with a pin placed by the user. 
+5. Use Google Maps’ API in order to create an interactive map.
+2.c. The following table compares the above information.
+Functions
+	Landlord Ratings
+	Yelp
+	Angie’s List
+	Glass Door
+	Foursquare City Guide
+	Trip Advisor
+	Airbnb
+	Star Ratings
+	V
+	V
+	
+
+	V
+	
+
+	V
+	V
+	Email Verification
+	O
+	V
+	V
+	V
+	V
+	V
+	V
+	Set Templates
+	V
+	
+
+	V
+	V
+	V
+	V
+	V
+	Static Map
+	O
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	Interactive Map
+	X
+	V
+	
+
+	
+
+	V
+	V
+	V
+	V: Able to perform the task
+X: Unable to perform the task
+O: Able to perform the task with poor interactive design
+
+
+3. Storyboard 
+3.a. Who will use the website?
+This website will be designed with New Mexico Tech students in mind and would therefore be used by fellow students. Furthermore, anyone thoroughly interested in moving into the Socorro area who would like to know specifics about their landlord, prior to signing a lease, would also be a great candidate for our website.  
+Users: 
+* NMT students
+* General Public 
+3.b. NMT Student Storyboard  
+New Mexico Tech Students will be able to access and view reviews on our “Socorro Rental Reviews” website. They can scroll down on the main page to access a map interface which will allow students to click on individual pins to view the property address in Socorro. From the property pin, they will be able to view posted reviews of that specific property, with descriptive posts as well as an overall rating, denoted with star ratings one through five. 
+
+
+From the main Rental Review page, above the property labeled map, there is another option that allows NMT students to contribute a review of a property. They may submit a new review simply by clicking on “Create New Review”. This web page will have a Review Template with multiple questions regarding the landlord and policies upheld by the agreed contract. This Review Template is easily completed as each section has its own corresponding questions. Following this rigorous set of questions, the user is greeted with an overall star rating. This is used to determine a quick average for the searched landlord/property. 
+If the user submits a valid NMT student email address, then they will receive an email with a link which they must click to verify that they are a NMT student. Then their post will be published and they can access their published review by going to the map and clicking on the pin where there rental property is located. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3.b.i. Desktop Website Layout
+  
+
+
+
+3.b.ii. Mobile Website Layout 
+  
+
+Continued on the next few page
+
+
+  
+
+  
+
+
+
+  
+
+
+
+3.c. General Public Storyboard
+The general public will be able to access and view reviews on the “Socorro Rental Reviews” website. They will be able to scroll down the main page, interact with the map, click on different pins on the map to view the reviews, and even look at the review template form. 
+The general public, however, will not be able to create or post reviews without a New Mexico Tech student email. If the user submits the review form by clicking the “Verify Email to Submit” button with an email address that is not a New Mexico Tech student email address, a page will appear telling them there is an error and that a NMT student email address is required to submit and publish their review.
+Once the user is on the error page, they can click on “Return to Review Template” to return to the review template form and enter their NMT student email address if possible. 
+
+
+3.c.i. Desktop Website Layout
+  
+
+
+
+
+
+3.c.ii. Mobile Website Layout 
+ Townies Mobile storyboard.png 
+
+ Townies Mobile storyboard.png 
+
+ Townies Mobile storyboard.png 
+
+3.d. Storyboard links
+For better quality, check out our storyboard links:
+3.d.i. New Mexico Tech Student Storyboards:
+Desktop Version 
+Mobile Version 
+3.d.ii. General Public Storyboards:
+Desktop
+Mobile Version 
+4. Entity-Relationship Diagram
+4.a. ER Diagram
+1. Prolog
+Based on our website storyboard and prototype, we have created our ER diagram which will illustrate the logical structure of the database and show the relationship of the entity sets stored in our database. Following each column within the table design will aid in the creation of each field name on the database. For example, identifying each of the field’s data types and leaving notes in the comments field will reduce complications and will aid overall the process of designing our database.
+
+
+
+
+
+
+
+
+
+
+1. The ER Diagram
+ ER Diagram-3.png 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4.b. Table Design 
+“address” Table
+Primary Key
+	Field Name
+	Data Type
+	Non-null
+	Unique
+	Binary
+	Foreign Key
+	Comments
+	V
+	coordinatePair
+	varchar(128)
+	V
+	
+
+	
+
+	
+
+	Latitude and Longitude coordinates for the address
+	
+
+	postNumber
+	int
+	V
+	V
+	
+
+	V
+	Unique number per post 
+	
+
+	address1
+	varchar(255)
+	V
+	
+
+	
+
+	
+
+	First line of the address
+	
+
+	address2
+	varchar(255)
+	
+
+	
+
+	
+
+	
+
+	Second line of the address. Not always needed
+	
+
+	city
+	varchar(255)
+	V
+	
+
+	
+
+	
+
+	City of the rental
+	
+
+	state
+	varchar(255)
+	V
+	
+
+	
+
+	
+
+	State of the rental
+	
+
+	zip
+	int(8)
+	V
+	
+
+	
+
+	
+
+	Zip of the rental
+	
+
+	postDate
+	timestamp
+	V
+	
+
+	
+
+	
+
+	Timestamp of when the user posted review
+	
+
+
+
+
+
+
+
+
+
+
+
+“rating” Table
+Primary Key
+	Field Name
+	Data Type
+	Non-null
+	Unique
+	Binary
+	Foreign Key
+	Comments
+	V
+	postNumber
+	int
+	V
+	V
+	
+
+	V
+	Unique identifier per post. Corresponds to an address in the address table
+	
+
+	email
+	varchar(320)
+	V
+	
+
+	
+
+	V
+	Retrieve user(s) email
+	
+
+	price
+	int
+	V
+	
+
+	
+
+	
+
+	User input field for price renal 
+	
+
+	bedrooms
+	int
+	V
+	
+
+	
+
+	
+
+	Number of bedrooms
+	
+
+	bathrooms
+	int
+	V
+	
+
+	
+
+	
+
+	Number of bathrooms
+	
+
+	leaseLength
+	varchar(128)
+	V
+	
+
+	V
+	
+
+	How long the lease is. 
+	
+
+	furnished
+	boolean
+	V
+	
+
+	V
+	
+
+	Is the rental furnished.
+	
+
+	leaseType
+	bit
+	V
+	
+
+	V
+	
+
+	Month-to-month, yearly, other.
+*checkboxes
+	
+
+	lateFee
+	int
+	V
+	
+
+	
+
+	
+
+	What is the fee if the rent is paid late?
+	
+
+	lateDays
+	int
+	V
+	
+
+	
+
+	
+
+	How many days after the rent is due is allowed before incurring penalties.
+	
+
+	paymentMethods
+	bit
+	V
+	
+
+	V
+	
+
+	How can rent be paid?
+*checkboxes
+	
+
+	deposit
+	int
+	V
+	
+
+	
+
+	
+
+	Deposit amount
+	
+
+	depositReturned
+	int
+	V
+	
+
+	
+
+	
+
+	How much was returned from the deposit after the lease was up?
+	
+
+	receiptGiven
+	boolean
+	V
+	
+
+	V
+	
+
+	Was an itemized receipt given with deposit deduction upon lease termination?
+	
+
+	utilities
+	bit
+	V
+	
+
+	V
+	
+
+	Are utilities included in the rent?
+	
+
+	appliances
+	bit
+	V
+	
+
+	V
+	
+
+	What appliances are in the unit?
+*checkboxes
+	
+
+	cooling
+	bit
+	V
+	
+
+	V
+	
+
+	What kind of cooling is available?
+*checkboxes
+	
+
+	heating
+	boolean
+	V
+	
+
+	V
+	
+
+	Is there heating?
+	
+
+	parking
+	bit
+	V
+	
+
+	V
+	
+
+	What kind of parking is there?
+*checkboxes
+	
+
+	smoking
+	boolean
+	V
+	
+
+	V
+	
+
+	Is smoking permitted?
+	
+
+	petsAllowed
+	boolean
+	V
+	
+
+	V
+	
+
+	Are pets allowed?
+	
+
+	petDeposit
+	int
+	V
+	
+
+	
+
+	
+
+	What is the pet Deposit?
+	
+
+	petWeight
+	int
+	V
+	
+
+	
+
+	
+
+	What is the maximum weight allowed?
+	
+
+	petSize
+	int
+	V
+	
+
+	
+
+	
+
+	What is the maximum size allowed?
+	
+
+	lawnMaintenance
+	boolean
+	V
+	
+
+	V
+	
+
+	Is the lawn maintenance covered by the landlord
+	
+
+	responseTime
+	int
+	V
+	
+
+	
+
+	
+
+	Landlord Response time to maintenance issues
+	
+
+	maintenanceTime
+	int
+	V
+	
+
+	
+
+	
+
+	How soon is maintenance response time
+	
+
+	maintenanceQuality
+	varchar(140)
+	V
+	
+
+	
+
+	
+
+	Maintenance quality given.
+	
+
+	overallThoughts
+	varchar(140)
+	V
+	
+
+	
+
+	
+
+	What are your overall thoughts of the rentals?
+	
+
+	overallRating
+	int(5)
+	V
+	
+
+	
+
+	
+
+	5 Star ratings
+	*Checkboxes - Each checkbox option will be stored as a bit (0 or 1). The value 0 will be used to indicate that the option was not selected and the value 1 will be used to indicate that the option was selected. 
+
+
+5. System Architecture
+5.a. System Architecture Figure
+  
+
+5.b. System Architecture Explanation
+Our system architecture is logically sequential and follows an agile methodology of development. Initially, the New Mexico Tech student must enter their student email in order to verify they are a student, thus they will find themselves at check_email.jsp and if this email is correct -- they will be forwarded to the first page of the review template basic.jsp. This page has simple questions you would expect to see regarding a rental property -- or should highly consider when trying to rent or buy real estate. Our main controller ReviewInfo retrieves and sends data to and from each review form -- amenities.jsp, pets.jsp, landlord.jsp, and overall.jsp. Each of which are more detailed questions regarding the property up for review. Once the review is complete, you will be lead to the success.jsp landing page which simply gives acknowledgement to the user -- their review has been received. Thereafter they will be reverted back home and are able to click on their pin (the location in which the users have left a review). Thus, we have our model Review -- as it is its own entity -- and we do not have to link this review to the exact user, but merely to the property itself. 
+This is an agile based system, because we are able to modify each file -- without directly manipulating other files. It is much simpler to utilize this method -- as we might need to change certain forms or append more to our overall system.  
+6. System Snapshot
+The following are screenshots of our website demonstrating our overall system. Each section contains details on what the user would expect to see when navigating through our website.
+Storyline 
+Suppose you want to leave a review for your current rental property -- either warning fellow techies about your current landlord or you would love to brag about the gem you have found in Socorro. Moreover you are just simply interested in a rental property and are trying to gather information from a valid source -- and who would be better to trust than other techies? Thus, you find yourself at our website: Socorro Rental Reviews. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Landing Page:
+  
+  
+
+When you first arrive at our landing page – you will be greeted with an About section which reiterates what we are doing for our community, also you will have the ability to Create A New Review and will be able to interact with a map. 
+Interaction with the map includes moving around Socorro to find reviews listed for a property or when you are finished with a review; you will be able to see it as a red pin where, geographically, the property will be represented by its latitude and longitude coordinates. These red pins are displayed below.  
+  
+
+
+
+
+
+
+
+
+
+
+
+Email Verification:
+  
+
+However, let us assume you would like to create a new review and thus will click Create A New Review. This will lead you to our email verification page, wherein you must verify that you are a New Mexico Tech student. This ensures that the quality of each review is unique and honest. If you are not a New Mexico Tech student then you will not be able to move onto the review templates after this page. Yet, if you are a student and this is verified, then you will be forwarded to the first form. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Basic.jsp:
+  
+
+  
+
+  
+
+This is the first form to be filled in. It is a casual set of questions you would expect to ask the landlord when gathering information to rent their property. The data in the beginning will be auto-populated as soon as you enter in the location of the property. However, more detailed information requires input -- such as Price per Month and Late days allowed per month. It should be noted that each question must have a response before being allowed to continue onto the next form -- for each of the rental review questions. To continue after each input has been filled, click the next button on the bottom of the page. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Amenities.jsp:
+  
+  
+
+This second form is aimed to clarify the amenities offered within the rental. Most of these fields are straight forward -- and in most cases, more than one option may be selected.
+
+
+Pets.jsp:
+  
+
+
+
+Moving forward, we are focused on the strictness of pets. Again we are intending to be exact and detailed in the review process and knowing about pet restrictions is another large question concerning rental properties.
+
+
+
+
+
+
+Landlord.jsp:
+  
+
+The second-to-last form is rather short and is a simple evaluation of your landlord. Four elementary questions -- each of which are very important to know as lack of quality in a landlord could result in a terrible renting experience. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Overall.jsp:
+  
+
+The last form you will be directed to is an overall review page. It is not necessarily a form, but more so an open model in which you may express your “overall thoughts”. You are limited to 140 characters which enables you to give the gist of your rental experience, but lengthy enough to give important details. Also, to summarize your rating -- with a ranking set of emojis -- you may choose which best represents how you felt your experience was when renting this current property. You should also be aware that the summary and emoji chosen will be the only information that will appear in your rental review when you click on the red pin. 
+
+
+
+
+
+
+Success.jsp: 
+  
+
+After you finish the preceding forms -- you will eventually find yourself at this success page. This is an acknowledgement page -- notifying you that your review has been submitted and posted for the given rental property. Once you click the Return to Home Page button -- you will be redirected to our landing page, but this time -- your review will appear as a red pin on the interactive map as displayed below.
+   
+By clicking on the red pin -- you will see it has the address of your rental property-- as well as a link to all other reviews, including yours. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Review_preview.jsp: 
+  
+
+Once you click on this link then you will be forwarded to the review(s) for the chosen rental property. The review posts themselves will be displayed in the order date in which they were posted -- as newer posts will be appended to the bottom. As you can see, each post has its 140 character summary as well as the chosen emoji representation for that review. After you are done reading each review and are satisfied with the investigation of the rental property, you may press the back button to navigate to our landing page. 
+It should also be noted that if you must advance to the landing page during the process of filling out a review form or at any time – simply clicking our banner 'Socorro Rental Reviews' will advance you there. 
+Frequently Asked Questions
+Where do I find my posted review? 
+You may click on the Return to Home Page hyperline or our banner ‘Socorro Rental Reviews’. Once you are at the landing page -- then scroll down toward the map. There  you will find your red pin at that property's location. Clicking on the current pin will allow you to choose the “Click here to see the reviews for this home” hyperline -- and will immediately direct you right to your post as well as others that may have left a review for that property. 
+What will the appearance of my review post consist of?
+The appearance of your review will only have the description given at the end of the review template. This is your 140 character summary and the emoji you chose to depict your overall experience for this rental.  
+7. Conclusion
+7.a. Summary of Completion
+Our website enables each feature depicted through the storyboard as well as section 2b -- under our Website Analysis. The features we integrated within our system are as follows:
+* Implementation of an overall rating that is easy to understand. We did this by utilizing emojis. This is a simple and interactive way of representing a user’s overall experience.  
+* In order to submit a review, each user must enter their school email to verify they are in fact a student at tech. This keeps integrity within our website, as we only allow our fellow techies to post reviews.
+* Our detailed forms provide a well-thought out review for each property up for review.
+* The interactive map utilized enables users to truly see the location of their property within Socorro. It also creates a chance for them to read other reviews posted for various properties within Socorro.
+* Google Maps’ API was used in order to create an interactive map.  
+7.b. Future Updates 
+Although the functionality of our website is great, we always aspire for more from our system. 
+Two main goals for the future of our website would be: 
+1. Email Verification to Users:
+        We were unable to send an email verifying each user’s email -- instead we parse the string entered to make sure it is valid. We would prefer to send an email to our client -- as it is more sophisticated and would truly give the feel of a progressive website. 
+1. Login for Various Users:
+        This feature was not implemented, because we did not necessarily have the traffic volume required for a login. However, we do see a need for a login scheme, as a user may need to go back and edit an erroneous post they may have submitted. 
+
+
+
+
+References
+1. https://www.airbnb.com
+2. https://www.angieslist.com
+3. https://foursquare.com
+4. https://www.glassdoor.com
+5. https://www.google.com/maps
+6. https://www.tripadvisor.com 
+7. https://www.yelp.com/
