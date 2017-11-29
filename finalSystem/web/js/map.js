@@ -48,14 +48,14 @@ function setMarkers(map) {
     /* create place details */
     google.maps.event.addListener(marker, 'click', (function (marker, i) {
           return function () {
-              infowindow.setContent("<h5>"
+              infowindow.setContent("<div><h5>"
                 + reviewLocations[i][0]
-                + "</h5><h6><a href=\"/apollo.4/finalSystem/review_preview.jsp?lat="
-                + reviewLocations[i][1]
-                + "&"
-                + "lon="
-                + reviewLocations[i][2]
-                + "\">Click here to see the reviews for this home</a></h6>"
+                + `</h5>`
+                + `<form action="/apollo.4/finalSystem/Populator" method="post">`
+                + `<input type="hidden" name="lon" value="` + reviewLocations[i][1] + `" />`
+                + `<input type="hidden" name="lat" value="` + reviewLocations[i][2] + `" />`
+                + `<button type="submit">Click here to see the reviews for this location</button>`
+                + `</form></div>`
               );
               infowindow.open(map, marker);
           }
