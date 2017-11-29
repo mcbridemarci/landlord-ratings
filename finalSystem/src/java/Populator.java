@@ -28,7 +28,6 @@ public class Populator extends HttpServlet {
             Statement statement = connection.createStatement();
             
             
-            
             double lat = Double.parseDouble(request.getParameter("lat")); //34.0584;
             double lon = Double.parseDouble(request.getParameter("lon")); //-106.898;
             
