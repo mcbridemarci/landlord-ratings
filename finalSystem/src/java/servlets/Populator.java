@@ -22,6 +22,7 @@ public class Populator extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/xml;charset=UTF-8");
+        request.getRequestDispatcher("review_preview.jsp").forward(request,response);
         try{
             String driver = "org.mariadb.jdbc.Driver";
             Class.forName(driver);
@@ -121,8 +122,6 @@ public class Populator extends HttpServlet {
             result.close();
             statement.close();
             connection.close();
-            
-            request.getRequestDispatcher("review_preview.jsp").forward(request,response);
             
             
         } catch (ClassNotFoundException ex) {
