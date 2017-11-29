@@ -35,7 +35,8 @@
         <form action="/apollo.4/finalSystem/javaServlet" method="post">
           <div class="question">
             <h4>Overall Thoughts:</h4>
-            <input type="text" id="thoughts" name="overall_thoughts" placeholder="140 character limit" maxlength="140" />
+            <textarea id="thoughts" name="overall_thoughts" placeholder="140 character limit" maxlength="140"  rows="5" cols="1"></textarea>
+            <!--<input type="text" id="thoughts" name="overall_thoughts" placeholder="140 character limit" maxlength="140" />-->
           </div>
 
           <div class="question">

@@ -11,8 +11,8 @@
     }
   };
 //alert("load data");
-  //xmlhttp.open("GET", "https://takyon.cs.nmt.edu/apollo.4/finalSystem/Populator?lat="+_+"&lon="+_, true);
-  xmlhttp.open("GET", "populatorTest.xml", true);
+  xmlhttp.open("GET", "https://takyon.cs.nmt.edu/apollo.4/finalSystem/Populator", true);
+  //xmlhttp.open("GET", "populatorTest.xml", true);
   xmlhttp.send();
 }*/
 
