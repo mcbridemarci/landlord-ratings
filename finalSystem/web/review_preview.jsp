@@ -59,7 +59,7 @@
 
   <footer>
     <p>
-      Created by techies - To help out other techies
+      Created by techies - To help out other techies 
     </p>
     <p><a href="legal.html" class="link">Legal Disclaimer</a></p>  </footer>
 </html>
