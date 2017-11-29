@@ -1,5 +1,6 @@
 function showXML(xmlStr) {
   var doc = (new DOMParser()).parseFromString(xmlStr, "text/xml");
+  console.log(doc);
 
   var i;
 
