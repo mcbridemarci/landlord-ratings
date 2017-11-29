@@ -4,14 +4,14 @@
         <servlet-name>javaServlet</servlet-name>
         <servlet-class>javaServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Populator</servlet-name>
+        <servlet-class>servlets.Populator</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>javaServlet</servlet-name>
         <url-pattern>/javaServlet</url-pattern>
     </servlet-mapping>
-    <servlet>
-        <servlet-name>Populator</servlet-name>
-        <servlet-class>Populator</servlet-class>
-    </servlet>
     <servlet-mapping>
         <servlet-name>Populator</servlet-name>
         <url-pattern>/Populator</url-pattern>
