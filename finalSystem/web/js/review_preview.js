@@ -171,22 +171,22 @@ function showXML(xmlStr) {
     }
     
     var petSize = x[i].getElementsByTagName("petSize")[0].childNodes[0].nodeValue;
-    if (payment == 4){
-        payment = "Large";
-    } else if(payment == 3){
-        payment = "Medium & Small";
-    } else if (payment == 2){
-        payment = "Medium";
-    } else if(payment == 1){
-        payment = "Small";
-    } else if(payment == 5){
+    if (petSize == 4){
+        petSize = "Large";
+    } else if(petSize == 3){
+        petSize = "Medium & Small";
+    } else if (petSize == 2){
+        petSize = "Medium";
+    } else if(petSize == 1){
+        petSize = "Small";
+    } else if(petSize == 5){
         payment = "Large & Small";
-    }else if(payment == 6){
-        payment = "Large & Medium";
-    }else if(payment == 7){
-        payment = "Large, Medium & Small";
+    }else if(petSize == 6){
+        petSize = "Large & Medium";
+    }else if(petSize == 7){
+        petSize = "Large, Medium & Small";
     }else{
-        payment = "Unknown";
+        petSize = "Unknown";
     }
     var lawn = x[i].getElementsByTagName("lawnMaintenance")[0].childNodes[0].nodeValue;
     if (lawn == 1){
