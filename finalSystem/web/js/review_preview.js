@@ -114,7 +114,7 @@ function show(xml) {
     if (ap == 0) {
       apResult = "Unknown";
     } else { /* delete last space and comma, this is lazy but who cares */
-      apResult = apResult.substring(0, str.length - 2);
+      apResult = apResult.substring(0, apResult.length - 2);
     }
 
     //TODO: check for correctness
@@ -135,7 +135,7 @@ function show(xml) {
     if (cool == 0) {
       cooling = "Unknown";
     } else { /* delete last space and comma, this is lazy but who cares */
-      cooling = cooling.substring(0, str.length - 2);
+      cooling = cooling.substring(0, cooling.length - 2);
     }
 
     var heating = x[i].getElementsByTagName("heating")[0].childNodes[0].nodeValue;
@@ -162,9 +162,8 @@ function show(xml) {
     if (park == 0) {
       parking = "Unknown";
     } else { /* delete last space and comma */
-      parking = parking.substring(0, str.length - 2);
+      parking = parking.substring(0, parking.length - 2);
     }
-
 
     var smoking = x[i].getElementsByTagName("smoking")[0].childNodes[0].nodeValue;
     if (smoking == 1){
@@ -216,6 +215,8 @@ function show(xml) {
             "More<span class='glyphicon glyphicon-chevron-down'></a></div>";
 
     html += "<div class='collapse' id='"+collapse+"'>"+
+            "<h4 class='details'>Rental Details</h4>"+
+            "<hr class='line-separator'>"+
             "<p><span class='info'>Number of bedrooms: </span>"+
             x[i].getElementsByTagName("bedrooms")[0].childNodes[0].nodeValue+"</p>"+
             "<p><span class='info'>Number of bathrooms: </span> "+
