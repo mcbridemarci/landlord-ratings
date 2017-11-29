@@ -36,44 +36,7 @@
       </div>
 
       <div id="allReviews">
-        <div class="container reviewBox">
-          <p class="postHead">Post #<span class="postNum"></span><span class="price"></span></p>
-          <p class="stars">Rental Rating: <span class="emoji"> </span></p>
-          <p class="overallDesc"></p>
-          <!--<input type="radio" name="allowed" value="Yes" data-toggle="collapse" data-target=".hides:not(.in)"  required /> Yes</label>-->
-        </div>
-          
-         
-          
-        <!--
-        <div class="container reviewBox">
-          <p class="postHead">Post #<span class="postNum">2</span><span class="timeStamp">2016/03/22</span></p>
-          <p class="stars">Rental Rating:
-            <span>
-              <span class="glyphicon glyphicon-star checked"></span>
-    					<span class="glyphicon glyphicon-star checked"></span>
-    					<span class="glyphicon glyphicon-star checked"></span>
-    					<span class="glyphicon glyphicon-star checked"></span>
-    					<span class="glyphicon glyphicon-star-empty"></span>
-            </span>
-          </p>
-          <p class="overallDesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at ultrices mauris. Curabitur congue laoreet rutrum. Mauris et molestie elit. Curabitur a tristique diam. Vestibulum sollicitudin libero quis nunc laoreet auctor.</p>
-        </div>
-
-        <div class="container reviewBox">
-          <p class="postHead">Post #<span class="postNum">3</span><span class="timeStamp">2017/01/09</span></p>
-          <p class="stars">Rental Rating:
-            <span>
-              <span class="glyphicon glyphicon-star checked"></span>
-    					<span class="glyphicon glyphicon-star checked"></span>
-    					<span class="glyphicon glyphicon-star checked"></span>
-    					<span class="glyphicon glyphicon-star-empty"></span>
-    					<span class="glyphicon glyphicon-star-empty"></span>
-            </span>
-          </p>
-          <p class="overallDesc">Pellentesque viverra odio semper, tristique quam non, pellentesque justo. Fusce quis elit posuere, venenatis eros eget, ultrices ipsum. Nam pellentesque erat risus, sit amet fermentum felis tincidunt ut. Nam blandit hendrerit urna non scelerisque. Nunc vel pharetra eros. Duis rutrum accumsan imperdiet. Nam gravida dui efficitur turpis vehicula lobortis. Nam nec venenatis magna, a egestas sem.</p>
-        </div>
-        -->
+          <!-- review_preview.js will populate this area-->
       </div>
 
       <br><br><br>
