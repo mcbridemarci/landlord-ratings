@@ -1,3 +1,15 @@
+#thoughts {
+	width: 60%;
+        height: 90px;
+  background-color: white;
+	padding: 5px;
+	border: 1px solid #ccc; /*gray border*/
+	border-radius: 10px; /*for roundedness in borders */
+  margin-bottom: 5px;
+  margin-top: 5px;
+  /*display: block;*/
+}
+
 #emoji_rating label {
   float: left;
   padding: 1em;

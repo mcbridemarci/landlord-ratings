@@ -71,8 +71,8 @@
           </div>
 
           <div class="question">
-            <h4>Price per Month $</h4>
-            <input type="text" id="price" name="price" placeholder="$ (round to nearest dollar)" required />
+            <h4>Price per Month </h4>
+                <p>$ <input type="number" id="price" name="price" placeholder="Round to nearest dollar" required /></p>
           </div>
           <div class="question">
             <h4>Number of bedrooms:</h4>
@@ -113,7 +113,7 @@
 
           <div class="question">
             <h4>Late fee:</h4>
-            <input type="text" id="late_fee" name="fee" placeholder = "Dollar amount" required />
+            <p>$ <input type="number" id="late_fee" name="fee" placeholder = "Dollar amount" required /></p>
           </div>
 
           <div class="question">
@@ -141,16 +141,16 @@
 
           <div class="question">
             <h4>Deposit amount:</h4>
-            <input type="number" id="deposit" name="deposit_amnt" required />
+            <p>$ <input type="number" id="deposit" name="deposit_amnt" required /></p>
           </div>
 
           <div class="question">
             <h4>Amount returned from deposit:</h4>
-            <input type="number" id="deposit_returned" name="return_deposit" required />
+            <p>$ <input type="number" id="deposit_returned" name="return_deposit" required /></p>
           </div>
 
           <div class="question">
-            <h4>Itemized receipt given with deposit decution</h4>
+            <h4>Itemized receipt given with deposit deduction</h4>
             <fieldset>
               <label><input type="radio" name="receipt" value="Yes" required /> Yes</label>
               <label><input type="radio" name="receipt" value="No" /> No</label>
