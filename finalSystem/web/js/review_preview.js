@@ -51,6 +51,7 @@ function showXML(xmlStr) {
     }
 
     var payment = x[i].getElementsByTagName("paymentMethods")[0].childNodes[0].nodeValue;
+    payment = Number(payment);
     if (payment == 4){
         payment = "Direct Deposit";
     } else if(payment == 3){
