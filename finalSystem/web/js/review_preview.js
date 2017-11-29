@@ -50,7 +50,6 @@ function showXML(xmlStr) {
         leaseType = "Unknown";
     }
 
-    //TODO
     var payment = x[i].getElementsByTagName("paymentMethods")[0].childNodes[0].nodeValue;
     if (payment == 4){
         payment = "Direct Deposit";
@@ -82,7 +81,6 @@ function showXML(xmlStr) {
         utilities = "No";
     }
 
-    // TODO: Check for correctness... don't know what Number(ap).toString(2) does.
     var ap = x[i].getElementsByTagName("appliances")[0].childNodes[0].nodeValue;
     var apResult = "";
 
@@ -104,7 +102,6 @@ function showXML(xmlStr) {
       apResult = apResult.substring(0, apResult.length - 2);
     }
 
-    //TODO: check for correctness
     var cool = Number(x[i].getElementsByTagName("cooling")[0].childNodes[0].nodeValue);
     var cooling = "";
     if ((cool & 0b0001) != 0) {
@@ -131,7 +128,6 @@ function showXML(xmlStr) {
     } else {
         heating = "No";
     }
-    //TODO: check for correctness
     var park = Number(x[i].getElementsByTagName("parking")[0].childNodes[0].nodeValue);
     var parking = "";
     if ((park & 0b0001) != 0) {
@@ -164,6 +160,16 @@ function showXML(xmlStr) {
     } else {
         petsAllowed = "No";
     }
+    
+    if (petsAllowed == "No") {
+        var petDepo = "--";
+        var petWeight = "--";
+        
+    } else {
+        var petDepo = x[i].getElementsByTagName("petDeposit")[0].childNodes[0].nodeValue;
+        var petWeight = x[i].getElementsByTagName("petWeight")[0].childNodes[0].nodeValue;
+    }
+    
     var petSize = x[i].getElementsByTagName("petSize")[0].childNodes[0].nodeValue;
     if (payment == 4){
         payment = "Large";
@@ -214,15 +220,15 @@ function showXML(xmlStr) {
             furnished+"</p>"+
             "<p><span class='info'>Type of lease allowed: </span>"+
             leaseType+"</p>"+
-            "<p><span class='info'>Late Fee: </span>"+
+            "<p><span class='info'>Late Fee: $</span>"+
             x[i].getElementsByTagName("lateFee")[0].childNodes[0].nodeValue +"</p>"+
             "<p><span class='info'>Late days allowed per month: </span>"+
             x[i].getElementsByTagName("lateDays")[0].childNodes[0].nodeValue +"</p>"+
             "<p><span class='info'>Payment methods allowed: </span>"+
             payment+"</p>"+
-            "<p><span class='info'>Deposit amount: </span>"+
+            "<p><span class='info'>Deposit amount: $</span>"+
             x[i].getElementsByTagName("deposit")[0].childNodes[0].nodeValue +"</p>"+
-            "<p><span class='info'>Amount returned from deposit: </span>"+
+            "<p><span class='info'>Amount returned from deposit: $</span>"+
             x[i].getElementsByTagName("depositReturned")[0].childNodes[0].nodeValue +"</p>"+
             "<p><span class='info'>Itemized receipt given with deposit decution: </span>"+
             itemized+"</p>"+
@@ -240,10 +246,10 @@ function showXML(xmlStr) {
             smoking+"</p>"+
             "<p><span class='info'>Are pets allowed: </span>"+
             petsAllowed+"</p>"+
-            "<p><span class='info'>Pet deposit amount: </span>"+
-            x[i].getElementsByTagName("petDeposit")[0].childNodes[0].nodeValue +"</p>"+
+            "<p><span class='info'>Pet deposit amount: $</span>"+
+            petDepo+"</p>"+
             "<p><span class='info'>Pet weight restriction: </span>"+
-            x[i].getElementsByTagName("petWeight")[0].childNodes[0].nodeValue +"</p>"+
+            petWeight+"</p>"+
             "<p><span class='info'>Pet Size Restriction: </span>"+
             petSize+"</p>"+
             "<p><span class='info'>Lawn maintenance is covered by landlord: </span>"+
