@@ -46,28 +46,26 @@ public class Populator extends HttpServlet {
             double longUp = lon + 0.0001;
             double longLow = lon - 0.0001;
 
-            String query = "SELECT postNumber,address1 FROM `apollo_4_project`.`address` WHERE "
+            /*String query = "SELECT postNumber,address1 FROM `apollo_4_project`.`address` WHERE "
                 + " latitude >= " + latLow 
                 + " AND latitude <= " + latUp 
                 + " AND longitude >= " + longLow 
                 + " AND longitude <= " + longUp + ";";
-            ResultSet result = statement.executeQuery(query);
+            ResultSet result = statement.executeQuery(query);*/
 
-            /* TODO: Convert to the above sql to a prepared statement 
-            PreparedStatement stmt = connection.prepareStatement("SELECT postNumber,address1 FROM `apollo_4_project`.`address` WHERE latitude >= ? AND latitude <= ? AND longitude >= ? AND longitude <= ?;");
+            PreparedStatement stmt = connection.prepareStatement("SELECT postNumber,address1 FROM `apollo_4_project`.`address` "
+                    + "WHERE latitude >= ? AND latitude <= ? AND longitude >= ? AND longitude <= ?;");
             stmt.setDouble(1, latLow);
             stmt.setDouble(2, latUp);
             stmt.setDouble(3, longLow);
             stmt.setDouble(4, longUp);
-            stmt.execute();
-            */
-
+            ResultSet result = stmt.executeQuery();
             
             /* builds query. e.g. query = `select * from rating where postNumber IN (0,2);` 
              * Also sets address1 for building XML later
             */
             String address1 = "";
-            query = "SELECT * FROM `apollo_4_project`.`rating` WHERE postNumber IN (";
+            String query = "SELECT * FROM `apollo_4_project`.`rating` WHERE postNumber IN (";
             while (result.next()) {
                 int pn = result.getInt("postNumber");
                 query += pn + ",";
