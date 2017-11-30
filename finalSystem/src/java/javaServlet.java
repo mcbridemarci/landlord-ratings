@@ -254,8 +254,29 @@ public class javaServlet extends HttpServlet {
                 Class.forName(driver);
                 String dbURL = "jdbc:mariadb://localhost:3306/apollo_4_project?allowMultiQueries=true";
                 Connection connection = DriverManager.getConnection(dbURL, "apollo.4", "zozoZOZO");
-                Statement statement = connection.createStatement();
-                ResultSet query = statement.executeQuery(
+                
+                
+                PreparedStatement stmt = connection.prepareStatement("INSERT INTO `apollo_4_project`.`address` "
+                        + "(`latitude`, `longitude`, `address1`, `address2`, `city`, "
+                        + "`state`, `zip`, `country`, `postDate`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP);"
+                    );
+                
+                stmt.setDouble(1, r.latitude);
+                stmt.setDouble(2, r.longitude);
+                stmt.setString(3, r.address1);
+                stmt.setString(4, r.address2);
+                stmt.setString(5, r.city);
+                stmt.setString(6, r.state);
+                stmt.setInt(7, r.zip);
+                stmt.setString(8, r.country);
+                
+                int res = stmt.executeUpdate();
+                System.out.println("num rows updated in address:" + res);
+                if (res == 0) {
+                    System.out.println("failed to update address table");
+                }
+                    
+                /*ResultSet query = statement.executeQuery(
                     "INSERT INTO `apollo_4_project`.`address` "
                         + "(`latitude`, `longitude`, `address1`, `address2`, `city`, "
                         + "`state`, `zip`, `country`, `postDate`) VALUES ('"
@@ -268,16 +289,68 @@ public class javaServlet extends HttpServlet {
                         + r.zip + "','"
                         + r.country + "',"
                         + "CURRENT_TIMESTAMP);"
-                );
+                );*/
                 
                 /* below Select should return postNumber from the above insert */
-                query = statement.executeQuery("select last_insert_id();");
+                Statement statement = connection.createStatement();
+                ResultSet query = statement.executeQuery("select last_insert_id();");
                 if (query.next()) {
                     System.out.println("PostNumber:" + query.getInt("last_insert_id()"));
                     r.postNumber = query.getInt("last_insert_id()");
                 }
+                statement.close();
                 
-                query = statement.executeQuery(
+                stmt = connection.prepareStatement("INSERT INTO `apollo_4_project`.`rating` "
+                            + "(`postNumber`, `email`, `price`, `bedrooms`, "
+                            + "`bathrooms`, `leaseLength`, `furnished`, "
+                            + "`leaseType`, `lateFee`, `lateDays`, "
+                            + "`paymentMethods`, `deposit`, `depositReturned`, "
+                            + "`receiptGiven`, `utilities`, `appliances`, `cooling`, "
+                            + "`heating`, `parking`, `smoking`, `petsAllowed`, "
+                            + "`petDeposit`, `petWeight`, `petSize`, "
+                            + "`lawnMaintenance`, `responseTime`, `maintenanceTime`, "
+                            + "`maintenanceQuality`, `overallThoughts`, `overallRating`) "
+                            + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);"
+                );
+                
+                stmt.setInt(1, r.postNumber);
+                stmt.setString(2, r.email);
+                stmt.setInt(3, r.price);
+                stmt.setInt(4, r.bedrooms);
+                stmt.setInt(5, r.bathrooms);
+                stmt.setString(6, r.leaseLength);
+                stmt.setInt(7, (r.furnished ? 1 : 0));
+                stmt.setInt(8, r.leaseType);
+                stmt.setInt(9, r.lateFee);
+                stmt.setInt(10, r.lateDays);
+                stmt.setInt(11, r.paymentMethods);
+                stmt.setInt(12, r.deposit);
+                stmt.setInt(13, r.depositReturned);
+                stmt.setInt(14, (r.receiptGiven? 1 : 0));
+                stmt.setInt(15, (r.utilities? 1 : 0));
+                stmt.setInt(16, r.appliances);
+                stmt.setInt(17, r.cooling);
+                stmt.setInt(18, (r.heating? 1 : 0));
+                stmt.setInt(19, r.parking);
+                stmt.setInt(20, (r.smoking? 1 : 0));
+                stmt.setInt(21, (r.petsAllowed? 1 : 0));
+                stmt.setInt(22, r.petDeposit);
+                stmt.setInt(23, r.petWeight);
+                stmt.setInt(24, r.petSize);
+                stmt.setInt(25, (r.lawnMaintenance? 1 : 0));
+                stmt.setInt(26, r.responseTime);
+                stmt.setInt(27, r.maintenanceTime);
+                stmt.setString(28, r.maintenanceQuality);
+                stmt.setString(29, r.overallThoughts);
+                stmt.setInt(30, r.overallRating);
+                
+                res = stmt.executeUpdate();
+                System.out.println("num rows updated in rating:" + res);
+                if (res == 0) {
+                    System.out.println("failed to update ratings table");
+                }
+                
+                /*query = statement.executeQuery(
                     "INSERT INTO `apollo_4_project`.`rating` "
                             + "(`postNumber`, `email`, `price`, `bedrooms`, "
                             + "`bathrooms`, `leaseLength`, `furnished`, "
@@ -298,7 +371,7 @@ public class javaServlet extends HttpServlet {
                             + (r.furnished ? 1 : 0)  + "','"
                             + r.leaseType + "','"
                             + r.lateFee + "','"
-                            + r.lateDays + "','"
+                            + r.lateDays + "','" 
                             + r.paymentMethods + "','"
                             + r.deposit + "','"
                             + r.depositReturned + "','"
@@ -321,11 +394,10 @@ public class javaServlet extends HttpServlet {
                             + r.overallRating
                             + "');"
                 
-                );
+                );*/
                 
-                
+                stmt.close();
                 query.close();
-                statement.close();
                 connection.close();
             } catch (ClassNotFoundException ex) {
                 System.err.println("Error with connection: " + ex);
