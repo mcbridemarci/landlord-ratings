@@ -162,16 +162,16 @@ function showXML(xmlStr) {
     } else {
         petsAllowed = "No";
     }
-    
+
     if (petsAllowed == "No") {
         var petDepo = "--";
         var petWeight = "--";
-        
+
     } else {
         var petDepo = x[i].getElementsByTagName("petDeposit")[0].childNodes[0].nodeValue;
         var petWeight = x[i].getElementsByTagName("petWeight")[0].childNodes[0].nodeValue;
     }
-    
+
     var petSize = x[i].getElementsByTagName("petSize")[0].childNodes[0].nodeValue;
     if (petSize == 4){
         petSize = "Large";
@@ -262,8 +262,8 @@ function showXML(xmlStr) {
             x[i].getElementsByTagName("maintenanceTime")[0].childNodes[0].nodeValue +"</p>"+
             "<p><span class='info'>Maintenance quality: </span>"+
             x[i].getElementsByTagName("maintenanceQuality")[0].childNodes[0].nodeValue +"</p>"+
-            + "</div>";
-    html += "</div></div>";
+            "</div><br />";
+    html += "</div>";
     }
     document.getElementById("allReviews").innerHTML = html;
 }
