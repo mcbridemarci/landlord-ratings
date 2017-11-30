@@ -65,7 +65,7 @@ input[type=text], select, textarea, input[type=email] {
     margin-right:auto;
     position: relative;
     text-align: center;
-    
+
     border: 1px solid #ccc; /*gray border*/
     border-radius: 10px; /*for roundedness in borders */
     display: block;
@@ -103,4 +103,8 @@ form{
 a:link, a:visited {
   padding: 0 5px;
   color: var(--dark-color);
+}
+
+.bold {
+  font-weight: bold;
 }

@@ -29,7 +29,6 @@ public class javaServlet extends HttpServlet {
         if (action.equals("email_page")) {
             /* create Review obj and then store in the session */
             
-            //TODO: check if null or not @student.nmt.edu and redirect to correct page
             String email = request.getParameter("email");
             
             String[] splitEmail = email.split("@");
@@ -39,9 +38,8 @@ public class javaServlet extends HttpServlet {
                 session.setAttribute("review", r);
                 url = "/basic.jsp";
             }
-            else {
-                //TODO url = "???"; ... error message, need @student...
-                //          maybe add error attrib on sesh and js in jsp to display error on page???
+            else { /* errors if bad email */
+                url = "/check_email_error.jsp";
             }
         } 
         else if (action.equals("basic_page")) {
@@ -276,20 +274,6 @@ public class javaServlet extends HttpServlet {
                     System.out.println("failed to update address table");
                 }
                     
-                /*ResultSet query = statement.executeQuery(
-                    "INSERT INTO `apollo_4_project`.`address` "
-                        + "(`latitude`, `longitude`, `address1`, `address2`, `city`, "
-                        + "`state`, `zip`, `country`, `postDate`) VALUES ('"
-                        + r.latitude + "','"
-                        + r.longitude + "','"
-                        + r.address1  + "','" 
-                        + r.address2 + "','"
-                        + r.city + "','"
-                        + r.state + "','"
-                        + r.zip + "','"
-                        + r.country + "',"
-                        + "CURRENT_TIMESTAMP);"
-                );*/
                 
                 /* below Select should return postNumber from the above insert */
                 Statement statement = connection.createStatement();
@@ -349,52 +333,6 @@ public class javaServlet extends HttpServlet {
                 if (res == 0) {
                     System.out.println("failed to update ratings table");
                 }
-                
-                /*query = statement.executeQuery(
-                    "INSERT INTO `apollo_4_project`.`rating` "
-                            + "(`postNumber`, `email`, `price`, `bedrooms`, "
-                            + "`bathrooms`, `leaseLength`, `furnished`, "
-                            + "`leaseType`, `lateFee`, `lateDays`, "
-                            + "`paymentMethods`, `deposit`, `depositReturned`, "
-                            + "`receiptGiven`, `utilities`, `appliances`, `cooling`, "
-                            + "`heating`, `parking`, `smoking`, `petsAllowed`, "
-                            + "`petDeposit`, `petWeight`, `petSize`, "
-                            + "`lawnMaintenance`, `responseTime`, `maintenanceTime`, "
-                            + "`maintenanceQuality`, `overallThoughts`, `overallRating`) "
-                            + "VALUES ('"
-                            + r.postNumber + "','"
-                            + r.email + "','"
-                            + r.price + "','"
-                            + r.bedrooms + "','"
-                            + r.bathrooms + "','"
-                            + r.leaseLength + "','"
-                            + (r.furnished ? 1 : 0)  + "','"
-                            + r.leaseType + "','"
-                            + r.lateFee + "','"
-                            + r.lateDays + "','" 
-                            + r.paymentMethods + "','"
-                            + r.deposit + "','"
-                            + r.depositReturned + "','"
-                            + (r.receiptGiven ? 1 : 0) + "','"
-                            + (r.utilities ? 1 : 0) + "','"
-                            + r.appliances + "','"
-                            + r.cooling + "','"
-                            + (r.heating ? 1 : 0) + "','"
-                            + r.parking + "','"
-                            + (r.smoking ? 1 : 0) + "','"
-                            + (r.petsAllowed ? 1 : 0) + "','"
-                            + r.petDeposit + "','"
-                            + r.petWeight + "','"
-                            + r.petSize + "','"
-                            + (r.lawnMaintenance ? 1 : 0) + "','"
-                            + r.responseTime  + "','"
-                            + r.maintenanceTime + "','"
-                            + r.maintenanceQuality + "','"
-                            + r.overallThoughts + "','"
-                            + r.overallRating
-                            + "');"
-                
-                );*/
                 
                 stmt.close();
                 query.close();
