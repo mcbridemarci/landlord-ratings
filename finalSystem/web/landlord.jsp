@@ -48,7 +48,7 @@
 
           <div class="question">
             <h4>Maintenance quality:</h4>
-            <textarea id="quality" width="60%" name="quality" placeholder="140 Character Limit" required maxlength="140"  rows="5" cols="1"></textarea>
+            <textarea id="quality" width="60%" name="quality" placeholder="140 Character Limit" required maxlength="140"  rows="5" cols="1" required></textarea>
             <!--<input type="text" id="quality" name="quality" placeholder="140 Character Limit" required />-->
           </div>
             <!--for next button at bottom of page-->

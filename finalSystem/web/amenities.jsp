@@ -31,8 +31,8 @@
   				<div class="question">
   					<h4 for="utilities">Utilities Included:</h4>
   					<fieldset id="utilities">
-  						<label><input type="radio" name="utilities" value="Yes"> Yes</label>
-  						<label><input type="radio" name="utilities" value="No"> No</label>
+  						<label><input type="radio" name="utilities" value="Yes" required /> Yes</label>
+  						<label><input type="radio" name="utilities" value="No" /> No</label>
   					</fieldset>
   				</div>
 
@@ -84,8 +84,8 @@
   				<div class="question">
   					<h4 for="heating">Heating:</h4>
   					<fieldset id="radio2">
-  						<label><input type="radio" name="heating" value="Yes"> Yes</label>
-  						<label><input type="radio" name="heating" value="No"> No</label>
+  						<label><input type="radio" name="heating" value="Yes" required /> Yes</label>
+  						<label><input type="radio" name="heating" value="No" /> No</label>
   					</fieldset>
   				</div>
 
@@ -114,8 +114,8 @@
   				<div class="question">
   					<h4>Smoking Permitted:</h4>
   					<fieldset id="radio3">
-    					<label><input type="radio" name="smoking" value="Yes"> Yes</label>
-    					<label><input type="radio" name="smoking" value="No"> No</label>
+    					<label><input type="radio" name="smoking" value="Yes" required/> Yes</label>
+    					<label><input type="radio" name="smoking" value="No" /> No</label>
   					</fieldset>
   				</div>
   				<!--for next button at bottom of page-->
