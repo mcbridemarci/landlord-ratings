@@ -17,6 +17,7 @@ and open the template in the editor.
   --button-color: #373737;
   --line-color: #373737;
   --bold-line-color: #3AA3D1;
+  --border-color: white;
 }
 
 body{
@@ -72,18 +73,24 @@ a:link, a:visited {
   text-align: center;
   cursor: pointer;
 }
+.iconColor{
+    padding-left: 5px;
+    color: #ffef41;
+}
 .button {
   cursor: pointer;
   margin:0 auto;
   background-color: var(--button-color);
-  border: 1px solid var(--dark-color);
+  border-width: 10px;
+  border-style: double;
+  border-color: var(--border-color);
   text-decoration: none;
   font-family: 'Alegreya Sans SC', sans-serif;
   font-size: 125%;
   color: #FFF;
 }
 a.btn.button {
-  padding: 10px 15px;
+  padding: 15px 50px;
 }
 .centerText {
   text-align: center;
