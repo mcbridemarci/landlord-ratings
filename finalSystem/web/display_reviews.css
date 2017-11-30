@@ -1,18 +1,21 @@
-
 .info{
     font-weight: bold;
 }
+
 .emoji:hover {
   background-color: gray!important;
 }
+
 .emoji {
   height: 3.5em;
 }
+
 .more {
     position: relative;
     padding-top: 5px;
     float: right;
 }
+
 .overall {
   background-color: var(--dark-color);
   color: #FFF;
@@ -55,6 +58,7 @@ div.overall h3 {
 .timeStamp {
   margin-left: 10px;
 }
+
 .price {
   margin-left: 10px;
 }
