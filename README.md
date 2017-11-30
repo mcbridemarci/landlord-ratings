@@ -1,4 +1,4 @@
-# CSE 321 Group Project :hotel: /play ohyeah 
+# CSE 321 Group Project :hotel: 
 ## Socorro Landloard Ratings 
 
 Socorro is a small community with a high demand for rentals close to campus, and often landlords view this as the perfect opportunity to rent their homes without ever keeping up with maintenance.
