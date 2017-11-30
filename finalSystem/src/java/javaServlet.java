@@ -39,9 +39,8 @@ public class javaServlet extends HttpServlet {
                 session.setAttribute("review", r);
                 url = "/basic.jsp";
             }
-            else {
-                //TODO url = "???"; ... error message, need @student...
-                //          maybe add error attrib on sesh and js in jsp to display error on page???
+            else { /* errors if bad email */
+                url = "/check_email_error.jsp";
             }
         } 
         else if (action.equals("basic_page")) {

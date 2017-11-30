@@ -30,6 +30,9 @@
                 Verify your New Mexico Tech student email address bellow.</p>
         </div>
         <div>
+          <p id="message" class="alert alert-danger"><span class="bold">Error</span>: email must be a valid NMT Student email address!</p>
+        </div>
+        <div>
           <form action="/apollo.4/finalSystem/javaServlet" method="post">
               <Label for="email">Enter Your Email Address:</label>
               <input type="email" class="question" id="email" name="email" placeholder="john.smith@student.nmt.edu" required />

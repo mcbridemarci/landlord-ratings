@@ -50,10 +50,6 @@ public class Review {
     String overallThoughts;
     int overallRating;
     
-    
-    /* Err status */
-    boolean emailError = false;
-    
     Review(String email) {
         this.email = email;
     }
