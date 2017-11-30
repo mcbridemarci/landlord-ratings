@@ -46,12 +46,6 @@ public class Populator extends HttpServlet {
             double longUp = lon + 0.0001;
             double longLow = lon - 0.0001;
 
-            /*String query = "SELECT postNumber,address1 FROM `apollo_4_project`.`address` WHERE "
-                + " latitude >= " + latLow 
-                + " AND latitude <= " + latUp 
-                + " AND longitude >= " + longLow 
-                + " AND longitude <= " + longUp + ";";
-            ResultSet result = statement.executeQuery(query);*/
 
             PreparedStatement stmt = connection.prepareStatement("SELECT postNumber,address1 FROM `apollo_4_project`.`address` "
                     + "WHERE latitude >= ? AND latitude <= ? AND longitude >= ? AND longitude <= ?;");
@@ -122,10 +116,6 @@ public class Populator extends HttpServlet {
             
             request.setAttribute("xml", xml);
             
-            //PrintWriter out = response.getWriter();
-            //out.println(xml);
-            
-            //out.close();
             result.close();
             statement.close();
             connection.close();
