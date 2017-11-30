@@ -6,10 +6,8 @@ function showXML(xmlStr) {
 
   //Get the address for the review page
   var y = doc.getElementsByTagName("address")[0].childNodes[0].nodeValue;
-  var address = "Rental Review for ";
-  address += y;
-  // Now put it on the web page
-  document.getElementById("address").innerHTML = address;
+  var address = "" + y;
+  //document.getElementById("address").innerHTML = address;
   document.getElementById("address_overall").innerHTML = address;
 
 

@@ -6,7 +6,7 @@
   background-color: gray!important;
 }
 .emoji {
-  height: 3.5em;  
+  height: 3.5em;
 }
 .more {
     position: relative;
@@ -18,7 +18,7 @@
   color: #FFF;
   border-radius: 10px;
   margin-bottom: 2em;
-  margin-top: 2em;
+  margin-top: 0;
   max-width: 750px;
 }
 

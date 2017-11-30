@@ -35,10 +35,9 @@
     <hr class="line-separator">
 
     <section class="mainDescriptionArea">
-      <h2><span id="address"></span></h2>
-      <h3 id="address" class="centerText"> </h3>
       <div class="container overall">
-        <h3 class="centerText">All <span id="address_overall"></span></h3>
+        <h3 class="centerText">All Rental Reviews for <span id="address_overall"></span></h3>
+
       </div>
 
       <div id="allReviews">
@@ -59,7 +58,7 @@
 
   <footer>
     <p>
-      Created by techies - To help out other techies 
+      Created by techies - To help out other techies
     </p>
     <p><a href="legal.html" class="link">Legal Disclaimer</a></p>  </footer>
 </html>
