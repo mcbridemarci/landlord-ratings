@@ -29,9 +29,9 @@
       <section class="content" id="contentSection">
         <h3 class="subtitleArea">Basic Information:</h3>
         <form action="/apollo.4/finalSystem/javaServlet" method="post">
-                                        <input type="hidden" id="coordinate" name="coordinate" >
-					<input type="hidden" id="latitude" name="latitude" >
-                                        <input type="hidden" id="longitude" name="longitude" >
+          <input type="hidden" id="coordinate" name="coordinate" />
+					<input type="hidden" id="latitude" name="latitude" required />
+          <input type="hidden" id="longitude" name="longitude" required />
 					<input type="hidden" id="completeAddr" name="completeAddr" >
           <div class="question">
             <h4>Rental Address</h4>
@@ -41,7 +41,7 @@
 
           <div class="question">
             <h4>Rental Street Address</h4>
-            <input type="hidden" id="street_number" name="location_" />
+            <input type="hidden" id="street_number" name="locations" />
             <input type="text" id="route" name="location" required />
           </div>
 
@@ -113,7 +113,7 @@
 
           <div class="question">
             <h4>Late fee:</h4>
-            <p>$ <input type="number" id="late_fee" name="fee" placeholder = "Dollar amount" required /></p>
+            <p>$ <input type="number" id="late_fee" name="fee" placeholder="Dollar amount" required /></p>
           </div>
 
           <div class="question">

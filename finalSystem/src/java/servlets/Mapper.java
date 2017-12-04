@@ -7,10 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.sql.*;
 
-/**
- *
- * @author Johnathan
- */
+
 public class Mapper extends HttpServlet {
 
     /**
