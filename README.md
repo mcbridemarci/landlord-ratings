@@ -27,3 +27,8 @@ After you have completed your review, you may click on the “Return to Home Pag
 To read a review, simply click on the red pins located on the map to bring up a small information window that will allow you to click on a link below the address. The link will take you to a different web page populated with reviews other people have left for that same address. 
 ### Note
 It should be noted that if you want to return to the welcome page and not complete the review, simply click the banner 'Socorro Rental Reviews' which will redirect you to the home page.
+### Known Issues
+The following are known issues that need corrected. 
+ * Support for usage of the back button when filling out the review form
+ * Check input for correct type (i.e. string vs. int)
+ * Further improve mobile layout.
